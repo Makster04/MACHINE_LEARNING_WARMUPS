@@ -101,7 +101,7 @@ The PDF has two different rules depending on the value of $x$:
 $$
 f_X(x) =
 \begin{cases}
-\dfrac{1}{b-a}, & a < x < b \\[6pt]
+\dfrac{1}{b-a}, & a < x < b \cr
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -246,8 +246,8 @@ Putting the three regions together:
 $$
 F_X(x) =
 \begin{cases}
-0, & x < a \\[6pt]
-\dfrac{x-a}{b-a}, & a \leq x < b \\[6pt]
+0, & x < a \cr
+\dfrac{x-a}{b-a}, & a \leq x < b \cr
 1, & x \geq b
 \end{cases}
 $$
@@ -331,7 +331,7 @@ The PDF height is $\dfrac{1}{b-a}$, and:
 $$
 f_X(x) =
 \begin{cases}
-\dfrac{1}{b-a}, & a < x < b \\[6pt]
+\dfrac{1}{b-a}, & a < x < b \cr
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -355,8 +355,8 @@ Remember:
 $$
 F_X(x) =
 \begin{cases}
-0, & x < a \\[6pt]
-\dfrac{x-a}{b-a}, & a \leq x < b \\[6pt]
+0, & x < a \cr
+\dfrac{x-a}{b-a}, & a \leq x < b \cr
 1, & x \geq b
 \end{cases}
 $$
