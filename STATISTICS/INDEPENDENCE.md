@@ -158,8 +158,7 @@ In words:
 $$
 \boxed{
 \text{Probability of A AND B}
-=
-P(A)\times P(B)
+= P(A)\times P(B)
 }
 $$
 
@@ -237,16 +236,14 @@ Use the independent-event product rule:
 
 $$
 P(S\cap R_1)
-=
-P(S)\cdot P(R_1)
+= P(S)\cdot P(R_1)
 $$
 
 Substitute:
 
 $$
 P(S\cap R_1)
-=
-0.40(0.30)
+= 0.40(0.30)
 $$
 
 $$
@@ -353,8 +350,7 @@ In fact:
 
 $$
 P(A\cap B)
-=
-\frac12\cdot\frac12
+= \frac12\cdot\frac12
 $$
 
 $$
@@ -391,8 +387,7 @@ Therefore:
 
 $$
 P(\text{5 heads})
-=
-\frac12
+= \frac12
 \cdot
 \frac12
 \cdot
@@ -407,16 +402,14 @@ This can be written more simply as:
 
 $$
 P(\text{5 heads})
-=
-\left(\frac12\right)^5
+= \left(\frac12\right)^5
 $$
 
 Calculate:
 
 $$
 \left(\frac12\right)^5
-=
-\frac{1}{32}
+= \frac{1}{32}
 $$
 
 Therefore:
@@ -497,16 +490,14 @@ For example:
 
 $$
 \frac12\cdot\frac12
-=
-\frac14
+= \frac14
 $$
 
 and:
 
 $$
 \frac12\cdot\frac12\cdot\frac12
-=
-\frac18
+= \frac18
 $$
 
 This makes intuitive sense.
@@ -545,10 +536,8 @@ Use the product rule:
 
 $$
 P(6,6)
-=
-\frac16\cdot\frac16
-=
-\boxed{\frac{1}{36}}
+= \frac16\cdot\frac16
+= \boxed{\frac{1}{36}}
 $$
 
 ### Sanity check
@@ -758,8 +747,7 @@ Calculate:
 
 $$
 P(A)P(B)
-=
-0.50(0.40)
+= 0.50(0.40)
 =0.20
 $$
 
@@ -942,16 +930,14 @@ For example:
 
 $$
 P(\text{5 heads})
-=
-\left(\frac12\right)^5
+= \left(\frac12\right)^5
 $$
 
 and:
 
 $$
 P(\text{10 sixes})
-=
-\left(\frac16\right)^{10}
+= \left(\frac16\right)^{10}
 $$
 
 ---
@@ -1071,10 +1057,8 @@ For five heads:
 $$
 \boxed{
 P(\text{5 heads})
-=
-\left(\frac12\right)^5
-=
-\frac1{32}
+= \left(\frac12\right)^5
+= \frac1{32}
 }
 $$
 
@@ -1083,10 +1067,8 @@ For two sixes:
 $$
 \boxed{
 P(6,6)
-=
-\frac16\cdot\frac16
-=
-\frac1{36}
+= \frac16\cdot\frac16
+= \frac1{36}
 }
 $$
 
@@ -1095,8 +1077,7 @@ For ten sixes:
 $$
 \boxed{
 P(\text{10 sixes})
-=
-\left(\frac16\right)^{10}
+= \left(\frac16\right)^{10}
 }
 $$
 
