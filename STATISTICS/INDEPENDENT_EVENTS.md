@@ -1,10 +1,12 @@
-# What You Should Know About Independent Events
+# What You Should Know About Independence
 
-These slides are mainly teaching **eight important ideas**: what independence means, how independent events differ from dependent events, how to calculate the probability of independent events happening together, and how the product rule works for repeated events.
+> **Set notation ($\cup$, $\cap$, $A^c$, $\varnothing$) is defined in 01 — Events and Set Notation.** This file assumes it and does not redefine it.
+
+These notes cover **seven important ideas**: what independence means, how independent events differ from dependent events, how to calculate the probability of independent events happening together, how the product rule works for repeated events, the two ways to test for independence, why independent is not the same as disjoint, and what conditional independence means.
 
 ---
 
-## 1. Independent events do not affect each other's probabilities
+# 1. Independent events do not affect each other's probabilities
 
 Two events are **independent** when the occurrence of one event does **not change the probability** of the other event occurring.
 
@@ -106,6 +108,12 @@ The first event changed the probability of the second event.
 
 Therefore, the events are **dependent**.
 
+### The keyword to watch for
+
+**With replacement** → the situation resets each time → **independent**
+
+**Without replacement** → the pool changes → **dependent**
+
 ---
 
 # 3. Independent versus dependent events
@@ -131,57 +139,11 @@ $$
 
 ---
 
-# 4. AND means intersection
+# 4. For independent events, multiply probabilities
 
-When a question asks for the probability that **A AND B** occur, this is an intersection.
+Recall from 01 that $A\cap B$ means **A AND B**.
 
-The intersection symbol is:
-
-$$
-\cap
-$$
-
-Therefore:
-
-$$
-A\cap B
-$$
-
-means:
-
-**A AND B**
-
-and:
-
-$$
-P(A\cap B)
-$$
-
-means:
-
-$$
-\boxed{\text{Probability that A and B both occur}}
-$$
-
-For example:
-
-$$
-P(\text{Soccer AND Room 1})
-$$
-
-means the probability that a randomly selected student:
-
-- Likes soccer
-- AND
-- Is in Room 1
-
-Both conditions must be true.
-
----
-
-# 5. For independent events, multiply probabilities
-
-The main formula in these slides is the **Product Rule for Independent Events**.
+The main formula in this file is the **Product Rule for Independent Events**.
 
 If A and B are independent:
 
@@ -211,9 +173,29 @@ When the events are independent and the question asks for:
 
 you usually **multiply**.
 
+### The rule extends to any number of events
+
+The events do not need to have the same probability. If $A$, $B$, and $C$ are all independent:
+
+$$
+\boxed{
+P(A\cap B\cap C)=P(A)P(B)P(C)
+}
+$$
+
+and so on for any number of independent events.
+
+### Important limitation
+
+This shortcut **only** works when the events are independent. For dependent events you must use the General Product Rule, covered in 03:
+
+$$
+P(A\cap B)=P(A)P(B\mid A)
+$$
+
 ---
 
-# 6. Soccer and Room 1 example
+# 5. Soccer and Room 1 example
 
 Suppose:
 
@@ -279,9 +261,9 @@ $$
 
 ---
 
-# 7. Independence means the same proportion appears in each group
+# 6. Independence means the same proportion appears in each group
 
-The school examples in the slides help visualize what independence means.
+The school examples help visualize what independence means.
 
 Suppose:
 
@@ -333,9 +315,11 @@ This matches the idea of independence:
 
 **Being assigned to Room 1 does not change the proportion of students who like soccer.**
 
+This is the intuition behind the second independence test in section 12: the proportion inside the group equals the proportion overall.
+
 ---
 
-# 8. Independent events can happen together
+# 7. Independent events can happen together
 
 Do not confuse **independent** with **unable to happen together**.
 
@@ -381,9 +365,11 @@ So:
 
 **Independent does NOT mean the events cannot happen together.**
 
+Section 11 makes this distinction fully.
+
 ---
 
-# 9. Coin-flip example: Heads five times
+# 8. Coin-flip example: Heads five times
 
 Suppose you flip a fair coin five times.
 
@@ -449,7 +435,7 @@ $$
 
 ---
 
-# 10. Repeated independent events can be written with exponents
+# 9. Repeated independent events use exponents
 
 If the same independent event occurs repeatedly and has the same probability each time, you can use an exponent.
 
@@ -483,119 +469,27 @@ $$
 
 a total of $n$ times.
 
-### Example
+So instead of writing:
 
-Five heads:
+$$
+\frac12
+\cdot
+\frac12
+\cdot
+\frac12
+\cdot
+\frac12
+\cdot
+\frac12
+$$
+
+you write:
 
 $$
 \left(\frac12\right)^5
 $$
 
-instead of writing:
-
-$$
-\frac12
-\cdot
-\frac12
-\cdot
-\frac12
-\cdot
-\frac12
-\cdot
-\frac12
-$$
-
----
-
-# 11. Dice example: Rolling two sixes
-
-For one fair six-sided die:
-
-$$
-P(6)=\frac16
-$$
-
-Suppose we roll two independent dice.
-
-We want:
-
-**Die 1 = 6 AND Die 2 = 6**
-
-Use the product rule:
-
-$$
-P(6,6)
-=
-\frac16\cdot\frac16
-$$
-
-$$
-=
-\frac{1}{36}
-$$
-
-Therefore:
-
-$$
-\boxed{
-P(6,6)=\frac{1}{36}
-}
-$$
-
-This makes sense because rolling two dice creates:
-
-$$
-6\times6=36
-$$
-
-equally likely ordered outcomes.
-
-Only one outcome is:
-
-$$
-(6,6)
-$$
-
-Therefore:
-
-$$
-P(6,6)=\frac1{36}
-$$
-
----
-
-# 12. Dice example: Rolling ten sixes
-
-Suppose you roll a fair die ten independent times.
-
-The probability of rolling a 6 once is:
-
-$$
-\frac16
-$$
-
-To obtain a 6 on **all ten rolls**:
-
-$$
-P(\text{10 sixes})
-=
-\left(\frac16\right)^{10}
-$$
-
-Therefore:
-
-$$
-\boxed{
-P(\text{10 sixes})=
-\left(\frac16\right)^{10}
-}
-$$
-
-The probability becomes extremely small because you are requiring the same event to occur repeatedly.
-
----
-
-# 13. Why multiplication makes probabilities smaller
+## Why this makes probabilities smaller
 
 When multiplying probabilities between 0 and 1, the result generally becomes smaller.
 
@@ -625,67 +519,88 @@ Getting one head is easier than getting:
 
 The more independent conditions that must **all** happen, the less likely the combined event becomes.
 
+Therefore:
+
+$$
+\boxed{\text{More required successes}\rightarrow\text{smaller probability}}
+$$
+
 ---
 
-# 14. AND versus OR
+# 10. Dice examples: two sixes and ten sixes
 
-This distinction is extremely important because it determines whether you are generally thinking about **multiplication** or **addition**.
-
-### AND
-
-AND means intersection:
+For one fair six-sided die:
 
 $$
-A\cap B
+P(6)=\frac16
 $$
 
-For independent events:
+## Rolling two sixes
+
+Suppose we roll two independent dice and want:
+
+**Die 1 = 6 AND Die 2 = 6**
+
+Use the product rule:
 
 $$
-\boxed{
-P(A\cap B)=P(A)P(B)
-}
-$$
-
-So independent **AND** problems usually involve multiplication.
-
-### OR
-
-OR means union:
-
-$$
-A\cup B
-$$
-
-For OR problems, use the addition rule:
-
-$$
-P(A\cup B)
+P(6,6)
 =
-P(A)+P(B)-P(A\cap B)
+\frac16\cdot\frac16
+=
+\boxed{\frac{1}{36}}
+$$
+
+### Sanity check
+
+Rolling two dice creates:
+
+$$
+6\times6=36
+$$
+
+equally likely ordered outcomes.
+
+Only one outcome is:
+
+$$
+(6,6)
 $$
 
 Therefore:
 
 $$
-\boxed{\text{AND}\rightarrow\text{intersection}}
+P(6,6)=\frac1{36}
 $$
 
+which confirms the product rule.
+
+## Rolling ten sixes
+
+Suppose you roll a fair die ten independent times. Using the exponent rule with $p=\frac16$ and $n=10$:
+
 $$
-\boxed{\text{OR}\rightarrow\text{union}}
+\boxed{
+P(\text{10 sixes})=
+\left(\frac16\right)^{10}
+}
 $$
 
-Do not automatically multiply just because two events appear in the same problem.
-
-First determine whether the question is asking for **AND** or **OR**.
+The probability becomes extremely small because you are requiring the same event to occur repeatedly.
 
 ---
 
-# 15. Independence versus disjoint events
+# 11. Independence versus disjoint events
 
 This is one of the easiest probability concepts to confuse.
 
 **Independent events and disjoint events are NOT the same thing.**
+
+They answer completely different questions:
+
+> **Independent** asks: *does one event change the probability of the other?*
+>
+> **Disjoint** asks: *can both events happen at all?*
 
 ### Independent events
 
@@ -703,7 +618,7 @@ They **can happen together**.
 
 ### Disjoint events
 
-Disjoint events cannot happen together.
+Disjoint events cannot happen together (see 01).
 
 For disjoint events:
 
@@ -749,6 +664,30 @@ The same die roll cannot be both 2 and 5.
 
 Therefore, they are disjoint.
 
+### Disjoint events are actually dependent
+
+Here is the part that makes the distinction click.
+
+If A and B are disjoint and you learn that A happened, then you now know B is **impossible**. Learning about A changed the probability of B from something to zero.
+
+That is the definition of dependence.
+
+Therefore:
+
+$$
+\boxed{\text{Disjoint events with nonzero probability are always dependent}}
+$$
+
+### Comparison
+
+| | Independent | Disjoint |
+|---|---|---|
+| Can both events happen? | Yes | No |
+| Does one affect the other? | No | If one happens, the other cannot |
+| $P(A\cap B)$ | $P(A)P(B)$ | $0$ |
+| Relationship | Unrelated | Strongly dependent |
+| Example | Heads on two separate flips | Roll 2 or 5 on one die |
+
 ### Remember
 
 $$
@@ -757,33 +696,61 @@ $$
 
 ---
 
-# 16. A mathematical way to test independence
+# 12. Two ways to test for independence
 
-Two events A and B are independent when:
+There are two equivalent tests. Use whichever matches the information you are given.
+
+## Test 1: The multiplication test
 
 $$
 \boxed{
-P(A\cap B)=P(A)P(B)
+A\text{ and }B\text{ are independent when } P(A\cap B)=P(A)P(B)
 }
 $$
 
-So if a problem gives you all three probabilities, you can check independence.
+Use this when the problem gives you all three probabilities.
 
-### Example
+## Test 2: The conditional test
+
+$$
+\boxed{
+A\text{ and }B\text{ are independent when } P(A\mid B)=P(A)
+}
+$$
+
+and equivalently:
+
+$$
+P(B\mid A)=P(B)
+$$
+
+Use this when the problem asks whether knowing one event **changes** the other. The vertical bar means "given that," and conditional probability is covered fully in 03.
+
+## Why the two tests are the same
+
+The conditional probability formula is:
+
+$$
+P(A\mid B)=\frac{P(A\cap B)}{P(B)}
+$$
+
+If A and B are independent, substitute $P(A\cap B)=P(A)P(B)$:
+
+$$
+P(A\mid B)=\frac{P(A)P(B)}{P(B)}=P(A)
+$$
+
+The $P(B)$ terms cancel. So the two tests always agree, and the derivation is developed further in 03.
+
+## Example: independent
 
 Suppose:
 
 $$
 P(A)=0.50
-$$
-
-$$
+\qquad
 P(B)=0.40
-$$
-
-and:
-
-$$
+\qquad
 P(A\cap B)=0.20
 $$
 
@@ -793,9 +760,6 @@ $$
 P(A)P(B)
 =
 0.50(0.40)
-$$
-
-$$
 =0.20
 $$
 
@@ -805,7 +769,112 @@ $$
 P(A\cap B)=P(A)P(B)
 $$
 
-the events are independent.
+the events are **independent**.
+
+## Example: not independent
+
+Suppose instead:
+
+$$
+P(A)=0.50
+\qquad
+P(B)=0.40
+\qquad
+P(A\cap B)=0.30
+$$
+
+Calculate:
+
+$$
+P(A)P(B)=0.50(0.40)=0.20
+$$
+
+But:
+
+$$
+P(A\cap B)=0.30\neq0.20
+$$
+
+Therefore the events are **dependent**. Checking with the conditional test:
+
+$$
+P(A\mid B)=\frac{0.30}{0.40}=0.75
+$$
+
+which does not equal $P(A)=0.50$. Knowing B raised the probability of A from 50% to 75%, so B carries information about A.
+
+---
+
+# 13. Conditional independence
+
+Independence can hold **inside a group** even when it does not hold overall. This is called **conditional independence**, and it is written:
+
+$$
+\boxed{
+P(A\cap B\mid C)=P(A\mid C)\,P(B\mid C)
+}
+$$
+
+In words:
+
+> **Once you already know C, learning about A tells you nothing more about B.**
+
+### Example
+
+Consider email, with:
+
+$$
+A=\text{contains "lottery"}
+\qquad
+B=\text{contains "winning"}
+\qquad
+C=\text{the email is spam}
+$$
+
+Across all email, these two words appear together far more often than chance would predict, so A and B are **dependent** overall.
+
+But once you already know an email is spam, the assumption is that the two words no longer carry information about each other. That is conditional independence given the class.
+
+### The critical warning
+
+$$
+\boxed{\text{Conditional independence does NOT imply independence}}
+$$
+
+$$
+\boxed{\text{Independence does NOT imply conditional independence}}
+$$
+
+These are two separate claims. One can be true while the other is false.
+
+### Why this matters
+
+This assumption is exactly what makes Naive Bayes "naive," and it is the reason that classifier can handle hundreds of features at once. It is developed fully in 13.
+
+---
+
+# 14. AND versus OR
+
+Before you multiply, check what the question is actually asking.
+
+| Question asks | Symbol | Operation |
+|---|---|---|
+| A **AND** B | $A\cap B$ | Multiply, if independent |
+| A **OR** B | $A\cup B$ | Addition rule, see 01 |
+
+For independent events:
+
+$$
+\boxed{
+P(A\cap B)=P(A)P(B)
+}
+$$
+
+### The mistake to avoid
+
+Do not automatically multiply just because two events appear in the same problem.
+
+First determine whether the question is asking for **AND** or **OR**. Then, if it is AND, check whether the events are actually independent before using the shortcut.
 
 ---
 
@@ -841,21 +910,19 @@ $$
 
 ---
 
-## Intersection
-
-Intersection means **AND**.
-
-$$
-\boxed{
-A\cap B=\text{A AND B}
-}
-$$
-
-For independent events:
+## Product rule for independent events
 
 $$
 \boxed{
 P(A\cap B)=P(A)\cdot P(B)
+}
+$$
+
+and for any number of independent events:
+
+$$
+\boxed{
+P(A\cap B\cap C)=P(A)P(B)P(C)
 }
 $$
 
@@ -889,6 +956,36 @@ $$
 
 ---
 
+## The two independence tests
+
+$$
+\boxed{
+P(A\cap B)=P(A)P(B)
+}
+$$
+
+$$
+\boxed{
+P(A\mid B)=P(A)
+}
+$$
+
+These are equivalent.
+
+---
+
+## Conditional independence
+
+$$
+\boxed{
+P(A\cap B\mid C)=P(A\mid C)P(B\mid C)
+}
+$$
+
+Independence **within** a group. It does not imply, and is not implied by, ordinary independence.
+
+---
+
 ## Independent versus dependent
 
 | | Independent | Dependent |
@@ -915,6 +1012,8 @@ $$
 \boxed{\text{Independent}\neq\text{Disjoint}}
 $$
 
+In fact, disjoint events with nonzero probability are always **dependent**.
+
 ---
 
 # Main Rules to Put in Your Notebook
@@ -933,12 +1032,6 @@ $$
 }
 $$
 
-$$
-\boxed{
-\cap=\text{AND}
-}
-$$
-
 For independent events:
 
 $$
@@ -952,6 +1045,24 @@ For repeated independent events:
 $$
 \boxed{
 P(\text{same event }n\text{ times})=p^n
+}
+$$
+
+To test independence:
+
+$$
+\boxed{
+P(A\cap B)=P(A)P(B)
+\qquad\text{or}\qquad
+P(A\mid B)=P(A)
+}
+$$
+
+For conditional independence:
+
+$$
+\boxed{
+P(A\cap B\mid C)=P(A\mid C)P(B\mid C)
 }
 $$
 
@@ -999,4 +1110,16 @@ $$
 
 The biggest idea is:
 
-**Independent events do not change each other's probabilities. When independent events must happen together, multiply their probabilities. If the same independent event must happen repeatedly, multiply the probability by itself, which can be written using an exponent.**
+**Independent events do not change each other's probabilities. When independent events must happen together, multiply their probabilities. If the same independent event must happen repeatedly, multiply the probability by itself, which can be written using an exponent. Before multiplying, always confirm the events are actually independent.**
+
+---
+
+# Where This Goes Next
+
+| Idea from this file | Where it is used |
+|---|---|
+| $P(A\cap B)=P(A)P(B)$ | **03 — Conditional Probability**: the special case of the General Product Rule |
+| $P(A\mid B)=P(A)$ | **03 — Conditional Probability**: where this form is derived |
+| Independent trials | **08 — Bernoulli and Binomial**: independence is what allows $p^x(1-p)^{n-x}$ |
+| $p^n$ | **08 — Bernoulli and Binomial**: the success and failure portions of the PMF |
+| Conditional independence | **13 — Naive Bayes**: the "naive" assumption itself |
