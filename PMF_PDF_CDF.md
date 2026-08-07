@@ -41,9 +41,8 @@ heads.
 
 Discrete random variables use a:
 
-```math
-\boxed{\displaystyle \text{PMF}}
-```
+| $\text{PMF}$ |
+|:---:|
 
 The slides use the five-coin example to show separate probabilities at $X=0,1,2,3,4,5$.
 
@@ -71,9 +70,8 @@ There are infinitely many possible values between any two measurements.
 
 Continuous random variables use a:
 
-```math
-\boxed{\displaystyle \text{PDF}}
-```
+| $\text{PDF}$ |
+|:---:|
 
 The waiting-time slides emphasize that a continuous variable can take infinitely many possible values.
 
@@ -83,9 +81,8 @@ The waiting-time slides emphasize that a continuous variable can take infinitely
 
 A **Probability Mass Function (PMF)** is used for:
 
-```math
-\boxed{\displaystyle \text{Discrete random variables}}
-```
+| $\text{Discrete random variables}$ |
+|:---:|
 
 The PMF is written:
 
@@ -95,9 +92,8 @@ p_X(x)
 
 and means:
 
-```math
-\boxed{\displaystyle p_X(x)=P(X=x)}
-```
+| $p_X(x)=P(X=x)$ |
+|:---:|
 
 In words:
 
@@ -149,9 +145,8 @@ A valid PMF must satisfy two conditions.
 
 ## Rule 1: Probabilities cannot be negative
 
-```math
-\boxed{\displaystyle p_X(x)\geq0}
-```
+| $p_X(x)\geq0$ |
+|:---:|
 
 Every probability must be zero or positive.
 
@@ -159,9 +154,8 @@ Every probability must be zero or positive.
 
 ## Rule 2: All probabilities must add to 1
 
-```math
-\boxed{\displaystyle \sum_x p_X(x)=1}
-```
+| $\sum_x p_X(x)=1$ |
+|:---:|
 
 For the five-coin example:
 
@@ -171,9 +165,8 @@ For the five-coin example:
 
 Therefore:
 
-```math
-\boxed{\displaystyle \text{Discrete: sum of all probability masses}=1}
-```
+| $\text{Discrete: sum of all probability masses}=1$ |
+|:---:|
 
 
 
@@ -201,15 +194,13 @@ P(1\leq X\leq3)=p_X(1)+p_X(2)+p_X(3)
 
 Or more generally:
 
-```math
-\boxed{\displaystyle P(a\leq X\leq b)=\sum_{x=a}^{b}p_X(x)}
-```
+| $P(a\leq X\leq b)=\sum_{x=a}^{b}p_X(x)$ |
+|:---:|
 
 So remember:
 
-```math
-\boxed{\displaystyle \text{PMF probability}=\text{sum of probability masses}}
-```
+| $\text{PMF probability}=\text{sum of probability masses}$ |
+|:---:|
 
 ---
 
@@ -217,9 +208,8 @@ So remember:
 
 A **Probability Density Function (PDF)** is used for:
 
-```math
-\boxed{\displaystyle \text{Continuous random variables}}
-```
+| $\text{Continuous random variables}$ |
+|:---:|
 
 The PDF is written:
 
@@ -229,9 +219,8 @@ f_X(x)
 
 The important distinction is that:
 
-```math
-\boxed{\displaystyle f_X(x)=\text{density}}
-```
+| $f_X(x)=\text{density}$ |
+|:---:|
 
 It is **not** the probability that $X=x$.
 
@@ -243,9 +232,8 @@ The slides describe the PDF as the rate at which probability accumulates around 
 
 For a PDF:
 
-```math
-\boxed{\displaystyle \text{Area under the curve}=\text{probability}}
-```
+| $\text{Area under the curve}=\text{probability}$ |
+|:---:|
 
 Therefore:
 
@@ -257,9 +245,8 @@ is the area underneath the PDF between $a$ and $b$.
 
 Mathematically:
 
-```math
-\boxed{\displaystyle  P(a<X<b)=\int_a^b f_X(x)\,dx }
-```
+| $P(a<X<b)=\int_a^b f_X(x)\,dx$ |
+|:---:|
 
 The slides illustrate this by shading the region between (a) and (b) underneath $f_X(x)$.
 
@@ -289,15 +276,13 @@ P(X=2)
 
 Instead:
 
-```math
-\boxed{\displaystyle \text{PDF height}=\text{density}}
-```
+| $\text{PDF height}=\text{density}$ |
+|:---:|
 
 while:
 
-```math
-\boxed{\displaystyle \text{Area under the PDF}=\text{probability}}
-```
+| $\text{Area under the PDF}=\text{probability}$ |
+|:---:|
 
 ---
 
@@ -309,15 +294,13 @@ The waiting-time slides specifically ask:
 
 The answer is:
 
-```math
-\boxed{\displaystyle 0}
-```
+| $0$ |
+|:---:|
 
 For every continuous random variable:
 
-```math
-\boxed{\displaystyle P(X=x)=0}
-```
+| $P(X=x)=0$ |
+|:---:|
 
 Why?
 
@@ -356,7 +339,7 @@ can have a positive probability because the interval has width.
 The slides give a waiting-time example where:
 
 ```math
-P(2<X<3)=\frac15
+P(2<X<3)=\frac{1}{5}
 ```
 
 and a smaller interval:
@@ -369,15 +352,13 @@ P(2<X<2.5)=0.1
 
 For a **constant density**, this can be thought of as:
 
-```math
-\boxed{\displaystyle \text{Probability}=\text{density}\times\text{interval width}}
-```
+| $\text{Probability}=\text{density}\times\text{interval width}$ |
+|:---:|
 
 For a curved PDF, the more general rule is:
 
-```math
-\boxed{\displaystyle \text{Probability}=\text{area under the PDF}}
-```
+| $\text{Probability}=\text{area under the PDF}$ |
+|:---:|
 
 ---
 
@@ -387,17 +368,15 @@ A valid PDF must satisfy:
 
 ## Rule 1: Density cannot be negative
 
-```math
-\boxed{\displaystyle f_X(x)\geq0}
-```
+| $f_X(x)\geq0$ |
+|:---:|
 
 ---
 
 ## Rule 2: Total area equals 1
 
-```math
-\boxed{\displaystyle  \int_{-\infty}^{\infty}f_X(x)\,dx=1 }
-```
+| $\int_{-\infty}^{\infty}f_X(x)\,dx=1$ |
+|:---:|
 
 The slides contrast this with the discrete case: **discrete probabilities sum to 1, while continuous probability is represented by total area equal to 1.**
 
@@ -405,9 +384,8 @@ The slides contrast this with the discrete case: **discrete probabilities sum to
 
 ## Rule 3: Probability comes from area over an interval
 
-```math
-\boxed{\displaystyle  P(a<X<b)=\int_a^b f_X(x)\,dx }
-```
+| $P(a<X<b)=\int_a^b f_X(x)\,dx$ |
+|:---:|
 
 ---
 
@@ -429,13 +407,11 @@ The slides directly contrast discrete PMFs with continuous PDFs.
 
 The easiest rule to remember is:
 
-```math
-\boxed{\displaystyle  \text{Discrete}\rightarrow\text{PMF}\rightarrow\text{ADD} }
-```
+| $\text{Discrete}\rightarrow\text{PMF}\rightarrow\text{ADD}$ |
+|:---:|
 
-```math
-\boxed{\displaystyle  \text{Continuous}\rightarrow\text{PDF}\rightarrow\text{AREA} }
-```
+| $\text{Continuous}\rightarrow\text{PDF}\rightarrow\text{AREA}$ |
+|:---:|
 
 ---
 
@@ -451,9 +427,8 @@ F_X(x)
 
 and defined as:
 
-```math
-\boxed{\displaystyle  F_X(x)=P(X\leq x) }
-```
+| $F_X(x)=P(X\leq x)$ |
+|:---:|
 
 In words:
 
@@ -471,9 +446,8 @@ A CDF is **not another version of the PDF**.
 
 It can be used for:
 
-```math
-\boxed{\displaystyle \text{Discrete AND continuous random variables}}
-```
+| $\text{Discrete AND continuous random variables}$ |
+|:---:|
 
 So:
 
@@ -484,17 +458,14 @@ So:
 
 Therefore:
 
-```math
-\boxed{\displaystyle  \text{PMF = discrete only} }
-```
+| $\text{PMF = discrete only}$ |
+|:---:|
 
-```math
-\boxed{\displaystyle  \text{PDF = continuous only} }
-```
+| $\text{PDF = continuous only}$ |
+|:---:|
 
-```math
-\boxed{\displaystyle  \text{CDF = both} }
-```
+| $\text{CDF = both}$ |
+|:---:|
 
 ---
 
@@ -538,9 +509,8 @@ F_X(x)=1
 
 Therefore:
 
-```math
-\boxed{\displaystyle  0\leq F_X(x)\leq1 }
-```
+| $0\leq F_X(x)\leq1$ |
+|:---:|
 
 The slides explicitly state that the CDF starts at 0 and ends at 1.
 
@@ -557,9 +527,8 @@ but it cannot remove probability.
 
 Therefore:
 
-```math
-\boxed{\displaystyle  F_X(x)\text{ never decreases} }
-```
+| $F_X(x)\text{ never decreases}$ |
+|:---:|
 
 The final CDF slide lists this as one of its defining properties.
 
@@ -579,9 +548,8 @@ but their graphs look different.
 
 A discrete CDF looks like a:
 
-```math
-\boxed{\displaystyle \text{step function}}
-```
+| $\text{step function}$ |
+|:---:|
 
 Each possible outcome causes the accumulated probability to jump upward.
 
@@ -591,9 +559,8 @@ Each possible outcome causes the accumulated probability to jump upward.
 
 A continuous CDF usually looks like a:
 
-```math
-\boxed{\displaystyle \text{smooth increasing curve}}
-```
+| $\text{smooth increasing curve}$ |
+|:---:|
 
 because probability accumulates continuously.
 
@@ -613,9 +580,8 @@ f_X(x)
 
 tells you:
 
-```math
-\boxed{\displaystyle \text{density around }x}
-```
+| $\text{density around }x$ |
+|:---:|
 
 Probability comes from **area underneath it**.
 
@@ -629,9 +595,8 @@ F_X(x)
 
 tells you:
 
-```math
-\boxed{\displaystyle \text{total probability accumulated up to }x}
-```
+| $\text{total probability accumulated up to }x$ |
+|:---:|
 
 Therefore:
 
@@ -659,15 +624,13 @@ F_X(a)=P(X\leq a)
 
 the probability between two points can be obtained by subtracting cumulative probabilities:
 
-```math
-\boxed{\displaystyle  P(a<X\leq b)=F_X(b)-F_X(a) }
-```
+| $P(a<X\leq b)=F_X(b)-F_X(a)$ |
+|:---:|
 
 In words:
 
-```math
-\boxed{\displaystyle \text{Probability between}=\text{upper CDF}-\text{lower CDF}}
-```
+| $\text{Probability between}=\text{upper CDF}-\text{lower CDF}$ |
+|:---:|
 
 ---
 
@@ -681,9 +644,8 @@ Question:
 
 > What is the probability of **exactly this discrete value**?
 
-```math
-\boxed{\displaystyle p_X(x)=P(X=x)}
-```
+| $p_X(x)=P(X=x)$ |
+|:---:|
 
 ---
 
@@ -693,9 +655,8 @@ Question:
 
 > Where is probability **densely concentrated**, and what is the probability over an interval?
 
-```math
-\boxed{\displaystyle  P(a<X<b)=\text{area under }f_X(x) }
-```
+| $P(a<X<b)=\text{area under }f_X(x)$ |
+|:---:|
 
 ---
 
@@ -705,9 +666,8 @@ Question:
 
 > What is the probability of being **at or below this value**?
 
-```math
-\boxed{\displaystyle  F_X(x)=P(X\leq x) }
-```
+| $F_X(x)=P(X\leq x)$ |
+|:---:|
 
 ---
 
@@ -717,15 +677,13 @@ Question:
 
 A **Probability Mass Function** is used for discrete random variables.
 
-```math
-\boxed{\displaystyle  p_X(x)=P(X=x) }
-```
+| $p_X(x)=P(X=x)$ |
+|:---:|
 
 Probability is obtained by **adding probability masses**.
 
-```math
-\boxed{\displaystyle  \sum_xp_X(x)=1 }
-```
+| $\sum_x p_X(x)=1$ |
+|:---:|
 
 ---
 
@@ -733,27 +691,23 @@ Probability is obtained by **adding probability masses**.
 
 A **Probability Density Function** is used for continuous random variables.
 
-```math
-\boxed{\displaystyle  f_X(x)=\text{density at }x }
-```
+| $f_X(x)=\text{density at }x$ |
+|:---:|
 
 Probability is represented by:
 
-```math
-\boxed{\displaystyle  \text{area under the PDF} }
-```
+| $\text{area under the PDF}$ |
+|:---:|
 
 For an interval:
 
-```math
-\boxed{\displaystyle  P(a<X<b)=\int_a^b f_X(x)\,dx }
-```
+| $P(a<X<b)=\int_a^b f_X(x)\,dx$ |
+|:---:|
 
 For an exact continuous value:
 
-```math
-\boxed{\displaystyle  P(X=x)=0 }
-```
+| $P(X=x)=0$ |
+|:---:|
 
 ---
 
@@ -761,21 +715,18 @@ For an exact continuous value:
 
 A **Cumulative Distribution Function** works for both discrete and continuous variables.
 
-```math
-\boxed{\displaystyle  F_X(x)=P(X\leq x) }
-```
+| $F_X(x)=P(X\leq x)$ |
+|:---:|
 
 It measures:
 
-```math
-\boxed{\displaystyle \text{accumulated probability}}
-```
+| $\text{accumulated probability}$ |
+|:---:|
 
 and always satisfies:
 
-```math
-\boxed{\displaystyle  0\leq F_X(x)\leq1 }
-```
+| $0\leq F_X(x)\leq1$ |
+|:---:|
 
 The CDF never decreases.
 
@@ -783,67 +734,52 @@ The CDF never decreases.
 
 # Main Rules to Put in Your Notebook
 
-```math
-\boxed{\displaystyle \text{Discrete}\rightarrow\text{PMF}}
-```
+| $\text{Discrete}\rightarrow\text{PMF}$ |
+|:---:|
 
-```math
-\boxed{\displaystyle \text{Continuous}\rightarrow\text{PDF}}
-```
+| $\text{Continuous}\rightarrow\text{PDF}$ |
+|:---:|
 
-```math
-\boxed{\displaystyle \text{Discrete AND Continuous}\rightarrow\text{CDF}}
-```
+| $\text{Discrete AND Continuous}\rightarrow\text{CDF}$ |
+|:---:|
 
-```math
-\boxed{\displaystyle p_X(x)=P(X=x)}
-```
+| $p_X(x)=P(X=x)$ |
+|:---:|
 
-```math
-\boxed{\displaystyle \sum_xp_X(x)=1}
-```
+| $\sum_x p_X(x)=1$ |
+|:---:|
 
-```math
-\boxed{\displaystyle f_X(x)\geq0}
-```
+| $f_X(x)\geq0$ |
+|:---:|
 
-```math
-\boxed{\displaystyle \text{Total area under a PDF}=1}
-```
+| $\text{Total area under a PDF}=1$ |
+|:---:|
 
-```math
-\boxed{\displaystyle P(X=x)=0\quad\text{for continuous }X}
-```
+| $P(X=x)=0\quad\text{for continuous }X$ |
+|:---:|
 
-```math
-\boxed{\displaystyle  P(a<X<b)=\int_a^b f_X(x)\,dx }
-```
+| $P(a<X<b)=\int_a^b f_X(x)\,dx$ |
+|:---:|
 
-```math
-\boxed{\displaystyle  F_X(x)=P(X\leq x) }
-```
+| $F_X(x)=P(X\leq x)$ |
+|:---:|
 
-```math
-\boxed{\displaystyle  0\leq F_X(x)\leq1 }
-```
+| $0\leq F_X(x)\leq1$ |
+|:---:|
 
-```math
-\boxed{\displaystyle  P(a<X\leq b)=F_X(b)-F_X(a) }
-```
+| $P(a<X\leq b)=F_X(b)-F_X(a)$ |
+|:---:|
 
 And the **single biggest idea** to remember is:
 
-```math
-\boxed{\displaystyle \text{PMF}=\text{probability at discrete values}}
-```
+| $\text{PMF}=\text{probability at discrete values}$ |
+|:---:|
 
-```math
-\boxed{\displaystyle \text{PDF}=\text{density; area gives probability}}
-```
+| $\text{PDF}=\text{density; area gives probability}$ |
+|:---:|
 
-```math
-\boxed{\displaystyle \text{CDF}=\text{probability accumulated up to }x}
-```
+| $\text{CDF}=\text{probability accumulated up to }x$ |
+|:---:|
 
 So in plain English:
 
