@@ -56,15 +56,7 @@ In words:
 The ordinary Bayes expression shown in the slides is:
 
 $$
-P(\text{spam}\mid\text{lottery}\cap\text{winning})
-=
-\frac{
-P(\text{spam})\,P(\text{lottery}\cap\text{winning}\mid\text{spam})
-}{
-P(\text{spam})\,P(\text{lottery}\cap\text{winning}\mid\text{spam})
-+
-P(\text{ham})\,P(\text{lottery}\cap\text{winning}\mid\text{ham})
-}
+P(\text{spam}\mid\text{lottery}\cap\text{winning}) = \frac{P(\text{spam})\,P(\text{lottery}\cap\text{winning}\mid\text{spam})}{P(\text{spam})\,P(\text{lottery}\cap\text{winning}\mid\text{spam}) + P(\text{ham})\,P(\text{lottery}\cap\text{winning}\mid\text{ham})}
 $$
 
 where **ham** means **not spam**.
@@ -113,9 +105,7 @@ Applied *inside* the spam class, this gives:
 
 $$
 \boxed{\
-P(\text{lottery}\cap\text{winning}\mid\text{spam})
-\approx
-P(\text{lottery}\mid\text{spam})\,P(\text{winning}\mid\text{spam})
+P(\text{lottery}\cap\text{winning}\mid\text{spam}) \approx P(\text{lottery}\mid\text{spam})\,P(\text{winning}\mid\text{spam})
 \ }
 $$
 
@@ -123,9 +113,7 @@ Likewise for ham:
 
 $$
 \boxed{\
-P(\text{lottery}\cap\text{winning}\mid\text{ham})
-\approx
-P(\text{lottery}\mid\text{ham})\,P(\text{winning}\mid\text{ham})
+P(\text{lottery}\cap\text{winning}\mid\text{ham}) \approx P(\text{lottery}\mid\text{ham})\,P(\text{winning}\mid\text{ham})
 \ }
 $$
 
@@ -156,17 +144,7 @@ $$
 Using the naive assumption, the slides rewrite the spam calculation as:
 
 $$
-\boxed{\
-P(\text{spam}\mid\text{lottery}\cap\text{winning})
-=
-\frac{
-P(\text{spam})\,P(\text{lottery}\mid\text{spam})\,P(\text{winning}\mid\text{spam})
-}{
-P(\text{spam})\,P(\text{lottery}\mid\text{spam})\,P(\text{winning}\mid\text{spam})
-+
-P(\text{ham})\,P(\text{lottery}\mid\text{ham})\,P(\text{winning}\mid\text{ham})
-}
-\ }
+\boxed{\ P(\text{spam}\mid\text{lottery}\cap\text{winning}) = \frac{P(\text{spam})\,P(\text{lottery}\mid\text{spam})\,P(\text{winning}\mid\text{spam})}{P(\text{spam})\,P(\text{lottery}\mid\text{spam})\,P(\text{winning}\mid\text{spam}) + P(\text{ham})\,P(\text{lottery}\mid\text{ham})\,P(\text{winning}\mid\text{ham})}\ }
 $$
 
 This is the central equation in the slides.
@@ -244,17 +222,7 @@ $$
 For many words:
 
 $$
-\boxed{\
-P(\text{spam}\mid w_1,\ldots,w_n)
-=
-\frac{
-P(\text{spam})\,P(w_1\mid\text{spam})\cdots P(w_n\mid\text{spam})
-}{
-P(\text{spam})\,P(w_1\mid\text{spam})\cdots P(w_n\mid\text{spam})
-+
-P(\text{ham})\,P(w_1\mid\text{ham})\cdots P(w_n\mid\text{ham})
-}
-\ }
+\boxed{\ P(\text{spam}\mid w_1,\ldots,w_n) = \frac{P(\text{spam})\,P(w_1\mid\text{spam})\cdots P(w_n\mid\text{spam})}{P(\text{spam})\,P(w_1\mid\text{spam})\cdots P(w_n\mid\text{spam}) + P(\text{ham})\,P(w_1\mid\text{ham})\cdots P(w_n\mid\text{ham})}\ }
 $$
 
 So the overall pattern is:
@@ -337,13 +305,7 @@ We now have:
 Substituting into the two-feature formula:
 
 $$
-P(\text{spam}\mid\text{lottery}\cap\text{winning})
-=
-\frac{
-0.2(0.7)(0.75)
-}{
-0.2(0.7)(0.75) + 0.8(0.125)(0.1)
-}
+P(\text{spam}\mid\text{lottery}\cap\text{winning}) = \frac{0.2(0.7)(0.75)}{0.2(0.7)(0.75) + 0.8(0.125)(0.1)}
 $$
 
 ---
@@ -466,9 +428,7 @@ The features are treated as independent **within each class**. For two features:
 
 $$
 \boxed{\
-P(\text{lottery}\cap\text{winning}\mid\text{spam})
-\approx
-P(\text{lottery}\mid\text{spam})\,P(\text{winning}\mid\text{spam})
+P(\text{lottery}\cap\text{winning}\mid\text{spam}) \approx P(\text{lottery}\mid\text{spam})\,P(\text{winning}\mid\text{spam})
 \ }
 $$
 
@@ -496,9 +456,7 @@ For two spam features:
 
 $$
 \boxed{\
-P(\text{lottery}\cap\text{winning}\mid\text{spam})
-\approx
-P(\text{lottery}\mid\text{spam})\,P(\text{winning}\mid\text{spam})
+P(\text{lottery}\cap\text{winning}\mid\text{spam}) \approx P(\text{lottery}\mid\text{spam})\,P(\text{winning}\mid\text{spam})
 \ }
 $$
 
@@ -506,9 +464,7 @@ For many features:
 
 $$
 \boxed{\
-P(w_1,\ldots,w_n\mid\text{spam})
-\approx
-P(w_1\mid\text{spam})\cdots P(w_n\mid\text{spam})
+P(w_1,\ldots,w_n\mid\text{spam}) \approx P(w_1\mid\text{spam})\cdots P(w_n\mid\text{spam})
 \ }
 $$
 
