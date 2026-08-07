@@ -1043,7 +1043,7 @@ This distinction is easy to miss.
 |---|---|---|
 | Question it answers | Do they overlap? | Do they cover everything? |
 | Requirement | $A\cap B=\varnothing$ | $A\cup B=S$ |
-| Both together | \multicolumn | A partition |
+| If both are true | A partition | A partition |
 
 Events can be disjoint without being exhaustive. Rolling an even number and rolling a 5 do not overlap, but they leave out 1 and 3.
 
@@ -1125,4 +1125,3 @@ The most important idea is:
 | Disjoint events | **02 — Independence**: disjoint and independent are **not** the same thing |
 | $A^c$ and partitions | **03 — Conditional Probability**: the Law of Total Probability |
 | Partitions | **04 — Bayes' Theorem**: the denominator sums over a partition |
-
