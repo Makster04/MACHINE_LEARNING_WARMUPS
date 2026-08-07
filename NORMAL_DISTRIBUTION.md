@@ -19,7 +19,7 @@ A normal distribution:
 Because the total area equals 1, areas under the curve represent probabilities.
 
 $$
-\boxed{\text{Total area under the curve}=1}
+\text{Total area under the curve}=1
 $$
 
 For a perfectly normal distribution:
@@ -82,7 +82,7 @@ Changing $\mu$:
 Therefore:
 
 $$
-\boxed{\mu=\text{center of the distribution}}
+\mu=\text{center of the distribution}
 $$
 
 ---
@@ -100,7 +100,7 @@ Standard deviation measures how spread out the values are around the mean.
 Therefore:
 
 $$
-\boxed{\sigma=\text{spread of the distribution}}
+\sigma=\text{spread of the distribution}
 $$
 
 ### Small standard deviation
@@ -158,11 +158,11 @@ The mean and standard deviation control different properties of the normal distr
 Remember:
 
 $$
-\boxed{\mu=\text{center}}
+\mu=\text{center}
 $$
 
 $$
-\boxed{\sigma=\text{spread}}
+\sigma=\text{spread}
 $$
 
 Changing $\mu$ does **not** change the spread.
@@ -194,13 +194,13 @@ Variance is the square of the standard deviation.
 Therefore:
 
 $$
-\boxed{\sigma^2=\text{variance}}
+\sigma^2=\text{variance}
 $$
 
 and:
 
 $$
-\boxed{\sigma=\sqrt{\sigma^2}}
+\sigma=\sqrt{\sigma^2}
 $$
 
 ### Example
@@ -218,7 +218,7 @@ $$
 $$
 
 $$
-=\boxed{5}
+=5
 $$
 
 So:
@@ -247,7 +247,7 @@ This means:
 Therefore:
 
 $$
-\boxed{X\sim N(\mu,\sigma^2)}
+X\sim N(\mu,\sigma^2)
 $$
 
 means:
@@ -287,7 +287,7 @@ $$
 $$
 
 $$
-=\boxed{5}
+=5
 $$
 
 Therefore:
@@ -431,7 +431,7 @@ This is one of the most important ideas to understand about continuous distribut
 For a continuous random variable:
 
 $$
-\boxed{P(X=x)=0}
+P(X=x)=0
 $$
 
 The probability of one exact value is zero.
@@ -459,13 +459,13 @@ $$
 Therefore:
 
 $$
-\boxed{\text{PDF height}=\text{density}}
+\text{PDF height}=\text{density}
 $$
 
 while:
 
 $$
-\boxed{\text{Area under the PDF}=\text{probability}}
+\text{Area under the PDF}=\text{probability}
 $$
 
 ### Important distinction
@@ -491,7 +491,7 @@ The CDF tells you the probability that $X$ is **less than or equal to** a partic
 Therefore:
 
 $$
-\boxed{F_X(x)=P(X\leq x)}
+F_X(x)=P(X\leq x)
 $$
 
 The normal PDF is **bell-shaped**.
@@ -561,13 +561,13 @@ $$
 using the CDF:
 
 $$
-\boxed{ P(a<X<b)=F_X(b)-F_X(a) }
+P(a<X<b)=F_X(b)-F_X(a)
 $$
 
 In words:
 
 $$
-\boxed{ \text{Probability between two values} = \text{upper CDF} - \text{lower CDF} }
+\text{Probability between two values} = \text{upper CDF} - \text{lower CDF}
 $$
 
 ---
@@ -579,7 +579,7 @@ A **z-score** tells you how many standard deviations a value is above or below t
 The standardization formula is:
 
 $$
-\boxed{ z=\frac{x-\mu}{\sigma} }
+z=\frac{x-\mu}{\sigma}
 $$
 
 where:
@@ -658,7 +658,7 @@ $$
 Therefore:
 
 $$
-\boxed{Z\sim N(0,1)}
+Z\sim N(0,1)
 $$
 
 ---
@@ -706,7 +706,7 @@ $$
 $$
 
 $$
-=\boxed{1.5}
+=1.5
 $$
 
 Therefore, the student's score is:
@@ -754,7 +754,7 @@ $$
 Therefore:
 
 $$
-\boxed{ P(\mu-\sigma<X<\mu+\sigma)\approx68\% }
+P(\mu-\sigma<X<\mu+\sigma)\approx68\%
 $$
 
 ---
@@ -782,7 +782,7 @@ $$
 Therefore:
 
 $$
-\boxed{ P(\mu-2\sigma<X<\mu+2\sigma)\approx95\% }
+P(\mu-2\sigma<X<\mu+2\sigma)\approx95\%
 $$
 
 ---
@@ -810,7 +810,7 @@ $$
 Therefore:
 
 $$
-\boxed{ P(\mu-3\sigma<X<\mu+3\sigma)\approx99.7\% }
+P(\mu-3\sigma<X<\mu+3\sigma)\approx99.7\%
 $$
 
 ---
@@ -904,7 +904,7 @@ A binomial distribution can sometimes be approximated using a normal distributio
 Suppose:
 
 $$
-X\sim\operatorname{Binomial}(100,0.5)
+X\sim\mathrm{Binomial}(100,0.5)
 $$
 
 This represents:
@@ -928,7 +928,7 @@ For example, this could represent 100 independent fair coin flips.
 The binomial mean is:
 
 $$
-\boxed{\mu=np}
+\mu=np
 $$
 
 Substitute:
@@ -938,7 +938,7 @@ $$
 $$
 
 $$
-=\boxed{50}
+=50
 $$
 
 Therefore, the distribution is centered around 50.
@@ -950,7 +950,7 @@ Therefore, the distribution is centered around 50.
 The binomial standard deviation is:
 
 $$
-\boxed{ \sigma=\sqrt{np(1-p)} }
+\sigma=\sqrt{np(1-p)}
 $$
 
 Substitute:
@@ -964,7 +964,7 @@ $$
 $$
 
 $$
-=\boxed{5}
+=5
 $$
 
 This is why a binomial distribution with:
@@ -1058,7 +1058,7 @@ adjustment helps account for the difference between discrete bars and a continuo
 Therefore:
 
 $$
-\boxed{ P(X\leq55)\approx P(Y\leq55.5) }
+P(X\leq55)\approx P(Y\leq55.5)
 $$
 
 ---
@@ -1095,7 +1095,7 @@ rather than requiring every original variable to be normally distributed.
 Therefore:
 
 $$
-\boxed{ \text{Normality is not automatically required for every variable} }
+\text{Normality is not automatically required for every variable}
 $$
 
 ---
@@ -1111,13 +1111,13 @@ A normal distribution is a:
 Its total area is:
 
 $$
-\boxed{1}
+1
 $$
 
 For a perfectly normal distribution:
 
 $$
-\boxed{ \text{Mean}=\text{Median}=\text{Mode} }
+\text{Mean}=\text{Median}=\text{Mode}
 $$
 
 ---
@@ -1127,7 +1127,7 @@ $$
 The mean determines the center of the distribution.
 
 $$
-\boxed{\mu=\text{center}}
+\mu=\text{center}
 $$
 
 Changing $\mu$ moves the curve left or right.
@@ -1139,7 +1139,7 @@ Changing $\mu$ moves the curve left or right.
 Standard deviation determines the spread of the distribution.
 
 $$
-\boxed{\sigma=\text{spread}}
+\sigma=\text{spread}
 $$
 
 A smaller $\sigma$ creates a narrower curve.
@@ -1153,13 +1153,13 @@ A larger $\sigma$ creates a wider curve.
 Variance is the square of the standard deviation.
 
 $$
-\boxed{\sigma^2=\text{variance}}
+\sigma^2=\text{variance}
 $$
 
 Therefore:
 
 $$
-\boxed{\sigma=\sqrt{\sigma^2}}
+\sigma=\sqrt{\sigma^2}
 $$
 
 ---
@@ -1167,7 +1167,7 @@ $$
 ## Normal-distribution notation
 
 $$
-\boxed{ X\sim N(\mu,\sigma^2) }
+X\sim N(\mu,\sigma^2)
 $$
 
 where:
@@ -1189,19 +1189,19 @@ $$
 Remember:
 
 $$
-\boxed{\text{PDF height}=\text{density}}
+\text{PDF height}=\text{density}
 $$
 
 and:
 
 $$
-\boxed{\text{Area under the PDF}=\text{probability}}
+\text{Area under the PDF}=\text{probability}
 $$
 
 For a continuous random variable:
 
 $$
-\boxed{P(X=x)=0}
+P(X=x)=0
 $$
 
 ---
@@ -1211,13 +1211,13 @@ $$
 The cumulative distribution function gives accumulated probability.
 
 $$
-\boxed{ F_X(x)=P(X\leq x) }
+F_X(x)=P(X\leq x)
 $$
 
 To calculate probability between two values:
 
 $$
-\boxed{ P(a<X<b)=F_X(b)-F_X(a) }
+P(a<X<b)=F_X(b)-F_X(a)
 $$
 
 ---
@@ -1227,13 +1227,13 @@ $$
 The z-score tells you how many standard deviations a value is from the mean.
 
 $$
-\boxed{ z=\frac{x-\mu}{\sigma} }
+z=\frac{x-\mu}{\sigma}
 $$
 
 The standard normal distribution is:
 
 $$
-\boxed{ Z\sim N(0,1) }
+Z\sim N(0,1)
 $$
 
 ---
@@ -1243,15 +1243,15 @@ $$
 For an approximately normal distribution:
 
 $$
-\boxed{ P(\mu-\sigma<X<\mu+\sigma)\approx68\% }
+P(\mu-\sigma<X<\mu+\sigma)\approx68\%
 $$
 
 $$
-\boxed{ P(\mu-2\sigma<X<\mu+2\sigma)\approx95\% }
+P(\mu-2\sigma<X<\mu+2\sigma)\approx95\%
 $$
 
 $$
-\boxed{ P(\mu-3\sigma<X<\mu+3\sigma)\approx99.7\% }
+P(\mu-3\sigma<X<\mu+3\sigma)\approx99.7\%
 $$
 
 ---
@@ -1261,25 +1261,25 @@ $$
 For a binomial distribution:
 
 $$
-\boxed{\mu=np}
+\mu=np
 $$
 
 and:
 
 $$
-\boxed{ \sigma=\sqrt{np(1-p)} }
+\sigma=\sqrt{np(1-p)}
 $$
 
 A normal approximation generally works well when:
 
 $$
-\boxed{np\geq10}
+np\geq10
 $$
 
 and:
 
 $$
-\boxed{n(1-p)\geq10}
+n(1-p)\geq10
 $$
 
 ---
@@ -1287,61 +1287,61 @@ $$
 # Main Rules to Put in Your Notebook
 
 $$
-\boxed{ X\sim N(\mu,\sigma^2) }
+X\sim N(\mu,\sigma^2)
 $$
 
 $$
-\boxed{ \mu=\text{center} }
+\mu=\text{center}
 $$
 
 $$
-\boxed{ \sigma=\text{spread} }
+\sigma=\text{spread}
 $$
 
 $$
-\boxed{ \sigma^2=\text{variance} }
+\sigma^2=\text{variance}
 $$
 
 $$
-\boxed{ \text{Total area under the PDF}=1 }
+\text{Total area under the PDF}=1
 $$
 
 $$
-\boxed{ P(X=x)=0 \text{ for a continuous random variable} }
+P(X=x)=0 \text{ for a continuous random variable}
 $$
 
 $$
-\boxed{ \text{Probability}=\text{area under the PDF} }
+\text{Probability}=\text{area under the PDF}
 $$
 
 $$
-\boxed{ F_X(x)=P(X\leq x) }
+F_X(x)=P(X\leq x)
 $$
 
 $$
-\boxed{ P(a<X<b)=F_X(b)-F_X(a) }
+P(a<X<b)=F_X(b)-F_X(a)
 $$
 
 $$
-\boxed{ z=\frac{x-\mu}{\sigma} }
+z=\frac{x-\mu}{\sigma}
 $$
 
 $$
-\boxed{ Z\sim N(0,1) }
+Z\sim N(0,1)
 $$
 
 $$
-\boxed{ 68\%-95\%-99.7\% }
+68\%-95\%-99.7\%
 $$
 
 For the binomial normal approximation:
 
 $$
-\boxed{ \mu=np }
+\mu=np
 $$
 
 $$
-\boxed{ \sigma=\sqrt{np(1-p)} }
+\sigma=\sqrt{np(1-p)}
 $$
 
 The biggest idea is:
