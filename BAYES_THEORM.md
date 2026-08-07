@@ -1,158 +1,8 @@
 # What You Should Know About Bayes' Theorem
 
-Bayes' theorem is mainly about **updating a probability after receiving new information**.
+Bayes' theorem is used to **update a probability after receiving new evidence**.
 
-The most important ideas are:
-
-- Conditional probability
-- The direction of conditioning
-- Prior probability
-- Likelihood
-- Total probability
-- Bayes' theorem
-- True positives versus false positives
-- Why base rates matter
-- How to recognize and solve a Bayes problem
-
----
-
-# 1. Bayes' theorem answers a "given that" question
-
-Bayes' theorem is used when you want a probability such as:
-
-$$
-P(A\mid B)
-$$
-
-This is read:
-
-**The probability of A GIVEN B.**
-
-The symbol:
-
-$$
-\mid
-$$
-
-means:
-
-**given that**
-
-For example:
-
-$$
-P(\text{sick}\mid\text{tested positive})
-$$
-
-means:
-
-**What is the probability that a person is actually sick GIVEN that the person tested positive?**
-
-Therefore:
-
-$$
-P(A\mid B)=\text{probability of A given that B occurred}
-$$
-
----
-
-# 2. Conditional probability changes the group you are looking at
-
-The definition of conditional probability is:
-
-$$
-P(A\mid B)=\frac{P(A\cap B)}{P(B)}
-$$
-
-This means:
-
-> Out of all cases where $B$ happened, what fraction also had $A$ happen?
-
-The denominator:
-
-$$
-P(B)
-$$
-
-restricts your attention to cases where $B$ occurred.
-
-The numerator:
-
-$$
-P(A\cap B)
-$$
-
-represents cases where **both A and B occurred**.
-
-Therefore:
-
-$$
-P(A\mid B) = \frac{\text{A AND B}}{\text{all B}}
-$$
-
-### Medical example
-
-If:
-
-$$
-A=\text{sick}
-$$
-
-and:
-
-$$
-B=\text{tested positive}
-$$
-
-then:
-
-$$
-P(A\mid B) = \frac{P(\text{sick AND positive})} {P(\text{positive})}
-$$
-
-In words:
-
-$$
-\text{Actually sick among everyone who tested positive}
-$$
-
----
-
-# 3. The order in conditional probability matters
-
-This is one of the **most important distinctions** in Bayes' theorem.
-
-In general:
-
-$$
-P(A\mid B)\neq P(B\mid A)
-$$
-
-These probabilities answer different questions.
-
-For example:
-
-$$
-P(\text{positive}\mid\text{sick})
-$$
-
-means:
-
-**If someone is sick, what is the probability the test is positive?**
-
-But:
-
-$$
-P(\text{sick}\mid\text{positive})
-$$
-
-means:
-
-**If someone's test is positive, what is the probability the person is actually sick?**
-
-These are **not the same probability**.
-
-Bayes' theorem allows us to reverse the direction.
+More specifically, it allows you to reverse the direction of a conditional probability.
 
 You may know:
 
@@ -166,17 +16,130 @@ $$
 P(A\mid B)
 $$
 
+The most important ideas are:
+
+- Prior probability
+- Evidence
+- Likelihood
+- Posterior probability
+- Complement
+- Total probability
+- True positives and false positives
+- Base rates
+- Reversing conditional probability
+- The Bayes formula
+
+---
+
+## 1. Conditional probability reminder
+
+Bayes' theorem is built from conditional probability.
+
+Recall:
+
+$$
+P(A\mid B)
+$$
+
+means:
+
+**Probability of A GIVEN B.**
+
+The vertical bar means:
+
+$$
+\mid=\text{given that}
+$$
+
+The conditional-probability definition is:
+
+$$
+P(A\mid B)
+=
+\frac{P(A\cap B)}{P(B)}
+$$
+
+For a complete explanation of this formula, see the **Conditional Probability** notes.
+
+---
+
+# 2. Bayes reverses the direction of conditioning
+
+This is the main reason Bayes' theorem is useful.
+
+Suppose you know:
+
+$$
+P(B\mid A)
+$$
+
+but you want:
+
+$$
+P(A\mid B)
+$$
+
+These are not normally equal:
+
+$$
+P(A\mid B)\neq P(B\mid A)
+$$
+
+Bayes' theorem gives you a way to calculate one direction using information about the other.
+
 Therefore:
 
 $$
-\text{Bayes' theorem reverses the conditioning direction}
+\text{Bayes' theorem reverses conditional probability}
 $$
 
 ---
 
-# 4. Prior probability is what you know before the new evidence
+# 3. Medical-test example
 
-The **prior probability** is the original probability of an event before considering the new evidence.
+Let:
+
+$$
+A=\text{sick}
+$$
+
+and:
+
+$$
+B=\text{diagnosed sick}
+$$
+
+Suppose the question asks:
+
+**What is the probability that you are actually sick GIVEN that you tested positive?**
+
+We want:
+
+$$
+P(A\mid B)
+$$
+
+or:
+
+$$
+P(\text{sick}\mid\text{diagnosed sick})
+$$
+
+But the test information usually gives us something like:
+
+$$
+P(\text{diagnosed sick}\mid\text{sick})
+$$
+
+That is the opposite direction.
+
+Bayes' theorem allows us to reverse it.
+
+---
+
+# 4. Prior probability
+
+The **prior probability** is the probability of A before considering the new evidence.
 
 It is written:
 
@@ -187,22 +150,20 @@ $$
 In the medical example:
 
 $$
-P(\text{sick})= 0.0001
+P(\text{sick})=\frac{1}{10,000}
 $$
 
-which is:
+which equals:
 
 $$
-0.01\%
+0.0001
 $$
 
 or:
 
 $$
-\frac{1}{10,000}
+0.01\%
 $$
-
-This is the disease's **base rate**.
 
 Therefore:
 
@@ -212,11 +173,43 @@ $$
 
 Think of the prior as:
 
-**What did I believe about A before learning B?**
+**What was the probability before seeing the new evidence?**
 
 ---
 
-# 5. The complement represents the opposite event
+# 5. Base rate
+
+The prior probability is also often called the **base rate**.
+
+In the medical example:
+
+$$
+P(\text{sick})=0.01\%
+$$
+
+The disease is therefore extremely rare.
+
+This matters because Bayes' theorem considers not only how accurate the evidence is, but also how common the event was before the evidence appeared.
+
+Therefore:
+
+$$
+\text{Base rate}=\text{how common A is before observing B}
+$$
+
+---
+
+# 6. Complement
+
+The complement of A is written:
+
+$$
+A'
+$$
+
+and means:
+
+**A does not happen.**
 
 If:
 
@@ -227,68 +220,52 @@ $$
 then:
 
 $$
-A'
+A'=\text{not sick}
 $$
 
-means:
-
-**not sick**
-
-The probability of the complement is:
+The complement rule is:
 
 $$
 P(A')=1-P(A)
 $$
 
-In the medical example:
-
-$$
-P(A)= 0.0001
-$$
-
-Therefore:
+For the medical example:
 
 $$
 P(A')=1-0.0001
 $$
 
 $$
-= 0.9999
+=0.9999
 $$
 
-So:
+Therefore:
 
 $$
 P(\text{not sick})=99.99\%
 $$
 
-Remember:
-
-$$
-P(A')=1-P(A)
-$$
-
 ---
 
-# 6. Likelihood tells you how likely the evidence is if A is true
+# 7. Likelihood
 
-The slides use:
+The **likelihood** describes how likely the evidence B is if A is true.
+
+It is:
 
 $$
 P(B\mid A)
 $$
 
-as the **likelihood**.
-
 In the medical example:
 
 $$
-P(\text{positive}\mid\text{sick})= 0.99
+P(\text{diagnosed sick}\mid\text{sick})=0.99
 $$
 
 This means:
 
-**If the person really is sick, there is a 99% probability that the test is positive.**
+**If someone is actually sick, there is a 99% probability that the test says positive.**
 
 Therefore:
 
@@ -296,55 +273,69 @@ $$
 P(B\mid A)=\text{likelihood}
 $$
 
-For a medical test, this is also the **true positive rate** or **sensitivity**.
-
 ---
 
-# 7. False positive rate is different from the true positive rate
+# 8. True positive rate
 
-The medical example also gives:
-
-$$
-P(\text{positive}\mid\text{not sick})= 0.01
-$$
-
-This is the **false positive rate**.
-
-It means:
-
-**Among healthy people, 1% will incorrectly receive a positive result.**
-
-Do not confuse:
+For a medical test:
 
 $$
 P(\text{positive}\mid\text{sick})
 $$
 
-with:
+is the **true positive rate**.
+
+It is also called the test's:
+
+**Sensitivity**
+
+In the example:
 
 $$
-P(\text{positive}\mid\text{not sick})
+P(\text{positive}\mid\text{sick})=0.99
 $$
 
-They describe two different groups.
-
-### True positive rate
+Therefore:
 
 $$
+\text{True Positive Rate}
+=
 P(\text{positive}\mid\text{sick})
-$$
-
-### False positive rate
-
-$$
-P(\text{positive}\mid\text{not sick})
 $$
 
 ---
 
-# 8. Know the four possible test outcomes
+# 9. False positive rate
 
-The slides divide medical-test outcomes into four categories.
+The false positive rate is:
+
+$$
+P(\text{positive}\mid\text{not sick})
+$$
+
+It represents healthy people who incorrectly receive a positive test result.
+
+In the example:
+
+$$
+P(\text{positive}\mid\text{not sick})=0.01
+$$
+
+Therefore:
+
+$$
+\text{False Positive Rate}
+=
+P(\text{positive}\mid\text{not sick})
+$$
+
+Do not confuse this with the true positive rate.
+
+---
+
+# 10. Know the four possible test outcomes
+
+A medical-test example can produce four possible combinations.
 
 | Actual Condition | Test Result | Name |
 |---|---|---|
@@ -355,89 +346,82 @@ The slides divide medical-test outcomes into four categories.
 
 ### True Positive
 
-The person is sick and the test correctly says positive.
-
-$$
-\text{Sick}\cap\text{Positive}
-$$
+Actually sick and correctly tests positive.
 
 ### False Negative
 
-The person is sick but the test incorrectly says negative.
-
-$$
-\text{Sick}\cap\text{Negative}
-$$
+Actually sick but incorrectly tests negative.
 
 ### False Positive
 
-The person is healthy but the test incorrectly says positive.
-
-$$
-\text{Healthy}\cap\text{Positive}
-$$
+Actually healthy but incorrectly tests positive.
 
 ### True Negative
 
-The person is healthy and the test correctly says negative.
+Actually healthy and correctly tests negative.
+
+The two groups most important for the Bayes example are:
 
 $$
-\text{Healthy}\cap\text{Negative}
+\text{True Positives}
 $$
 
-The most important distinction for the Bayes example is:
+and:
 
 $$
-\text{Positive test} = \text{True Positives} + \text{False Positives}
+\text{False Positives}
 $$
+
+because both groups appear among people who tested positive.
 
 ---
 
-# 9. Use the multiplication rule to calculate A AND B
+# 11. The numerator represents A AND B
 
-The conditional-probability formula can be rearranged.
-
-Starting with:
+Bayes' theorem needs:
 
 $$
-P(B\mid A) = \frac{P(A\cap B)}{P(A)}
+P(A\cap B)
 $$
 
-Multiply both sides by:
+The general product rule gives:
 
 $$
-P(A)
+P(A\cap B)
+=
+P(A)P(B\mid A)
 $$
-
-to get:
-
-$$
-P(A\cap B) = P(A)P(B\mid A)
-$$
-
-This calculates the probability that:
-
-**A happens AND B happens.**
 
 In the medical example:
 
 $$
-P(\text{sick AND positive}) = P(\text{sick}) P(\text{positive}\mid\text{sick})
+P(\text{sick AND positive})
+=
+P(\text{sick})
+P(\text{positive}\mid\text{sick})
+$$
+
+Substitute:
+
+$$
+=
+0.0001(0.99)
 $$
 
 $$
-= 0.0001(0.99)
+=
+0.000099
 $$
 
+Therefore:
+
 $$
-= 0.000099
+P(\text{sick AND positive})=0.000099
 $$
 
 ---
 
-# 10. The denominator must include every way B can happen
-
-This is one of the most important steps in Bayes' theorem.
+# 12. The evidence can happen in more than one way
 
 Suppose:
 
@@ -445,52 +429,47 @@ $$
 B=\text{positive test}
 $$
 
-A positive test can happen in **two different ways**:
+A positive test can occur through two different paths.
 
-1. The person is sick and correctly tests positive.
-2. The person is healthy and incorrectly tests positive.
+### Path 1
+
+The person is sick and tests positive.
+
+$$
+A\cap B
+$$
+
+### Path 2
+
+The person is healthy and tests positive.
+
+$$
+A'\cap B
+$$
 
 Therefore:
 
 $$
-P(B) = P(A\cap B)+P(A'\cap B)
+P(B)
+=
+P(A\cap B)+P(A'\cap B)
 $$
 
-Using the multiplication rule:
+Using the product rule:
 
 $$
-P(B) = P(A)P(B\mid A) + P(A')P(B\mid A')
+P(B)
+=
+P(A)P(B\mid A)
++
+P(A')P(B\mid A')
 $$
 
 This is the **Law of Total Probability** for this two-case situation.
 
-In the medical example:
-
-$$
-P(\text{positive}) = P(\text{sick})P(\text{positive}\mid\text{sick}) + P(\text{healthy})P(\text{positive}\mid\text{healthy})
-$$
-
 ---
 
-# 11. Bayes' theorem combines these ideas
-
-The standard Bayes formula is:
-
-$$
-P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)}
-$$
-
-The numerator is:
-
-$$
-P(A)P(B\mid A)
-$$
-
-which represents:
-
-$$
-P(A\cap B)
-$$
+# 13. Why the denominator is so important
 
 The denominator:
 
@@ -498,60 +477,135 @@ $$
 P(B)
 $$
 
-represents **all ways that B can happen**.
+must include **every way the evidence B can occur**.
 
-Therefore, in words:
-
-$$
-\text{Updated probability} = \frac{\text{Prior}\times\text{Likelihood}} {\text{Overall probability of the evidence}}
-$$
-
----
-
-# 12. The expanded Bayes formula
-
-When there are two possibilities:
+In the medical example:
 
 $$
-A
+P(\text{positive})
 $$
 
-and:
+includes:
 
-$$
-A'
-$$
-
-the denominator can be expanded using total probability.
+- Sick people who correctly test positive
+- Healthy people who incorrectly test positive
 
 Therefore:
 
 $$
-P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') }
+\text{All positive tests}
+=
+\text{true positives}
++
+\text{false positives}
 $$
 
-This is the main version used in the medical-test slides.
+Ignoring false positives would produce the wrong answer.
 
 ---
 
-# 13. Medical-test example
+# 14. Bayes' theorem
+
+The standard Bayes formula is:
+
+$$
+P(A\mid B)
+=
+\frac{P(A)P(B\mid A)}
+{P(B)}
+$$
+
+In words:
+
+$$
+\text{Posterior}
+=
+\frac{\text{Prior}\times\text{Likelihood}}
+{\text{Probability of the Evidence}}
+$$
+
+This is the central Bayes formula.
+
+---
+
+# 15. Expanded Bayes formula
+
+If A and its complement $A'$ are the two possible underlying cases, then:
+
+$$
+P(B)
+=
+P(A)P(B\mid A)
++
+P(A')P(B\mid A')
+$$
+
+Therefore:
+
+$$
+P(A\mid B)
+=
+\frac{
+P(A)P(B\mid A)
+}{
+P(A)P(B\mid A)
++
+P(A')P(B\mid A')
+}
+$$
+
+This is the main version used in the medical-test example.
+
+---
+
+# 16. Posterior probability
+
+The answer produced by Bayes' theorem is called the **posterior probability**.
+
+The prior is:
+
+$$
+P(A)
+$$
+
+The posterior is:
+
+$$
+P(A\mid B)
+$$
+
+Therefore:
+
+$$
+\text{Prior}
+\xrightarrow{\text{new evidence}}
+\text{Posterior}
+$$
+
+In words:
+
+**Start with what you believed before the evidence and update it after observing the evidence.**
+
+---
+
+# 17. Solve the medical-test example
 
 Suppose:
 
 $$
-P(\text{sick})= 0.0001
+P(\text{sick})=0.0001
 $$
 
 $$
-P(\text{not sick})= 0.9999
+P(\text{not sick})=0.9999
 $$
 
 $$
-P(\text{positive}\mid\text{sick})= 0.99
+P(\text{positive}\mid\text{sick})=0.99
 $$
 
 $$
-P(\text{positive}\mid\text{not sick})= 0.01
+P(\text{positive}\mid\text{not sick})=0.01
 $$
 
 We want:
@@ -560,63 +614,116 @@ $$
 P(\text{sick}\mid\text{positive})
 $$
 
-Use Bayes' theorem:
+Use:
 
 $$
-P(\text{sick}\mid\text{positive}) = \frac{ P(\text{sick})P(\text{positive}\mid\text{sick}) }{ P(\text{sick})P(\text{positive}\mid\text{sick}) + P(\text{not sick})P(\text{positive}\mid\text{not sick}) }
+P(A\mid B)
+=
+\frac{
+P(A)P(B\mid A)
+}{
+P(A)P(B\mid A)
++
+P(A')P(B\mid A')
+}
 $$
 
 Substitute:
 
 $$
-= \frac{ 0.0001(0.99) }{ 0.0001(0.99)+0.9999(0.01) }
+P(\text{sick}\mid\text{positive})
+=
+\frac{
+0.0001(0.99)
+}{
+0.0001(0.99)+0.9999(0.01)
+}
 $$
 
 Calculate the true-positive path:
 
 $$
-0.0001(0.99)= 0.000099
+0.0001(0.99)=0.000099
 $$
 
 Calculate the false-positive path:
 
 $$
-0.9999(0.01)= 0.009999
+0.9999(0.01)=0.009999
 $$
 
-Therefore:
+Calculate all positive tests:
 
 $$
-P(\text{positive}) = 0.000099+0.009999
-$$
-
-$$
-= 0.010098
+0.000099+0.009999
+=
+0.010098
 $$
 
 Now divide:
 
 $$
-P(\text{sick}\mid\text{positive}) = \frac{0.000099}{0.010098}
+P(\text{sick}\mid\text{positive})
+=
+\frac{0.000099}{0.010098}
 $$
 
 $$
-\approx 0.0098
+\approx0.0098
 $$
 
 Therefore:
 
 $$
-P(\text{sick}\mid\text{positive}) \approx 0.98\%
+P(\text{sick}\mid\text{positive})
+\approx0.98\%
 $$
-
-So despite the test being 99% effective, a positive test corresponds to only about a **1% probability of actually being sick** in this example.
 
 ---
 
-# 14. Natural frequencies make Bayes easier to understand
+# 18. Why a 99% effective test does not mean a 99% chance of being sick
 
-The slides also explain the problem using:
+This is one of the most important distinctions in the entire topic.
+
+The statement:
+
+$$
+P(\text{positive}\mid\text{sick})=99\%
+$$
+
+does **not** mean:
+
+$$
+P(\text{sick}\mid\text{positive})=99\%
+$$
+
+These are reversed conditional probabilities.
+
+In this example:
+
+$$
+P(\text{positive}\mid\text{sick})=99\%
+$$
+
+but:
+
+$$
+P(\text{sick}\mid\text{positive})\approx0.98\%
+$$
+
+Therefore:
+
+$$
+P(A\mid B)\neq P(B\mid A)
+$$
+
+in general.
+
+---
+
+# 19. Natural-frequency interpretation
+
+The Bayes result becomes easier to understand if we imagine:
 
 $$
 1,000,000
@@ -624,15 +731,13 @@ $$
 
 people.
 
-The disease affects:
+Since the disease occurs in:
 
 $$
-1\text{ in }10,000
+1\text{ out of }10,000
 $$
 
-people.
-
-Therefore:
+people:
 
 $$
 100
@@ -640,21 +745,19 @@ $$
 
 people are sick.
 
-Of those 100 sick people:
+Of those 100 sick people, 99% test positive:
 
 $$
-99\%
+100(0.99)=99
 $$
 
-test positive.
-
-So:
+So there are:
 
 $$
 99
 $$
 
-are **true positives**.
+true positives.
 
 There are:
 
@@ -664,23 +767,21 @@ $$
 
 healthy people.
 
-Of those:
+Of those, 1% test positive incorrectly:
 
 $$
-1\%
+999,900(0.01)=9,999
 $$
 
-test positive incorrectly.
-
-So:
+So there are:
 
 $$
 9,999
 $$
 
-are **false positives**.
+false positives.
 
-Therefore, the total number of positive tests is:
+Therefore, total positive tests equal:
 
 $$
 99+9,999=10,098
@@ -692,103 +793,101 @@ $$
 99
 $$
 
-of those positive tests belong to truly sick people.
+of those people are actually sick.
 
 Therefore:
 
 $$
-P(\text{sick}\mid\text{positive}) = \frac{99}{10,098}
+P(\text{sick}\mid\text{positive})
+=
+\frac{99}{10,098}
 $$
 
 $$
-\approx 0.0098
+\approx0.98\%
 $$
-
-$$
-\approx 0.98\%
-$$
-
-This produces the same answer as Bayes' formula.
 
 ---
 
-# 15. Why the base rate matters
-
-This example demonstrates an extremely important Bayes idea.
+# 20. Why base rates matter
 
 The disease is extremely rare:
 
 $$
-P(\text{sick})= 0.01\%
+P(\text{sick})=0.01\%
 $$
 
-Almost everyone is healthy:
+while:
 
 $$
 P(\text{healthy})=99.99\%
 $$
 
-Even though only:
+So even though only:
 
 $$
 1\%
 $$
 
-of healthy people receive a false positive, the healthy population is enormous.
+of healthy people produce false positives, there are so many healthy people that the false-positive count becomes very large.
 
-That produces:
-
-$$
-9,999
-$$
-
-false positives compared with only:
+The example produces:
 
 $$
 99
 $$
 
-true positives.
+true positives but:
+
+$$
+9,999
+$$
+
+false positives.
 
 Therefore:
 
 $$
-\text{A small false-positive rate can still create many false positives when the base population is huge}
+\text{A very large population can make a small false-positive rate produce many false positives}
 $$
 
-This is why you cannot ignore the **prior probability or base rate**.
+This is why Bayes' theorem must consider the **base rate**.
 
 ---
 
-# 16. Bayes updates the prior using evidence
+# 21. Base-rate neglect
 
-Before the test result, the probability of being sick is:
+A common mistake is to focus only on the accuracy of the evidence and ignore how common the original event was.
 
-$$
-P(\text{sick})= 0.01\%
-$$
+For example, someone might think:
 
-This is the **prior**.
+> The test is 99% accurate, so a positive result must mean there is a 99% chance of disease.
 
-After observing a positive test, we calculate:
+That ignores:
 
 $$
-P(\text{sick}\mid\text{positive}) \approx 0.98\%
+P(\text{sick})
 $$
 
-The evidence changed our probability.
+the prior or base rate.
 
-Therefore, the big idea behind Bayes' theorem is:
+Bayes' theorem prevents this mistake by combining:
+
+- The prior
+- The likelihood
+- The false-positive path
+
+Therefore:
 
 $$
-\text{Start with a prior probability and update it using new evidence}
+\text{Do not ignore the prior when interpreting evidence}
 $$
 
 ---
 
-# 17. A simple Bayes problem-solving recipe
+# 22. Bayes problem-solving recipe
 
-When solving a Bayes problem, use this order.
+Most Bayes problems of this type can be solved using the same process.
 
 ### Step 1: Identify what you want
 
@@ -797,10 +896,6 @@ Find:
 $$
 P(A\mid B)
 $$
-
-Ask:
-
-**What probability am I trying to find GIVEN what evidence?**
 
 ---
 
@@ -815,8 +910,6 @@ $$
 ---
 
 ### Step 3: Find the complement
-
-If needed:
 
 $$
 P(A')=1-P(A)
@@ -844,7 +937,7 @@ $$
 
 ---
 
-### Step 6: Calculate the numerator
+### Step 6: Calculate the A path
 
 $$
 P(A)P(B\mid A)
@@ -852,45 +945,75 @@ $$
 
 ---
 
-### Step 7: Calculate all ways B can happen
+### Step 7: Calculate the alternative path
 
 $$
-P(B) = P(A)P(B\mid A) + P(A')P(B\mid A')
-$$
-
----
-
-### Step 8: Divide
-
-$$
-P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(B) }
-$$
-
-A useful shortcut to remember is:
-
-$$
-\text{Prior}\times\text{Likelihood} \rightarrow \text{sum all evidence paths} \rightarrow \text{divide}
+P(A')P(B\mid A')
 $$
 
 ---
 
-# 18. Bayes is not limited to medical testing
+### Step 8: Add the paths
 
-The slides also apply the same idea to the **Monty Hall problem**.
+$$
+P(B)
+=
+P(A)P(B\mid A)
++
+P(A')P(B\mid A')
+$$
 
-Suppose you choose Door 1 and the host opens Door 3.
+---
 
-Initially:
+### Step 9: Divide
+
+$$
+P(A\mid B)
+=
+\frac{
+P(A)P(B\mid A)
+}{
+P(B)
+}
+$$
+
+A useful memory shortcut is:
+
+$$
+\text{Prior}\times\text{Likelihood}
+arrow
+\text{sum all evidence paths}
+arrow
+\text{divide}
+$$
+
+---
+
+# 23. Bayes is not only for medical tests
+
+Bayes' theorem applies whenever new evidence changes what we should believe about an event.
+
+The slides also use the **Monty Hall problem**.
+
+Suppose you initially choose Door 1.
+
+Before seeing any new information:
 
 $$
 P(E_1)=P(E_2)=P(E_3)=\frac13
 $$
 
-where each $E_i$ represents the car being behind that door.
+where:
 
-After observing the host open Door 3, the probability changes.
+$$
+E_i=\text{car is behind Door }i
+$$
 
-The slides calculate:
+Then the host opens Door 3.
+
+That new information changes the probabilities.
+
+The Bayes calculation gives:
 
 $$
 P(E_2\mid B)=\frac23
@@ -904,35 +1027,23 @@ $$
 
 Therefore, switching to Door 2 gives the larger probability.
 
-The important point is not memorizing the Monty Hall arithmetic.
-
-The important point is that the **same Bayes structure applies**:
+The important lesson is that the same Bayes structure applies:
 
 $$
-\text{Prior}\times\text{Likelihood} \rightarrow \text{total probability} \rightarrow \text{divide}
+\text{Prior}\times\text{Likelihood}
+arrow
+\text{Total Probability}
+arrow
+\text{Posterior}
 $$
 
 ---
 
 # Most Important Definitions and Distinctions to Remember
 
-## Conditional probability
+## Prior
 
-$$
-P(A\mid B) = \text{probability of A given B}
-$$
-
-Definition:
-
-$$
-P(A\mid B)=\frac{P(A\cap B)}{P(B)}
-$$
-
----
-
-## Prior probability
-
-The probability before considering the new evidence:
+Probability before observing the evidence:
 
 $$
 P(A)=\text{prior}
@@ -942,7 +1053,7 @@ $$
 
 ## Likelihood
 
-The probability of observing the evidence if A is true:
+Probability of observing the evidence if A is true:
 
 $$
 P(B\mid A)=\text{likelihood}
@@ -950,9 +1061,27 @@ $$
 
 ---
 
-## Complement
+## Evidence
 
-The probability that A does not occur:
+The event that was observed:
+
+$$
+B=\text{evidence}
+$$
+
+---
+
+## Posterior
+
+Updated probability after observing the evidence:
+
+$$
+P(A\mid B)=\text{posterior}
+$$
+
+---
+
+## Complement
 
 $$
 P(A')=1-P(A)
@@ -960,20 +1089,14 @@ $$
 
 ---
 
-## Multiplication rule
-
-$$
-P(A\cap B)=P(A)P(B\mid A)
-$$
-
----
-
 ## Total probability
 
-When B can happen through A or through $A'$:
-
 $$
-P(B) = P(A)P(B\mid A) + P(A')P(B\mid A')
+P(B)
+=
+P(A)P(B\mid A)
++
+P(A')P(B\mid A')
 $$
 
 ---
@@ -981,71 +1104,58 @@ $$
 ## Bayes' theorem
 
 $$
-P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)}
+P(A\mid B)
+=
+\frac{P(A)P(B\mid A)}
+{P(B)}
 $$
 
 Expanded:
 
 $$
-P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') }
+P(A\mid B)
+=
+\frac{
+P(A)P(B\mid A)
+}{
+P(A)P(B\mid A)
++
+P(A')P(B\mid A')
+}
 $$
 
 ---
 
-# The Most Important Distinction: P(A|B) versus P(B|A)
+# Most Important Distinctions
 
-These are **not interchangeable**.
+| Concept | Meaning |
+|---|---|
+| $P(A)$ | Prior probability |
+| $P(B\mid A)$ | Likelihood |
+| $P(B)$ | Overall probability of the evidence |
+| $P(A\mid B)$ | Posterior probability |
+| $A'$ | Opposite or complement of A |
 
-$$
-P(A\mid B)
-$$
-
-means:
-
-**Probability of A given B**
-
-while:
-
-$$
-P(B\mid A)
-$$
-
-means:
-
-**Probability of B given A**
-
-Therefore:
+Most importantly:
 
 $$
 P(A\mid B)\neq P(B\mid A)
 $$
 
-in general.
-
-For the medical example:
+For medical testing:
 
 $$
-P(\text{positive}\mid\text{sick})=99\%
+P(\text{positive}\mid\text{sick})
+\neq
+P(\text{sick}\mid\text{positive})
 $$
-
-does **not** mean:
-
-$$
-P(\text{sick}\mid\text{positive})=99\%
-$$
-
-The latter must be calculated with Bayes' theorem.
 
 ---
 
 # Main Rules to Put in Your Notebook
 
 $$
-\mid=\text{given that}
-$$
-
-$$
-P(A\mid B)=\frac{P(A\cap B)}{P(B)}
+P(A')=1-P(A)
 $$
 
 $$
@@ -1053,36 +1163,56 @@ P(A\cap B)=P(A)P(B\mid A)
 $$
 
 $$
-P(A')=1-P(A)
+P(B)
+=
+P(A)P(B\mid A)
++
+P(A')P(B\mid A')
 $$
 
 $$
-P(B) = P(A)P(B\mid A) + P(A')P(B\mid A')
-$$
-
-$$
-P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)}
+P(A\mid B)
+=
+\frac{P(A)P(B\mid A)}
+{P(B)}
 $$
 
 or:
 
 $$
-P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') }
+P(A\mid B)
+=
+\frac{
+P(A)P(B\mid A)
+}{
+P(A)P(B\mid A)
++
+P(A')P(B\mid A')
+}
 $$
 
 Remember:
 
 $$
+\text{Prior}
+\xrightarrow{\text{Evidence}}
+\text{Posterior}
+$$
+
+$$
 P(A\mid B)\neq P(B\mid A)
 $$
 
-And the easiest way to remember the Bayes process is:
+And the easiest Bayes recipe to remember is:
 
 $$
-\text{Prior}\times\text{Likelihood} \rightarrow \text{find total probability of the evidence} \rightarrow \text{divide}
+\text{Prior}\times\text{Likelihood}
+arrow
+\text{add all ways the evidence can happen}
+arrow
+\text{divide}
 $$
 
 The biggest idea is:
 
-**Bayes' theorem updates what you believed before seeing the evidence. It starts with the prior probability, combines it with how likely the evidence would be under each possibility, and then asks what fraction of all cases producing that evidence came from the event you care about.**
-
+**Bayes' theorem updates a prior probability after new evidence is observed. It uses how common the event was beforehand, how likely the evidence is under each possible explanation, and then determines what proportion of all cases producing that evidence came from the event you care about.**
