@@ -84,18 +84,18 @@ The slides call $n$ and $p$ the **parameters of the binomial distribution**.
 The slides write a binomial random variable as:
 
 $$
-\boxed{X \sim \operatorname{Binomial}(n, p)}
+\boxed{X \sim \text{Binomial}(n, p)}
 $$
 
 The symbol $\sim$ means:
 
 > **"is distributed as"** or **"follows."**
 
-So $X \sim \operatorname{Binomial}(5, 0.5)$ means:
+So $X \sim \text{Binomial}(5, 0.5)$ means:
 
 > $X$ follows a binomial distribution with **5 trials** and a **0.5 probability of success on each trial**.
 
-The slides explain this notation using $X \sim \operatorname{Binomial}(5, p)$.
+The slides explain this notation using $X \sim \text{Binomial}(5, p)$.
 
 Therefore:
 
@@ -370,7 +370,7 @@ Rolling a die repeatedly can therefore be treated like repeated success/failure 
 Suppose $X = \text{number of 1s obtained in 10 die rolls}$. Then $n = 10$ and $p = \frac{1}{6}$, so:
 
 $$
-\boxed{X \sim \operatorname{Binomial}\left(10, \frac{1}{6}\right)}
+\boxed{X \sim \text{Binomial}\left(10, \frac{1}{6}\right)}
 $$
 
 The slide gives the decimal value as approximately $p \approx 0.1667$ for this example.
@@ -414,7 +414,7 @@ $$
 Notation:
 
 $$
-\boxed{X \sim \operatorname{Binomial}(n, p)}
+\boxed{X \sim \text{Binomial}(n, p)}
 $$
 
 ## $X$ versus $x$
@@ -461,7 +461,7 @@ $p^x$ represents the $x$ successes, and $(1-p)^{n-x}$ represents the $n - x$ fai
 
 | Rule | Meaning |
 | --- | --- |
-| $X \sim \operatorname{Binomial}(n, p)$ | Notation for a binomial random variable |
+| $X \sim \text{Binomial}(n, p)$ | Notation for a binomial random variable |
 | $n$ | Number of trials |
 | $p$ | Probability of success |
 | $1-p$ | Probability of failure |
