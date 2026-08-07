@@ -51,7 +51,7 @@ means:
 Therefore:
 
 $$
-\boxed{ P(A\mid B)=\text{probability of A given that B occurred} }
+P(A\mid B)=\text{probability of A given that B occurred}
 $$
 
 ---
@@ -61,7 +61,7 @@ $$
 The definition of conditional probability is:
 
 $$
-\boxed{ P(A\mid B)=\frac{P(A\cap B)}{P(B)} }
+P(A\mid B)=\frac{P(A\cap B)}{P(B)}
 $$
 
 This means:
@@ -87,7 +87,7 @@ represents cases where **both A and B occurred**.
 Therefore:
 
 $$
-\boxed{ P(A\mid B) = \frac{\text{A AND B}}{\text{all B}} }
+P(A\mid B) = \frac{\text{A AND B}}{\text{all B}}
 $$
 
 ### Medical example
@@ -113,7 +113,7 @@ $$
 In words:
 
 $$
-\boxed{ \text{Actually sick among everyone who tested positive} }
+\text{Actually sick among everyone who tested positive}
 $$
 
 ---
@@ -169,7 +169,7 @@ $$
 Therefore:
 
 $$
-\boxed{ \text{Bayes' theorem reverses the conditioning direction} }
+\text{Bayes' theorem reverses the conditioning direction}
 $$
 
 ---
@@ -207,7 +207,7 @@ This is the disease's **base rate**.
 Therefore:
 
 $$
-\boxed{ P(A)=\text{prior probability} }
+P(A)=\text{prior probability}
 $$
 
 Think of the prior as:
@@ -265,7 +265,7 @@ $$
 Remember:
 
 $$
-\boxed{ P(A')=1-P(A) }
+P(A')=1-P(A)
 $$
 
 ---
@@ -293,7 +293,7 @@ This means:
 Therefore:
 
 $$
-\boxed{ P(B\mid A)=\text{likelihood} }
+P(B\mid A)=\text{likelihood}
 $$
 
 For a medical test, this is also the **true positive rate** or **sensitivity**.
@@ -331,13 +331,13 @@ They describe two different groups.
 ### True positive rate
 
 $$
-\boxed{ P(\text{positive}\mid\text{sick}) }
+P(\text{positive}\mid\text{sick})
 $$
 
 ### False positive rate
 
 $$
-\boxed{ P(\text{positive}\mid\text{not sick}) }
+P(\text{positive}\mid\text{not sick})
 $$
 
 ---
@@ -388,7 +388,7 @@ $$
 The most important distinction for the Bayes example is:
 
 $$
-\boxed{ \text{Positive test} = \text{True Positives} + \text{False Positives} }
+\text{Positive test} = \text{True Positives} + \text{False Positives}
 $$
 
 ---
@@ -412,7 +412,7 @@ $$
 to get:
 
 $$
-\boxed{ P(A\cap B) = P(A)P(B\mid A) }
+P(A\cap B) = P(A)P(B\mid A)
 $$
 
 This calculates the probability that:
@@ -459,7 +459,7 @@ $$
 Using the multiplication rule:
 
 $$
-\boxed{ P(B) = P(A)P(B\mid A) + P(A')P(B\mid A') }
+P(B) = P(A)P(B\mid A) + P(A')P(B\mid A')
 $$
 
 This is the **Law of Total Probability** for this two-case situation.
@@ -477,7 +477,7 @@ $$
 The standard Bayes formula is:
 
 $$
-\boxed{ P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)} }
+P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)}
 $$
 
 The numerator is:
@@ -503,7 +503,7 @@ represents **all ways that B can happen**.
 Therefore, in words:
 
 $$
-\boxed{ \text{Updated probability} = \frac{\text{Prior}\times\text{Likelihood}} {\text{Overall probability of the evidence}} }
+\text{Updated probability} = \frac{\text{Prior}\times\text{Likelihood}} {\text{Overall probability of the evidence}}
 $$
 
 ---
@@ -527,7 +527,7 @@ the denominator can be expanded using total probability.
 Therefore:
 
 $$
-\boxed{ P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') } }
+P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') }
 $$
 
 This is the main version used in the medical-test slides.
@@ -607,7 +607,7 @@ $$
 Therefore:
 
 $$
-\boxed{ P(\text{sick}\mid\text{positive}) \approx 0.98\% }
+P(\text{sick}\mid\text{positive}) \approx 0.98\%
 $$
 
 So despite the test being 99% effective, a positive test corresponds to only about a **1% probability of actually being sick** in this example.
@@ -753,7 +753,7 @@ true positives.
 Therefore:
 
 $$
-\boxed{ \text{A small false-positive rate can still create many false positives when the base population is huge} }
+\text{A small false-positive rate can still create many false positives when the base population is huge}
 $$
 
 This is why you cannot ignore the **prior probability or base rate**.
@@ -781,7 +781,7 @@ The evidence changed our probability.
 Therefore, the big idea behind Bayes' theorem is:
 
 $$
-\boxed{ \text{Start with a prior probability and update it using new evidence} }
+\text{Start with a prior probability and update it using new evidence}
 $$
 
 ---
@@ -869,7 +869,7 @@ $$
 A useful shortcut to remember is:
 
 $$
-\boxed{ \text{Prior}\times\text{Likelihood} \rightarrow \text{sum all evidence paths} \rightarrow \text{divide} }
+\text{Prior}\times\text{Likelihood} \rightarrow \text{sum all evidence paths} \rightarrow \text{divide}
 $$
 
 ---
@@ -909,7 +909,7 @@ The important point is not memorizing the Monty Hall arithmetic.
 The important point is that the **same Bayes structure applies**:
 
 $$
-\boxed{ \text{Prior}\times\text{Likelihood} \rightarrow \text{total probability} \rightarrow \text{divide} }
+\text{Prior}\times\text{Likelihood} \rightarrow \text{total probability} \rightarrow \text{divide}
 $$
 
 ---
@@ -919,13 +919,13 @@ $$
 ## Conditional probability
 
 $$
-\boxed{ P(A\mid B) = \text{probability of A given B} }
+P(A\mid B) = \text{probability of A given B}
 $$
 
 Definition:
 
 $$
-\boxed{ P(A\mid B)=\frac{P(A\cap B)}{P(B)} }
+P(A\mid B)=\frac{P(A\cap B)}{P(B)}
 $$
 
 ---
@@ -935,7 +935,7 @@ $$
 The probability before considering the new evidence:
 
 $$
-\boxed{ P(A)=\text{prior} }
+P(A)=\text{prior}
 $$
 
 ---
@@ -945,7 +945,7 @@ $$
 The probability of observing the evidence if A is true:
 
 $$
-\boxed{ P(B\mid A)=\text{likelihood} }
+P(B\mid A)=\text{likelihood}
 $$
 
 ---
@@ -955,7 +955,7 @@ $$
 The probability that A does not occur:
 
 $$
-\boxed{ P(A')=1-P(A) }
+P(A')=1-P(A)
 $$
 
 ---
@@ -963,7 +963,7 @@ $$
 ## Multiplication rule
 
 $$
-\boxed{ P(A\cap B)=P(A)P(B\mid A) }
+P(A\cap B)=P(A)P(B\mid A)
 $$
 
 ---
@@ -973,7 +973,7 @@ $$
 When B can happen through A or through $A'$:
 
 $$
-\boxed{ P(B) = P(A)P(B\mid A) + P(A')P(B\mid A') }
+P(B) = P(A)P(B\mid A) + P(A')P(B\mid A')
 $$
 
 ---
@@ -981,13 +981,13 @@ $$
 ## Bayes' theorem
 
 $$
-\boxed{ P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)} }
+P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)}
 $$
 
 Expanded:
 
 $$
-\boxed{ P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') } }
+P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') }
 $$
 
 ---
@@ -1017,7 +1017,7 @@ means:
 Therefore:
 
 $$
-\boxed{ P(A\mid B)\neq P(B\mid A) }
+P(A\mid B)\neq P(B\mid A)
 $$
 
 in general.
@@ -1041,45 +1041,45 @@ The latter must be calculated with Bayes' theorem.
 # Main Rules to Put in Your Notebook
 
 $$
-\boxed{ \mid=\text{given that} }
+\mid=\text{given that}
 $$
 
 $$
-\boxed{ P(A\mid B)=\frac{P(A\cap B)}{P(B)} }
+P(A\mid B)=\frac{P(A\cap B)}{P(B)}
 $$
 
 $$
-\boxed{ P(A\cap B)=P(A)P(B\mid A) }
+P(A\cap B)=P(A)P(B\mid A)
 $$
 
 $$
-\boxed{ P(A')=1-P(A) }
+P(A')=1-P(A)
 $$
 
 $$
-\boxed{ P(B) = P(A)P(B\mid A) + P(A')P(B\mid A') }
+P(B) = P(A)P(B\mid A) + P(A')P(B\mid A')
 $$
 
 $$
-\boxed{ P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)} }
+P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)}
 $$
 
 or:
 
 $$
-\boxed{ P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') } }
+P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') }
 $$
 
 Remember:
 
 $$
-\boxed{ P(A\mid B)\neq P(B\mid A) }
+P(A\mid B)\neq P(B\mid A)
 $$
 
 And the easiest way to remember the Bayes process is:
 
 $$
-\boxed{ \text{Prior}\times\text{Likelihood} \rightarrow \text{find total probability of the evidence} \rightarrow \text{divide} }
+\text{Prior}\times\text{Likelihood} \rightarrow \text{find total probability of the evidence} \rightarrow \text{divide}
 $$
 
 The biggest idea is:
