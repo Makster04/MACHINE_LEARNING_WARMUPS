@@ -40,15 +40,13 @@ $$
 means:
 
 $$
-\boxed{\mid=\text{given that}}
+\mid=\text{given that}
 $$
 
 Therefore:
 
 $$
-\boxed{
 P(A\mid B)=\text{probability of A given that B occurred}
-}
 $$
 
 ---
@@ -66,9 +64,7 @@ Therefore, the **sample space becomes smaller**.
 In simple terms:
 
 $$
-\boxed{
 \text{Conditioning removes outcomes that no longer fit the given information}
-}
 $$
 
 ---
@@ -112,9 +108,7 @@ $$
 So without any additional information:
 
 $$
-\boxed{
 P(HH)=\frac14
-}
 $$
 
 ---
@@ -162,17 +156,13 @@ $$
 Therefore:
 
 $$
-P(HH\mid\text{first is H})
-=
-\frac12
+P(HH\mid\text{first is H}) = \frac12
 $$
 
 So:
 
 $$
-\boxed{
 P(HH\mid\text{first is H})=\frac12
-}
 $$
 
 Notice the difference:
@@ -226,9 +216,7 @@ $$
 So:
 
 $$
-\boxed{
 \text{A condition can increase, decrease, or even reduce a probability to 0}
-}
 $$
 
 ---
@@ -238,11 +226,7 @@ $$
 The general formula is:
 
 $$
-\boxed{
-P(A\mid B)
-=
-\frac{P(A\cap B)}{P(B)}
-}
+P(A\mid B) = \frac{P(A\cap B)}{P(B)}
 $$
 
 where:
@@ -255,23 +239,13 @@ where:
 In words:
 
 $$
-\boxed{
-P(A\mid B)
-=
-\frac{\text{probability of A AND B}}
-{\text{probability of B}}
-}
+P(A\mid B) = \frac{\text{probability of A AND B}} {\text{probability of B}}
 $$
 
 Another way to think about it is:
 
 $$
-\boxed{
-P(A\mid B)
-=
-\frac{\text{favorable outcomes inside B}}
-{\text{all outcomes inside B}}
-}
+P(A\mid B) = \frac{\text{favorable outcomes inside B}} {\text{all outcomes inside B}}
 $$
 
 ---
@@ -305,9 +279,7 @@ instead of the probability of the entire original sample space.
 Therefore:
 
 $$
-\boxed{
 \text{Conditioning means your new universe is B}
-}
 $$
 
 ---
@@ -351,9 +323,7 @@ means:
 The relationship between them is:
 
 $$
-P(A\mid B)
-=
-\frac{P(A\cap B)}{P(B)}
+P(A\mid B) = \frac{P(A\cap B)}{P(B)}
 $$
 
 Therefore:
@@ -370,9 +340,7 @@ Therefore:
 In general:
 
 $$
-\boxed{
 P(A\mid B)\neq P(B\mid A)
-}
 $$
 
 These answer different questions.
@@ -402,9 +370,7 @@ Those probabilities do not have to be the same.
 Therefore:
 
 $$
-\boxed{
 \text{Always pay attention to which event comes after the vertical bar}
-}
 $$
 
 ---
@@ -414,9 +380,7 @@ $$
 Start with the conditional-probability formula:
 
 $$
-P(B\mid A)
-=
-\frac{P(A\cap B)}{P(A)}
+P(B\mid A) = \frac{P(A\cap B)}{P(A)}
 $$
 
 Multiply both sides by:
@@ -428,11 +392,7 @@ $$
 to obtain:
 
 $$
-\boxed{
-P(A\cap B)
-=
-P(A)P(B\mid A)
-}
+P(A\cap B) = P(A)P(B\mid A)
 $$
 
 This is called the **General Product Rule**.
@@ -440,11 +400,7 @@ This is called the **General Product Rule**.
 In words:
 
 $$
-\boxed{
-\text{Probability of A AND B}
-=
-P(A)\times P(B\mid A)
-}
+\text{Probability of A AND B} = P(A)\times P(B\mid A)
 $$
 
 This formula works whether the events are:
@@ -463,11 +419,7 @@ This is one of the most important distinctions to remember.
 Always valid:
 
 $$
-\boxed{
-P(A\cap B)
-=
-P(A)P(B\mid A)
-}
+P(A\cap B) = P(A)P(B\mid A)
 $$
 
 ### If A and B are independent
@@ -483,25 +435,17 @@ $$
 So the formula becomes:
 
 $$
-\boxed{
-P(A\cap B)
-=
-P(A)P(B)
-}
+P(A\cap B) = P(A)P(B)
 $$
 
 Therefore:
 
 $$
-\boxed{
 \text{General case: }P(A)P(B\mid A)
-}
 $$
 
 $$
-\boxed{
 \text{Independent shortcut: }P(A)P(B)
-}
 $$
 
 ---
@@ -527,11 +471,7 @@ Because learning that one event happened provides no information that changes th
 Therefore:
 
 $$
-\boxed{
-\text{Independent}
-\Rightarrow
-\text{conditioning does not change the probability}
-}
+\text{Independent} \Rightarrow \text{conditioning does not change the probability}
 $$
 
 ---
@@ -557,11 +497,7 @@ $$
 Instead, use:
 
 $$
-\boxed{
-P(A\cap B)
-=
-P(A)P(B\mid A)
-}
+P(A\cap B) = P(A)P(B\mid A)
 $$
 
 ---
@@ -587,22 +523,17 @@ $$
 Therefore:
 
 $$
-P(\text{sum}=10)
-=
-\frac{3}{36}
+P(\text{sum}=10) = \frac{3}{36}
 $$
 
 $$
-=
-\frac{1}{12}
+= \frac{1}{12}
 $$
 
 So without any condition:
 
 $$
-\boxed{
 P(\text{sum}=10)=\frac{1}{12}
-}
 $$
 
 ---
@@ -646,17 +577,13 @@ works.
 Therefore:
 
 $$
-P(\text{sum}=10\mid\text{first die}=6)
-=
-\frac16
+P(\text{sum}=10\mid\text{first die}=6) = \frac16
 $$
 
 Thus:
 
 $$
-\boxed{
 P(\text{sum}=10\mid\text{first die}=6)=\frac16
-}
 $$
 
 Compare:
@@ -706,9 +633,7 @@ $$
 Therefore:
 
 $$
-\boxed{
 \text{Conditions can completely eliminate certain outcomes}
-}
 $$
 
 ---
@@ -736,9 +661,7 @@ $$
 Use:
 
 $$
-P(A\cap B)
-=
-P(A)P(B\mid A)
+P(A\cap B) = P(A)P(B\mid A)
 $$
 
 We know:
@@ -756,24 +679,17 @@ $$
 Therefore:
 
 $$
-P(A\cap B)
-=
-\frac16\cdot\frac16
+P(A\cap B) = \frac16\cdot\frac16
 $$
 
 $$
-=
-\frac{1}{36}
+= \frac{1}{36}
 $$
 
 So:
 
 $$
-\boxed{
-P(\text{first die is 6 AND sum is 10})
-=
-\frac{1}{36}
-}
+P(\text{first die is 6 AND sum is 10}) = \frac{1}{36}
 $$
 
 ---
@@ -805,11 +721,7 @@ $$
 Therefore:
 
 $$
-\boxed{
-\text{Conditional Probability}
-\rightarrow
-\text{foundation for Bayes' Theorem}
-}
+\text{Conditional Probability} \rightarrow \text{foundation for Bayes' Theorem}
 $$
 
 Bayes' theorem builds on conditional probability but is a separate topic.
@@ -821,11 +733,7 @@ Bayes' theorem builds on conditional probability but is a separate topic.
 ## Conditional probability
 
 $$
-\boxed{
-P(A\mid B)
-=
-\text{probability of A given B}
-}
+P(A\mid B) = \text{probability of A given B}
 $$
 
 ---
@@ -833,9 +741,7 @@ $$
 ## Vertical bar
 
 $$
-\boxed{
 \mid=\text{given that}
-}
 $$
 
 ---
@@ -843,11 +749,7 @@ $$
 ## Conditional-probability formula
 
 $$
-\boxed{
-P(A\mid B)
-=
-\frac{P(A\cap B)}{P(B)}
-}
+P(A\mid B) = \frac{P(A\cap B)}{P(B)}
 $$
 
 ---
@@ -855,11 +757,7 @@ $$
 ## Intersection
 
 $$
-\boxed{
-P(A\cap B)
-=
-\text{probability of A AND B}
-}
+P(A\cap B) = \text{probability of A AND B}
 $$
 
 ---
@@ -867,11 +765,7 @@ $$
 ## General Product Rule
 
 $$
-\boxed{
-P(A\cap B)
-=
-P(A)P(B\mid A)
-}
+P(A\cap B) = P(A)P(B\mid A)
 $$
 
 This works in the general case.
@@ -889,11 +783,7 @@ $$
 Therefore:
 
 $$
-\boxed{
-P(A\cap B)
-=
-P(A)P(B)
-}
+P(A\cap B) = P(A)P(B)
 $$
 
 ---
@@ -901,9 +791,7 @@ $$
 ## Order matters
 
 $$
-\boxed{
 P(A\mid B)\neq P(B\mid A)
-}
 $$
 
 in general.
@@ -913,55 +801,37 @@ in general.
 # Main Rules to Put in Your Notebook
 
 $$
-\boxed{
 \mid=\text{GIVEN THAT}
-}
 $$
 
 $$
-\boxed{
-P(A\mid B)
-=
-\frac{P(A\cap B)}{P(B)}
-}
+P(A\mid B) = \frac{P(A\cap B)}{P(B)}
 $$
 
 $$
-\boxed{
 \text{Conditioning shrinks the sample space to B}
-}
 $$
 
 $$
-\boxed{
-P(A\cap B)
-=
-P(A)P(B\mid A)
-}
+P(A\cap B) = P(A)P(B\mid A)
 $$
 
 If independent:
 
 $$
-\boxed{
 P(B\mid A)=P(B)
-}
 $$
 
 and:
 
 $$
-\boxed{
 P(A\cap B)=P(A)P(B)
-}
 $$
 
 Remember:
 
 $$
-\boxed{
 P(A\mid B)\neq P(B\mid A)
-}
 $$
 
 The biggest idea is:
