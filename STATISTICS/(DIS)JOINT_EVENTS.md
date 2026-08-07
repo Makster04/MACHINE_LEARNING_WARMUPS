@@ -1,10 +1,13 @@
-# What You Should Know About Joint and Disjoint Events
+# What You Should Know About Events and Set Notation
 
-These slides are mainly teaching **seven important ideas**: what union and intersection mean, how disjoint events differ from joint events, and when you need to subtract the overlap when adding probabilities.
+> **This file is the home for probability set notation.**
+> Union, intersection, complement, the empty set, disjoint vs. joint events, and the addition rule are all defined here. Later files reference this one instead of redefining these symbols.
+
+These notes cover **eight important ideas**: what an event is, what the sample space and complement are, what union and intersection mean, how disjoint events differ from joint events, what a partition is, and when you need to subtract the overlap before adding probabilities.
 
 ---
 
-## 1. Start with what an event is
+# 1. Start with what an event is
 
 An **event** is a set of possible outcomes.
 
@@ -40,7 +43,97 @@ $$
 
 ---
 
-# 2. Union means OR
+# 2. The sample space is everything that could happen
+
+The **sample space** is the set of all possible outcomes. It is written:
+
+$$
+S
+$$
+
+For one six-sided die:
+
+$$
+S=\{1,2,3,4,5,6\}
+$$
+
+Because the sample space contains every possible outcome, something in it must happen. Therefore:
+
+$$
+P(S)=1
+$$
+
+Every event is a subset of the sample space.
+
+---
+
+# 3. The complement means NOT
+
+The **complement** of an event is everything in the sample space that is **not** in that event.
+
+It is written:
+
+$$
+A^c
+$$
+
+You may also see:
+
+$$
+A'\qquad\text{or}\qquad \bar{A}
+$$
+
+All three mean the same thing.
+
+### Example
+
+Roll one die. Let:
+
+$$
+A=\text{rolling an even number}=\{2,4,6\}
+$$
+
+Then:
+
+$$
+A^c=\text{rolling an odd number}=\{1,3,5\}
+$$
+
+### The complement rule
+
+An event either happens or it does not. There is no third possibility. Therefore:
+
+$$
+P(A)+P(A^c)=1
+$$
+
+Rearranging gives the rule you will actually use:
+
+$$
+P(A^c)=1-P(A)
+$$
+
+Check it with the die:
+
+$$
+P(A)=\frac{3}{6}\qquad P(A^c)=1-\frac{3}{6}=\frac{3}{6}
+$$
+
+### Why the complement is useful
+
+Sometimes the event you want is complicated, but its opposite is simple. Instead of calculating the event directly, calculate the opposite and subtract from 1.
+
+The most common case is an **"at least one"** question:
+
+$$
+P(\text{at least one})=1-P(\text{none})
+$$
+
+Counting all the ways to get "at least one" is tedious. Counting the single way to get "none" is easy.
+
+---
+
+# 4. Union means OR
 
 The union symbol is:
 
@@ -114,7 +207,7 @@ In probability, **OR includes both unless stated otherwise**.
 
 ---
 
-# 3. Intersection means AND
+# 5. Intersection means AND
 
 The intersection symbol is:
 
@@ -172,7 +265,34 @@ $$
 
 ---
 
-# 4. Disjoint events cannot happen together
+# 6. Notation reference
+
+These are the symbols this file defines. Every later topic uses them.
+
+| Symbol | Name | Read as | Meaning |
+|---|---|---|---|
+| $S$ | Sample space | "everything" | All possible outcomes |
+| $A\cup B$ | Union | A **OR** B | In A, in B, or in both |
+| $A\cap B$ | Intersection | A **AND** B | In both A and B |
+| $A^c$ | Complement | **NOT** A | Everything not in A |
+| $\varnothing$ | Empty set | "nothing" | No outcomes |
+| $\lvert A\rvert$ | Cardinality | "size of A" | Number of outcomes in A |
+
+The two you will confuse most often:
+
+$$
+\cup=\text{OR}
+$$
+
+$$
+\cap=\text{AND}
+$$
+
+A memory hook: $\cup$ looks like a **cup** that collects everything from both events. $\cap$ is the **cap** where the two events touch.
+
+---
+
+# 7. Disjoint events cannot happen together
 
 Two events are **disjoint** when they have **no outcomes in common**.
 
@@ -207,25 +327,13 @@ Roll one six-sided die.
 Let:
 
 $$
-A=\text{rolling an even number}
-$$
-
-Therefore:
-
-$$
-A=\{2,4,6\}
+A=\text{rolling an even number}=\{2,4,6\}
 $$
 
 Let:
 
 $$
-B=\text{rolling a 5}
-$$
-
-Therefore:
-
-$$
-B=\{5\}
+B=\text{rolling a 5}=\{5\}
 $$
 
 There are no outcomes shared by both events.
@@ -240,7 +348,7 @@ The events are **disjoint**.
 
 ---
 
-# 5. For disjoint events, simply add the probabilities
+# 8. For disjoint events, simply add the probabilities
 
 Because disjoint events have no overlap:
 
@@ -308,7 +416,7 @@ $$
 
 ---
 
-# 6. Joint events can happen together
+# 9. Joint events can happen together
 
 **Joint events** are events that can occur at the same time.
 
@@ -336,19 +444,15 @@ $$
 
 The events overlap.
 
-Joint events are therefore different from disjoint events.
+### On a Venn diagram
 
-### Disjoint
-
-The circles do not overlap.
+**Disjoint** — the circles do not overlap:
 
 $$
 A\cap B=\varnothing
 $$
 
-### Joint
-
-The circles overlap.
+**Joint** — the circles overlap:
 
 $$
 A\cap B\neq\varnothing
@@ -356,7 +460,7 @@ $$
 
 ---
 
-# 7. You cannot always simply add probabilities
+# 10. You cannot always simply add probabilities
 
 Suppose:
 
@@ -398,9 +502,9 @@ Therefore, the overlap must be subtracted.
 
 ---
 
-# 8. For joint events, subtract the intersection
+# 11. For joint events, subtract the intersection
 
-The general addition rule is:
+The **general addition rule** is:
 
 $$
 P(A\cup B) = P(A)+P(B)-P(A\cap B)
@@ -428,7 +532,7 @@ Subtracting the intersection removes the duplicate count.
 
 ---
 
-# 9. School example: Soccer and basketball
+# 12. School example: Soccer and basketball
 
 Suppose:
 
@@ -478,7 +582,7 @@ $$
 
 ---
 
-# 10. The same rule works with counts
+# 13. The same rule works with counts
 
 Sometimes a problem gives you the **number of outcomes or people** instead of probabilities.
 
@@ -526,9 +630,88 @@ Therefore, **8 students play soccer or basketball**.
 
 ---
 
-# 11. Disjoint events are a special case of the general addition rule
+# 14. Exhaustive events and partitions
 
-The general rule is:
+Two ideas often appear together, and they are not the same thing.
+
+### Mutually exclusive
+
+The events do not overlap:
+
+$$
+A\cap B=\varnothing
+$$
+
+### Exhaustive
+
+The events cover the entire sample space, leaving nothing out:
+
+$$
+A\cup B\cup\cdots = S
+$$
+
+### Partition
+
+A group of events that is **both** mutually exclusive **and** exhaustive is called a **partition** of the sample space.
+
+A partition slices the sample space into pieces that do not overlap and leave no gaps. Because every outcome lands in exactly one piece:
+
+$$
+P(A_1)+P(A_2)+\cdots+P(A_k)=1
+$$
+
+### The simplest partition
+
+Any event and its complement always form a partition:
+
+$$
+A\cup A^c=S \qquad\text{and}\qquad A\cap A^c=\varnothing
+$$
+
+which is exactly why:
+
+$$
+P(A)+P(A^c)=1
+$$
+
+### Example
+
+Roll one die. These three events form a partition:
+
+$$
+\{1,2\},\quad\{3,4\},\quad\{5,6\}
+$$
+
+They do not overlap, and together they cover all six outcomes.
+
+But these two events do **not** form a partition:
+
+$$
+A=\{2,4,6\}\qquad B=\{5\}
+$$
+
+They are disjoint, but they are **not exhaustive** — the outcomes $1$ and $3$ are missing.
+
+### Why this matters later
+
+Partitions are what make the Law of Total Probability and the denominator of Bayes' theorem work. When you break an outcome into "all the separate ways it could have happened," you are using a partition.
+
+---
+
+# 15. Disjoint versus joint events
+
+| | Disjoint Events | Joint Events |
+|---|---|---|
+| Can both happen? | No | Yes |
+| Venn circles overlap? | No | Yes |
+| Intersection | No shared outcomes | Shared outcomes can exist |
+| $P(A\cap B)$ | $0$ | Can be greater than $0$ |
+| Other name | Mutually exclusive | Non-mutually exclusive |
+| OR formula | Add probabilities | Add and subtract overlap |
+
+### Disjoint events are a special case of the general rule
+
+You only need to memorize **one** addition formula. The general rule is:
 
 $$
 P(A\cup B) = P(A)+P(B)-P(A\cap B)
@@ -552,31 +735,11 @@ $$
 P(A\cup B)=P(A)+P(B)
 $$
 
-So the general formula works for both situations.
-
-### Joint events
-
-$$
-P(A\cup B) = P(A)+P(B)-P(A\cap B)
-$$
-
-### Disjoint events
-
-Because:
-
-$$
-P(A\cap B)=0
-$$
-
-the formula simplifies to:
-
-$$
-P(A\cup B)=P(A)+P(B)
-$$
+So the disjoint formula is not a separate rule. It is the general rule with the overlap term equal to zero.
 
 ---
 
-# 12. Two-dice example: Disjoint events
+# 16. Two-dice example: Disjoint events
 
 Suppose the question asks:
 
@@ -652,7 +815,7 @@ $$
 
 ---
 
-# 13. Two-dice example: Joint events
+# 17. Two-dice example: Joint events
 
 Now suppose:
 
@@ -710,79 +873,7 @@ The intersection is subtracted because those outcomes were counted in both event
 
 ---
 
-# 14. OR versus AND
-
-This is one of the most important distinctions to remember.
-
-| Meaning | Symbol | Read as |
-|---|---|---|
-| Union | $A\cup B$ | A **OR** B |
-| Intersection | $A\cap B$ | A **AND** B |
-
-Remember:
-
-$$
-\cup=\text{OR}
-$$
-
-$$
-\cap=\text{AND}
-$$
-
-### Union
-
-$$
-A\cup B
-$$
-
-means combine the outcomes belonging to either event.
-
-### Intersection
-
-$$
-A\cap B
-$$
-
-means look only at the outcomes shared by both events.
-
----
-
-# 15. Disjoint versus joint events
-
-| | Disjoint Events | Joint Events |
-|---|---|---|
-| Can both happen? | No | Yes |
-| Venn circles overlap? | No | Yes |
-| Intersection | No shared outcomes | Shared outcomes can exist |
-| $P(A\cap B)$ | $0$ | Can be greater than $0$ |
-| Other name | Mutually exclusive | Non-mutually exclusive |
-| OR formula | Add probabilities | Add and subtract overlap |
-
-### Disjoint events
-
-$$
-P(A\cap B)=0
-$$
-
-Therefore:
-
-$$
-P(A\cup B)=P(A)+P(B)
-$$
-
-### Joint events
-
-The events overlap.
-
-Therefore:
-
-$$
-P(A\cup B) = P(A)+P(B)-P(A\cap B)
-$$
-
----
-
-# 16. How to know which formula to use
+# 18. How to know which formula to use
 
 When you see an **OR** probability problem, ask:
 
@@ -810,6 +901,14 @@ $$
 
 The key is determining whether an **overlap exists**.
 
+### If the event is complicated
+
+Ask whether the **opposite** is easier to count. If so:
+
+$$
+P(A)=1-P(A^c)
+$$
+
 ---
 
 # Most Important Definitions and Distinctions to Remember
@@ -820,6 +919,30 @@ An event is a set of possible outcomes.
 
 $$
 A,B=\text{events}
+$$
+
+---
+
+## Sample space
+
+The set of all possible outcomes.
+
+$$
+S \qquad\text{and}\qquad P(S)=1
+$$
+
+---
+
+## Complement
+
+The complement means **NOT**.
+
+$$
+A^c=\text{everything not in }A
+$$
+
+$$
+P(A^c)=1-P(A)
 $$
 
 ---
@@ -894,6 +1017,38 @@ The intersection is subtracted because otherwise it would be counted twice.
 
 ---
 
+## Partition
+
+A partition is a group of events that is **mutually exclusive** and **exhaustive**.
+
+$$
+\text{No overlap} \qquad+\qquad \text{no gaps}
+$$
+
+Therefore the probabilities across a partition add to 1:
+
+$$
+P(A_1)+P(A_2)+\cdots+P(A_k)=1
+$$
+
+The simplest partition is $A$ and $A^c$.
+
+---
+
+## Disjoint versus exhaustive
+
+This distinction is easy to miss.
+
+| | Mutually exclusive | Exhaustive |
+|---|---|---|
+| Question it answers | Do they overlap? | Do they cover everything? |
+| Requirement | $A\cap B=\varnothing$ | $A\cup B=S$ |
+| Both together | \multicolumn | A partition |
+
+Events can be disjoint without being exhaustive. Rolling an even number and rolling a 5 do not overlap, but they leave out 1 and 3.
+
+---
+
 # Main Rules to Put in Your Notebook
 
 $$
@@ -902,6 +1057,22 @@ $$
 
 $$
 \cap=\text{AND}
+$$
+
+$$
+A^c=\text{NOT}
+$$
+
+$$
+P(S)=1
+$$
+
+$$
+P(A^c)=1-P(A)
+$$
+
+$$
+P(\text{at least one})=1-P(\text{none})
 $$
 
 $$
@@ -934,7 +1105,24 @@ $$
 |A\cup B| = |A|+|B|-|A\cap B|
 $$
 
+For a partition:
+
+$$
+P(A_1)+P(A_2)+\cdots+P(A_k)=1
+$$
+
 The most important idea is:
 
-**Union means OR and intersection means AND. If two events cannot overlap, simply add their probabilities. If they can overlap, add the probabilities and subtract the intersection once so that you do not double-count it.**
+**Union means OR and intersection means AND. If two events cannot overlap, simply add their probabilities. If they can overlap, add the probabilities and subtract the intersection once so that you do not double-count it. If the event itself is hard to count, count its complement and subtract from 1.**
+
+---
+
+# Where This Goes Next
+
+| Idea from this file | Where it is used |
+|---|---|
+| $P(A\cap B)$ | **02 — Independence**: when events are independent, $P(A\cap B)=P(A)P(B)$ |
+| Disjoint events | **02 — Independence**: disjoint and independent are **not** the same thing |
+| $A^c$ and partitions | **03 — Conditional Probability**: the Law of Total Probability |
+| Partitions | **04 — Bayes' Theorem**: the denominator sums over a partition |
 
