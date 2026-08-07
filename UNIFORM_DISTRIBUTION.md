@@ -2,17 +2,17 @@
 
 These slides are mainly teaching five important ideas:
 
-* What makes a distribution uniform
-* What (a) and (b) represent
-* Why the PDF has a constant height
-* How probability is calculated from the uniform PDF
-* How the uniform CDF is constructed
+- What makes a distribution uniform
+- What \(a\) and \(b\) represent
+- Why the PDF has a constant height
+- How probability is calculated from the uniform PDF
+- How the uniform CDF is constructed
 
 ---
 
 ## 1. A uniform distribution gives equal density throughout an interval
 
-A **continuous uniform distribution** models a continuous random variable when all possible values within a particular interval have the same frequency/density of occurrence.
+A **continuous uniform distribution** models a continuous random variable when all possible values within a particular interval have the same density of occurrence.
 
 The slides use the example of calling a tech-support line.
 
@@ -28,7 +28,7 @@ $$
 15\text{ minutes}
 $$
 
-The observed waiting times appear spread roughly evenly throughout the entire (0)-to-(15)-minute interval.
+The observed waiting times appear spread roughly evenly throughout the entire \(0\)-to-\(15\)-minute interval.
 
 Therefore, the basic idea is:
 
@@ -38,7 +38,7 @@ $$
 
 ---
 
-## 2. The interval is controlled by (a) and (b)
+## 2. The interval is controlled by \(a\) and \(b\)
 
 A continuous uniform distribution has two parameters:
 
@@ -58,8 +58,6 @@ $$
 a\text{ and }b
 $$
 
-The model shown on page 3 labels these directly as the beginning and end of the interval.
-
 Therefore:
 
 $$
@@ -70,13 +68,19 @@ $$
 \boxed{b=\text{upper endpoint}}
 $$
 
+The total width of the interval is:
+
+$$
+\boxed{b-a}
+$$
+
 ---
 
 ## 3. The PDF is flat because the density is constant
 
 For the uniform distribution, the PDF does not rise and fall like a normal distribution.
 
-Instead, it is a horizontal line between (a) and (b).
+Instead, it is a horizontal line between \(a\) and \(b\).
 
 Why?
 
@@ -88,19 +92,19 @@ $$
 \boxed{f_X(x)=\text{constant between }a\text{ and }b}
 $$
 
-and outside the interval:
+Outside the interval:
 
 $$
 \boxed{f_X(x)=0}
 $$
 
-The graph on page 3 shows exactly this rectangular PDF.
+The uniform PDF therefore has a rectangular shape.
 
 ---
 
-## 4. The height of the PDF is (\frac{1}{b-a})
+## 4. The height of the PDF is \(\frac{1}{b-a}\)
 
-The PDF must have total area:
+The total area underneath any PDF must equal:
 
 $$
 1
@@ -130,7 +134,7 @@ $$
 (b-a)h=1
 $$
 
-Solving:
+Solving for \(h\):
 
 $$
 h=\frac{1}{b-a}
@@ -148,33 +152,31 @@ This is the main PDF rule for the uniform distribution.
 
 ## 5. Uniform PDF formula
 
-The slides give the PDF as:
+The complete uniform PDF is:
 
 $$
-\boxed{
 f_X(x)=
 \begin{cases}
-\dfrac{1}{b-a}, & a<x<b [6pt]
-0, & x\notin(a,b)
+\dfrac{1}{b-a}, & a<x<b \\
+0, & \text{otherwise}
 \end{cases}
-}
 $$
 
 The important idea is:
 
-* **Inside the interval** → constant density
-* **Outside the interval** → density (0)
+- **Inside the interval** → constant density
+- **Outside the interval** → density equals \(0\)
 
 So:
 
 $$
-\boxed{a<x<b\quad\Rightarrow\quad f_X(x)=\frac{1}{b-a}}
+\boxed{a<x<b\Rightarrow f_X(x)=\frac{1}{b-a}}
 $$
 
 and:
 
 $$
-\boxed{x\text{ outside the interval}\quad\Rightarrow\quad f_X(x)=0}
+\boxed{x\text{ outside the interval}\Rightarrow f_X(x)=0}
 $$
 
 ---
@@ -199,7 +201,7 @@ $$
 b-a=15-0=15
 $$
 
-The PDF height must therefore be:
+The PDF height is:
 
 $$
 f_X(x)=\frac{1}{15}
@@ -211,23 +213,25 @@ $$
 0.0667
 $$
 
-The slides derive this using:
+This can also be derived using:
 
 $$
 15h=1
 $$
 
-so:
+Therefore:
 
 $$
 h=\frac{1}{15}\approx0.0667
 $$
 
-Therefore:
+So:
 
 $$
-\boxed{f_X(x)=\frac{1}{15}\text{ for waiting times between 0 and 15 minutes}}
+\boxed{f_X(x)=\frac{1}{15}}
 $$
+
+for waiting times between \(0\) and \(15\) minutes.
 
 ---
 
@@ -235,27 +239,21 @@ $$
 
 Because this is a continuous distribution, probability corresponds to **area underneath the PDF**.
 
-For a uniform distribution, that is especially easy because the PDF is a rectangle.
+For a uniform distribution, this is especially easy because the PDF is a rectangle.
 
-Suppose you want the probability of being between two values:
-
-$$
-c\text{ and }d
-$$
-
-where:
+Suppose we want the probability that \(X\) falls between \(c\) and \(d\), where:
 
 $$
 a\leq c<d\leq b
 $$
 
-The width of this region is:
+The width of the desired interval is:
 
 $$
 d-c
 $$
 
-The PDF height is:
+The height of the PDF is:
 
 $$
 \frac{1}{b-a}
@@ -264,7 +262,7 @@ $$
 Therefore:
 
 $$
-P(c<X<d)=(d-c)\frac{1}{b-a}
+P(c<X<d)=(d-c)\left(\frac{1}{b-a}\right)
 $$
 
 So:
@@ -278,13 +276,10 @@ In words:
 $$
 \boxed{
 \text{Probability}
-==================
-
+=
 \frac{\text{desired interval length}}{\text{total interval length}}
 }
 $$
-
-This follows directly from the rectangular uniform PDF shown in the slides.
 
 ---
 
@@ -296,18 +291,23 @@ $$
 \boxed{\text{Probability}=\text{width}\times\text{height}}
 $$
 
-Since:
+The width is:
 
 $$
-\text{height}=\frac{1}{b-a}
+d-c
 $$
 
-then:
+The height is:
+
+$$
+\frac{1}{b-a}
+$$
+
+Therefore:
 
 $$
 \text{Probability}
-==================
-
+=
 (d-c)\left(\frac{1}{b-a}\right)
 $$
 
@@ -317,15 +317,15 @@ $$
 \boxed{P(c<X<d)=\frac{d-c}{b-a}}
 $$
 
-This is much easier than dealing with a curved PDF because the density is constant.
+This is easier than dealing with a curved PDF because the density never changes.
 
 ---
 
-## 9. Uniform PDF versus a normal PDF
+## 9. Uniform PDF versus normal PDF
 
 This is an important visual distinction.
 
-A normal PDF has a changing density:
+A normal PDF has changing density:
 
 $$
 \text{low}\rightarrow\text{high}\rightarrow\text{low}
@@ -337,27 +337,28 @@ $$
 \boxed{\text{constant height}}
 $$
 
-So the uniform PDF looks like a **rectangle** rather than a bell curve.
+Therefore:
 
-The PDF graphs on pages 3–4 show this flat rectangular shape.
+- **Normal distribution** → bell-shaped PDF
+- **Uniform distribution** → rectangular PDF
 
 ---
 
 ## 10. The uniform CDF gives accumulated probability
 
-The **Cumulative Distribution Function** still means:
+The **Cumulative Distribution Function** is defined as:
 
 $$
 \boxed{F_X(x)=P(X\leq x)}
 $$
 
-For the uniform distribution, the CDF tells us how much area under the rectangular PDF has accumulated from the beginning of the interval (a) up to (x).
+For the uniform distribution, the CDF tells us how much probability has accumulated from the beginning of the interval \(a\) up to \(x\).
 
-The slides build the CDF visually by increasing the shaded area underneath the uniform PDF as (x) moves from left to right.
+As \(x\) moves from left to right, more area underneath the PDF accumulates.
 
 ---
 
-## 11. Before (a), the CDF is 0
+## 11. Before \(a\), the CDF equals 0
 
 If:
 
@@ -365,7 +366,7 @@ $$
 x<a
 $$
 
-then we have not reached the interval where the random variable can occur.
+then \(x\) occurs before the interval where the random variable can take values.
 
 Therefore:
 
@@ -379,9 +380,11 @@ $$
 x<a
 $$
 
+No probability has accumulated yet.
+
 ---
 
-## 12. Between (a) and (b), the CDF increases linearly
+## 12. Between \(a\) and \(b\), the CDF increases linearly
 
 Suppose:
 
@@ -395,7 +398,7 @@ $$
 x-a
 $$
 
-The total interval width is:
+The total width of the interval is:
 
 $$
 b-a
@@ -407,23 +410,23 @@ $$
 \boxed{F_X(x)=\frac{x-a}{b-a}}
 $$
 
-This means the uniform CDF rises at a constant rate between (a) and (b).
+This means the uniform CDF rises at a constant rate between \(a\) and \(b\).
 
-That is why its graph is a **straight diagonal line** rather than an S-shaped curve.
+That is why the graph is a straight diagonal line.
 
 ---
 
-## 13. At and beyond (b), the CDF equals 1
+## 13. At and beyond \(b\), the CDF equals 1
 
-Once we reach the end of the interval:
+If:
 
 $$
 x\geq b
 $$
 
-all of the probability has accumulated.
+then the entire interval has already been included.
 
-Therefore:
+Therefore all probability has accumulated:
 
 $$
 \boxed{F_X(x)=1}
@@ -436,17 +439,15 @@ $$
 Putting the three regions together:
 
 $$
-\boxed{
 F_X(x)=
 \begin{cases}
-0, & x<a [6pt]
-\dfrac{x-a}{b-a}, & a\leq x<b [8pt]
+0, & x<a \\
+\dfrac{x-a}{b-a}, & a\leq x<b \\
 1, & x\geq b
 \end{cases}
-}
 $$
 
-This is the full general CDF shown on the final slide.
+This is the complete CDF for the continuous uniform distribution.
 
 ---
 
@@ -458,11 +459,11 @@ $$
 \frac{1}{b-a}
 $$
 
-So every equal-sized interval adds the same amount of probability.
+Therefore, every equal-sized interval adds the same amount of probability.
 
-For example, moving (x) by another 1 unit always adds the same amount of area.
+For example, moving \(x\) another 1 unit always adds the same amount of area.
 
-Therefore, the CDF increases evenly:
+Therefore:
 
 $$
 \boxed{\text{constant PDF}\rightarrow\text{linear CDF}}
@@ -474,7 +475,13 @@ This is the main relationship between the uniform PDF and CDF.
 
 ## 16. Special example: Uniform distribution from 0 to 1
 
-The slides also illustrate a uniform distribution whose endpoints are:
+Suppose:
+
+$$
+X\sim\mathrm{Uniform}(0,1)
+$$
+
+Then:
 
 $$
 a=0
@@ -498,22 +505,28 @@ $$
 f_X(x)=1
 $$
 
-between:
+for:
 
 $$
-0\text{ and }1
+0<x<1
 $$
 
-The CDF becomes:
+The CDF is:
+
+$$
+F_X(x)=\frac{x-a}{b-a}
+$$
+
+Substituting \(a=0\) and \(b=1\):
 
 $$
 F_X(x)=\frac{x-0}{1-0}
 $$
 
-so:
+Therefore:
 
 $$
-F_X(x)=x
+\boxed{F_X(x)=x}
 $$
 
 for:
@@ -522,8 +535,6 @@ $$
 0\leq x<1
 $$
 
-The graph on pages 4–5 shows the rectangular PDF alongside this straight-line CDF.
-
 ---
 
 ## 17. Example of reading the CDF
@@ -531,7 +542,7 @@ The graph on pages 4–5 shows the rectangular PDF alongside this straight-line 
 Suppose:
 
 $$
-X\sim\text{Uniform}(0,1)
+X\sim\mathrm{Uniform}(0,1)
 $$
 
 and we want:
@@ -546,7 +557,7 @@ $$
 F_X(x)=\frac{x-a}{b-a}
 $$
 
-we substitute:
+substitute:
 
 $$
 F_X(0.25)=\frac{0.25-0}{1-0}
@@ -564,9 +575,11 @@ $$
 \boxed{P(X\leq0.25)=0.25}
 $$
 
-So **25%** of the total probability has accumulated by (x=0.25).
+So \(25\%\) of the total probability has accumulated by:
 
-The page 5 diagram illustrates this exact idea by matching accumulated area under the PDF to the corresponding CDF height.
+$$
+x=0.25
+$$
 
 ---
 
@@ -580,24 +593,28 @@ $$
 \boxed{\text{constant density between }a\text{ and }b}
 $$
 
-All parts of the interval are treated equally.
+All equal-length parts of the interval have equal probabilities.
 
 ---
 
 ## Parameters
 
-$$
-\boxed{a=\text{beginning/lower endpoint}}
-$$
+The lower endpoint is:
 
 $$
-\boxed{b=\text{end/upper endpoint}}
+\boxed{a=\text{lower endpoint}}
+$$
+
+The upper endpoint is:
+
+$$
+\boxed{b=\text{upper endpoint}}
 $$
 
 The total interval width is:
 
 $$
-\boxed{b-a}
+\boxed{\text{Width}=b-a}
 $$
 
 ---
@@ -610,59 +627,62 @@ $$
 \boxed{\frac{1}{b-a}}
 $$
 
-Therefore:
+The complete PDF is:
 
 $$
-\boxed{
 f_X(x)=
 \begin{cases}
-\dfrac{1}{b-a}, & a<x<b [6pt]
+\dfrac{1}{b-a}, & a<x<b \\
 0, & \text{otherwise}
 \end{cases}
-}
 $$
 
 ---
 
 ## Probability
 
-For an interval contained inside ([a,b]):
+For an interval contained inside \([a,b]\):
 
 $$
 \boxed{P(c<X<d)=\frac{d-c}{b-a}}
 $$
 
-So remember:
+In words:
 
 $$
 \boxed{
 \text{Probability}
-==================
-
+=
 \frac{\text{desired interval width}}{\text{total interval width}}
 }
+$$
+
+Another way to remember it is:
+
+$$
+\boxed{\text{Probability}=\text{width}\times\text{height}}
 $$
 
 ---
 
 ## Uniform CDF
 
+The full CDF is:
+
 $$
-\boxed{
 F_X(x)=
 \begin{cases}
-0, & x<a [6pt]
-\dfrac{x-a}{b-a}, & a\leq x<b [8pt]
+0, & x<a \\
+\dfrac{x-a}{b-a}, & a\leq x<b \\
 1, & x\geq b
 \end{cases}
-}
 $$
 
 The CDF:
 
-* Is (0) before (a)
-* Increases linearly between (a) and (b)
-* Equals (1) after (b)
+- Equals \(0\) before \(a\)
+- Increases linearly between \(a\) and \(b\)
+- Equals \(1\) at and after \(b\)
 
 ---
 
@@ -689,11 +709,11 @@ $$
 $$
 
 $$
-\boxed{f_X(x)=\frac{1}{b-a}\quad\text{between }a\text{ and }b}
+\boxed{f_X(x)=\frac{1}{b-a}\text{ between }a\text{ and }b}
 $$
 
 $$
-\boxed{f_X(x)=0\quad\text{outside }[a,b]}
+\boxed{f_X(x)=0\text{ outside }[a,b]}
 $$
 
 $$
@@ -701,10 +721,12 @@ $$
 $$
 
 $$
-\boxed{F_X(x)=\frac{x-a}{b-a}\quad\text{between }a\text{ and }b}
+\boxed{F_X(x)=\frac{x-a}{b-a}\text{ between }a\text{ and }b}
 $$
 
-And the biggest ideas to remember are:
+---
+
+# Biggest Ideas to Remember
 
 $$
 \boxed{\text{Uniform PDF}=\text{constant density}}
@@ -713,8 +735,7 @@ $$
 $$
 \boxed{
 \text{Uniform probability}
-==========================
-
+=
 \frac{\text{desired interval length}}{\text{total interval length}}
 }
 $$
@@ -723,4 +744,6 @@ $$
 \boxed{\text{Constant PDF}\rightarrow\text{straight-line CDF}}
 $$
 
-So in plain English: **if every part of an interval is equally likely, the PDF is a flat rectangle; probability depends only on how much of the interval you select; and the CDF rises evenly from 0 to 1.**
+So in plain English:
+
+**If every part of an interval is equally likely, the PDF is a flat rectangle, probability depends only on how much of the interval you select, and the CDF rises evenly from 0 to 1.**
