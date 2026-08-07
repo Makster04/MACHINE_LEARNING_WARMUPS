@@ -73,7 +73,7 @@ $$
 means:
 
 $$
-\boxed{\text{Probability that A or B occurs}}
+\text{Probability that A or B occurs}
 $$
 
 ### Example
@@ -167,7 +167,7 @@ $$
 means:
 
 $$
-\boxed{\text{Probability that both A and B occur}}
+\text{Probability that both A and B occur}
 $$
 
 ---
@@ -197,7 +197,7 @@ $$
 Therefore:
 
 $$
-\boxed{P(A\cap B)=0}
+P(A\cap B)=0
 $$
 
 ### Example
@@ -251,7 +251,7 @@ $$
 Therefore, the probability that $A$ OR $B$ occurs is:
 
 $$
-\boxed{P(A\cup B)=P(A)+P(B)}
+P(A\cup B)=P(A)+P(B)
 $$
 
 ### Dice example
@@ -295,9 +295,7 @@ $$
 Substitute:
 
 $$
-P(A\cup B)
-=
-\frac{3}{6}+\frac{1}{6}
+P(A\cup B) = \frac{3}{6}+\frac{1}{6}
 $$
 
 $$
@@ -305,7 +303,7 @@ $$
 $$
 
 $$
-=\boxed{\frac{2}{3}}
+=\frac{2}{3}
 $$
 
 ---
@@ -405,21 +403,13 @@ Therefore, the overlap must be subtracted.
 The general addition rule is:
 
 $$
-\boxed{
-P(A\cup B)
-=
-P(A)+P(B)-P(A\cap B)
-}
+P(A\cup B) = P(A)+P(B)-P(A\cap B)
 $$
 
 In words:
 
 $$
-\boxed{
-\text{OR probability}
-=
-A+B-\text{both}
-}
+\text{OR probability} = A+B-\text{both}
 $$
 
 The reason we subtract:
@@ -463,17 +453,13 @@ The question is:
 Use:
 
 $$
-P(S\cup B)
-=
-P(S)+P(B)-P(S\cap B)
+P(S\cup B) = P(S)+P(B)-P(S\cap B)
 $$
 
 Substitute:
 
 $$
-P(S\cup B)
-=
-0.60+0.50-0.30
+P(S\cup B) = 0.60+0.50-0.30
 $$
 
 $$
@@ -481,13 +467,13 @@ $$
 $$
 
 $$
-=\boxed{0.80}
+=0.80
 $$
 
 Therefore:
 
 $$
-\boxed{P(S\cup B)=80\%}
+P(S\cup B)=80\%
 $$
 
 ---
@@ -499,11 +485,7 @@ Sometimes a problem gives you the **number of outcomes or people** instead of pr
 Use:
 
 $$
-\boxed{
-|A\cup B|
-=
-|A|+|B|-|A\cap B|
-}
+|A\cup B| = |A|+|B|-|A\cap B|
 $$
 
 The vertical bars mean the **number of outcomes in the event**.
@@ -533,13 +515,11 @@ $$
 Then:
 
 $$
-|S\cup B|
-=
-6+5-3
+|S\cup B| = 6+5-3
 $$
 
 $$
-=\boxed{8}
+=8
 $$
 
 Therefore, **8 students play soccer or basketball**.
@@ -551,9 +531,7 @@ Therefore, **8 students play soccer or basketball**.
 The general rule is:
 
 $$
-P(A\cup B)
-=
-P(A)+P(B)-P(A\cap B)
+P(A\cup B) = P(A)+P(B)-P(A\cap B)
 $$
 
 For disjoint events:
@@ -565,17 +543,13 @@ $$
 Therefore:
 
 $$
-P(A\cup B)
-=
-P(A)+P(B)-0
+P(A\cup B) = P(A)+P(B)-0
 $$
 
 which becomes:
 
 $$
-\boxed{
 P(A\cup B)=P(A)+P(B)
-}
 $$
 
 So the general formula works for both situations.
@@ -583,11 +557,7 @@ So the general formula works for both situations.
 ### Joint events
 
 $$
-\boxed{
-P(A\cup B)
-=
-P(A)+P(B)-P(A\cap B)
-}
+P(A\cup B) = P(A)+P(B)-P(A\cap B)
 $$
 
 ### Disjoint events
@@ -601,9 +571,7 @@ $$
 the formula simplifies to:
 
 $$
-\boxed{
 P(A\cup B)=P(A)+P(B)
-}
 $$
 
 ---
@@ -671,9 +639,7 @@ The events are disjoint.
 So:
 
 $$
-P(A\cup B)
-=
-\frac{6}{36}+\frac{3}{36}
+P(A\cup B) = \frac{6}{36}+\frac{3}{36}
 $$
 
 $$
@@ -681,7 +647,7 @@ $$
 $$
 
 $$
-=\boxed{\frac{1}{4}}
+=\frac{1}{4}
 $$
 
 ---
@@ -723,30 +689,21 @@ $$
 Use:
 
 $$
-P(A\cup B)
-=
-P(A)+P(B)-P(A\cap B)
+P(A\cup B) = P(A)+P(B)-P(A\cap B)
 $$
 
 Substitute:
 
 $$
-P(A\cup B)
-=
-\frac{6}{36}
-+
-\frac{10}{36}
--
-\frac{2}{36}
+P(A\cup B) = \frac{6}{36} + \frac{10}{36} - \frac{2}{36}
 $$
 
 $$
-=
-\frac{14}{36}
+= \frac{14}{36}
 $$
 
 $$
-=\boxed{\frac{7}{18}}
+=\frac{7}{18}
 $$
 
 The intersection is subtracted because those outcomes were counted in both events.
@@ -765,11 +722,11 @@ This is one of the most important distinctions to remember.
 Remember:
 
 $$
-\boxed{\cup=\text{OR}}
+\cup=\text{OR}
 $$
 
 $$
-\boxed{\cap=\text{AND}}
+\cap=\text{AND}
 $$
 
 ### Union
@@ -804,15 +761,13 @@ means look only at the outcomes shared by both events.
 ### Disjoint events
 
 $$
-\boxed{P(A\cap B)=0}
+P(A\cap B)=0
 $$
 
 Therefore:
 
 $$
-\boxed{
 P(A\cup B)=P(A)+P(B)
-}
 $$
 
 ### Joint events
@@ -822,11 +777,7 @@ The events overlap.
 Therefore:
 
 $$
-\boxed{
-P(A\cup B)
-=
-P(A)+P(B)-P(A\cap B)
-}
+P(A\cup B) = P(A)+P(B)-P(A\cap B)
 $$
 
 ---
@@ -844,9 +795,7 @@ The events are **disjoint**.
 Use:
 
 $$
-\boxed{
 P(A\cup B)=P(A)+P(B)
-}
 $$
 
 ### If YES
@@ -856,11 +805,7 @@ The events are **joint**.
 Use:
 
 $$
-\boxed{
-P(A\cup B)
-=
-P(A)+P(B)-P(A\cap B)
-}
+P(A\cup B) = P(A)+P(B)-P(A\cap B)
 $$
 
 The key is determining whether an **overlap exists**.
@@ -874,7 +819,7 @@ The key is determining whether an **overlap exists**.
 An event is a set of possible outcomes.
 
 $$
-\boxed{A,B=\text{events}}
+A,B=\text{events}
 $$
 
 ---
@@ -884,7 +829,7 @@ $$
 Union means **OR**.
 
 $$
-\boxed{A\cup B=\text{A OR B}}
+A\cup B=\text{A OR B}
 $$
 
 It includes:
@@ -900,7 +845,7 @@ It includes:
 Intersection means **AND**.
 
 $$
-\boxed{A\cap B=\text{A AND B}}
+A\cap B=\text{A AND B}
 $$
 
 It represents the overlap between the events.
@@ -912,21 +857,19 @@ It represents the overlap between the events.
 Disjoint events cannot happen at the same time.
 
 $$
-\boxed{A\cap B=\varnothing}
+A\cap B=\varnothing
 $$
 
 Therefore:
 
 $$
-\boxed{P(A\cap B)=0}
+P(A\cap B)=0
 $$
 
 For disjoint events:
 
 $$
-\boxed{
 P(A\cup B)=P(A)+P(B)
-}
 $$
 
 ---
@@ -944,11 +887,7 @@ $$
 Use:
 
 $$
-\boxed{
-P(A\cup B)
-=
-P(A)+P(B)-P(A\cap B)
-}
+P(A\cup B) = P(A)+P(B)-P(A\cap B)
 $$
 
 The intersection is subtracted because otherwise it would be counted twice.
@@ -958,53 +897,44 @@ The intersection is subtracted because otherwise it would be counted twice.
 # Main Rules to Put in Your Notebook
 
 $$
-\boxed{\cup=\text{OR}}
+\cup=\text{OR}
 $$
 
 $$
-\boxed{\cap=\text{AND}}
+\cap=\text{AND}
 $$
 
 $$
-\boxed{\text{Disjoint}=\text{cannot happen together}}
+\text{Disjoint}=\text{cannot happen together}
 $$
 
 $$
-\boxed{\text{Joint}=\text{can happen together}}
+\text{Joint}=\text{can happen together}
 $$
 
 For disjoint events:
 
 $$
-\boxed{P(A\cap B)=0}
+P(A\cap B)=0
 $$
 
 $$
-\boxed{
 P(A\cup B)=P(A)+P(B)
-}
 $$
 
 For joint events:
 
 $$
-\boxed{
-P(A\cup B)
-=
-P(A)+P(B)-P(A\cap B)
-}
+P(A\cup B) = P(A)+P(B)-P(A\cap B)
 $$
 
 For counts:
 
 $$
-\boxed{
-|A\cup B|
-=
-|A|+|B|-|A\cap B|
-}
+|A\cup B| = |A|+|B|-|A\cap B|
 $$
 
 The most important idea is:
 
 **Union means OR and intersection means AND. If two events cannot overlap, simply add their probabilities. If they can overlap, add the probabilities and subtract the intersection once so that you do not double-count it.**
+
