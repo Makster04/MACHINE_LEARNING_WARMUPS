@@ -48,7 +48,7 @@ means:
 The vertical bar means:
 
 $$
-\mid=\text{given that}
+\boxed{\displaystyle \mid=\text{given that}}
 $$
 
 The conditional-probability definition is:
@@ -82,7 +82,7 @@ $$
 These are not normally equal:
 
 $$
-P(A\mid B)\neq P(B\mid A)
+\boxed{\displaystyle P(A\mid B)\neq P(B\mid A)}
 $$
 
 Bayes' theorem gives you a way to calculate one direction using information about the other.
@@ -90,7 +90,7 @@ Bayes' theorem gives you a way to calculate one direction using information abou
 Therefore:
 
 $$
-\text{Bayes' theorem reverses conditional probability}
+\boxed{\displaystyle \text{Bayes' theorem reverses conditional probability}}
 $$
 
 ---
@@ -168,7 +168,7 @@ $$
 Therefore:
 
 $$
-P(A)=\text{prior probability}
+\boxed{\displaystyle P(A)=\text{prior probability}}
 $$
 
 Think of the prior as:
@@ -194,7 +194,7 @@ This matters because Bayes' theorem considers not only how accurate the evidence
 Therefore:
 
 $$
-\text{Base rate}=\text{how common A is before observing B}
+\boxed{\displaystyle \text{Base rate}=\text{how common A is before observing B}}
 $$
 
 ---
@@ -226,7 +226,7 @@ $$
 The complement rule is:
 
 $$
-P(A')=1-P(A)
+\boxed{\displaystyle P(A')=1-P(A)}
 $$
 
 For the medical example:
@@ -270,7 +270,7 @@ This means:
 Therefore:
 
 $$
-P(B\mid A)=\text{likelihood}
+\boxed{\displaystyle P(B\mid A)=\text{likelihood}}
 $$
 
 ---
@@ -298,9 +298,7 @@ $$
 Therefore:
 
 $$
-\text{True Positive Rate}
-=
-P(\text{positive}\mid\text{sick})
+\boxed{\displaystyle \text{True Positive Rate} = P(\text{positive}\mid\text{sick})}
 $$
 
 ---
@@ -324,9 +322,7 @@ $$
 Therefore:
 
 $$
-\text{False Positive Rate}
-=
-P(\text{positive}\mid\text{not sick})
+\boxed{\displaystyle \text{False Positive Rate} = P(\text{positive}\mid\text{not sick})}
 $$
 
 Do not confuse this with the true positive rate.
@@ -363,13 +359,13 @@ Actually healthy and correctly tests negative.
 The two groups most important for the Bayes example are:
 
 $$
-\text{True Positives}
+\boxed{\displaystyle \text{True Positives}}
 $$
 
 and:
 
 $$
-\text{False Positives}
+\boxed{\displaystyle \text{False Positives}}
 $$
 
 because both groups appear among people who tested positive.
@@ -416,7 +412,7 @@ $$
 Therefore:
 
 $$
-P(\text{sick AND positive})=0.000099
+\boxed{\displaystyle P(\text{sick AND positive})=0.000099}
 $$
 
 ---
@@ -458,11 +454,7 @@ $$
 Using the product rule:
 
 $$
-P(B)
-=
-P(A)P(B\mid A)
-+
-P(A')P(B\mid A')
+\boxed{\displaystyle P(B) = P(A)P(B\mid A) + P(A')P(B\mid A')}
 $$
 
 This is the **Law of Total Probability** for this two-case situation.
@@ -493,11 +485,7 @@ includes:
 Therefore:
 
 $$
-\text{All positive tests}
-=
-\text{true positives}
-+
-\text{false positives}
+\boxed{\displaystyle \text{All positive tests} = \text{true positives} + \text{false positives}}
 $$
 
 Ignoring false positives would produce the wrong answer.
@@ -509,19 +497,13 @@ Ignoring false positives would produce the wrong answer.
 The standard Bayes formula is:
 
 $$
-P(A\mid B)
-=
-\frac{P(A)P(B\mid A)}
-{P(B)}
+\boxed{\displaystyle P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)}}
 $$
 
 In words:
 
 $$
-\text{Posterior}
-=
-\frac{\text{Prior}\times\text{Likelihood}}
-{\text{Probability of the Evidence}}
+\boxed{\displaystyle \text{Posterior} = \frac{\text{Prior}\times\text{Likelihood}} {\text{Probability of the Evidence}}}
 $$
 
 This is the central Bayes formula.
@@ -543,15 +525,7 @@ $$
 Therefore:
 
 $$
-P(A\mid B)
-=
-\frac{
-P(A)P(B\mid A)
-}{
-P(A)P(B\mid A)
-+
-P(A')P(B\mid A')
-}
+\boxed{\displaystyle P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') }}
 $$
 
 This is the main version used in the medical-test example.
@@ -577,9 +551,7 @@ $$
 Therefore:
 
 $$
-\text{Prior}
-\xrightarrow{\text{new evidence}}
-\text{Posterior}
+\boxed{\displaystyle \text{Prior} \xrightarrow{\text{new evidence}} \text{Posterior}}
 $$
 
 In words:
@@ -675,8 +647,7 @@ $$
 Therefore:
 
 $$
-P(\text{sick}\mid\text{positive})
-\approx0.98\%
+\boxed{\displaystyle P(\text{sick}\mid\text{positive}) \approx0.98\%}
 $$
 
 ---
@@ -714,7 +685,7 @@ $$
 Therefore:
 
 $$
-P(A\mid B)\neq P(B\mid A)
+\boxed{\displaystyle P(A\mid B)\neq P(B\mid A)}
 $$
 
 in general.
@@ -848,7 +819,7 @@ false positives.
 Therefore:
 
 $$
-\text{A very large population can make a small false-positive rate produce many false positives}
+\boxed{\displaystyle \text{A very large population can make a small false-positive rate produce many false positives}}
 $$
 
 This is why Bayes' theorem must consider the **base rate**.
@@ -880,7 +851,7 @@ Bayes' theorem prevents this mistake by combining:
 Therefore:
 
 $$
-\text{Do not ignore the prior when interpreting evidence}
+\boxed{\displaystyle \text{Do not ignore the prior when interpreting evidence}}
 $$
 
 ---
@@ -980,11 +951,7 @@ $$
 A useful memory shortcut is:
 
 $$
-\text{Prior}\times\text{Likelihood}
-arrow
-\text{sum all evidence paths}
-arrow
-\text{divide}
+\boxed{\displaystyle \text{Prior}\times\text{Likelihood} \rightarrow \text{sum all evidence paths} \rightarrow \text{divide}}
 $$
 
 ---
@@ -1030,11 +997,7 @@ Therefore, switching to Door 2 gives the larger probability.
 The important lesson is that the same Bayes structure applies:
 
 $$
-\text{Prior}\times\text{Likelihood}
-arrow
-\text{Total Probability}
-arrow
-\text{Posterior}
+\boxed{\displaystyle \text{Prior}\times\text{Likelihood} \rightarrow \text{Total Probability} \rightarrow \text{Posterior}}
 $$
 
 ---
@@ -1046,7 +1009,7 @@ $$
 Probability before observing the evidence:
 
 $$
-P(A)=\text{prior}
+\boxed{\displaystyle P(A)=\text{prior}}
 $$
 
 ---
@@ -1056,7 +1019,7 @@ $$
 Probability of observing the evidence if A is true:
 
 $$
-P(B\mid A)=\text{likelihood}
+\boxed{\displaystyle P(B\mid A)=\text{likelihood}}
 $$
 
 ---
@@ -1066,7 +1029,7 @@ $$
 The event that was observed:
 
 $$
-B=\text{evidence}
+\boxed{\displaystyle B=\text{evidence}}
 $$
 
 ---
@@ -1076,7 +1039,7 @@ $$
 Updated probability after observing the evidence:
 
 $$
-P(A\mid B)=\text{posterior}
+\boxed{\displaystyle P(A\mid B)=\text{posterior}}
 $$
 
 ---
@@ -1084,7 +1047,7 @@ $$
 ## Complement
 
 $$
-P(A')=1-P(A)
+\boxed{\displaystyle P(A')=1-P(A)}
 $$
 
 ---
@@ -1092,11 +1055,7 @@ $$
 ## Total probability
 
 $$
-P(B)
-=
-P(A)P(B\mid A)
-+
-P(A')P(B\mid A')
+\boxed{\displaystyle P(B) = P(A)P(B\mid A) + P(A')P(B\mid A')}
 $$
 
 ---
@@ -1104,24 +1063,13 @@ $$
 ## Bayes' theorem
 
 $$
-P(A\mid B)
-=
-\frac{P(A)P(B\mid A)}
-{P(B)}
+\boxed{\displaystyle P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)}}
 $$
 
 Expanded:
 
 $$
-P(A\mid B)
-=
-\frac{
-P(A)P(B\mid A)
-}{
-P(A)P(B\mid A)
-+
-P(A')P(B\mid A')
-}
+\boxed{\displaystyle P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') }}
 $$
 
 ---
@@ -1139,15 +1087,13 @@ $$
 Most importantly:
 
 $$
-P(A\mid B)\neq P(B\mid A)
+\boxed{\displaystyle P(A\mid B)\neq P(B\mid A)}
 $$
 
 For medical testing:
 
 $$
-P(\text{positive}\mid\text{sick})
-\neq
-P(\text{sick}\mid\text{positive})
+\boxed{\displaystyle P(\text{positive}\mid\text{sick}) \neq P(\text{sick}\mid\text{positive})}
 $$
 
 ---
@@ -1155,62 +1101,41 @@ $$
 # Main Rules to Put in Your Notebook
 
 $$
-P(A')=1-P(A)
+\boxed{\displaystyle P(A')=1-P(A)}
 $$
 
 $$
-P(A\cap B)=P(A)P(B\mid A)
+\boxed{\displaystyle P(A\cap B)=P(A)P(B\mid A)}
 $$
 
 $$
-P(B)
-=
-P(A)P(B\mid A)
-+
-P(A')P(B\mid A')
+\boxed{\displaystyle P(B) = P(A)P(B\mid A) + P(A')P(B\mid A')}
 $$
 
 $$
-P(A\mid B)
-=
-\frac{P(A)P(B\mid A)}
-{P(B)}
+\boxed{\displaystyle P(A\mid B) = \frac{P(A)P(B\mid A)} {P(B)}}
 $$
 
 or:
 
 $$
-P(A\mid B)
-=
-\frac{
-P(A)P(B\mid A)
-}{
-P(A)P(B\mid A)
-+
-P(A')P(B\mid A')
-}
+\boxed{\displaystyle P(A\mid B) = \frac{ P(A)P(B\mid A) }{ P(A)P(B\mid A) + P(A')P(B\mid A') }}
 $$
 
 Remember:
 
 $$
-\text{Prior}
-\xrightarrow{\text{Evidence}}
-\text{Posterior}
+\boxed{\displaystyle \text{Prior} \xrightarrow{\text{Evidence}} \text{Posterior}}
 $$
 
 $$
-P(A\mid B)\neq P(B\mid A)
+\boxed{\displaystyle P(A\mid B)\neq P(B\mid A)}
 $$
 
 And the easiest Bayes recipe to remember is:
 
 $$
-\text{Prior}\times\text{Likelihood}
-arrow
-\text{add all ways the evidence can happen}
-arrow
-\text{divide}
+\boxed{\displaystyle \text{Prior}\times\text{Likelihood} \rightarrow \text{add all ways the evidence can happen} \rightarrow \text{divide}}
 $$
 
 The biggest idea is:
