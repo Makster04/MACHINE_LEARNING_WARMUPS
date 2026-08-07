@@ -329,9 +329,7 @@ Always check which notation is being used.
 The **probability density function**, or PDF, for a normal distribution is:
 
 $$
-f_X(x)=
-\frac{1}{\sigma\sqrt{2\pi}}
-e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+f_X(x)= \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
 $$
 
 You should understand what the pieces of the formula mean, but you usually will **not** calculate the entire formula manually.
@@ -533,15 +531,13 @@ $$
 As $x$ moves toward negative infinity:
 
 $$
-F_X(x)\rightarrow0
-\quad\text{as }x\rightarrow-\infty
+F_X(x)\rightarrow0 \quad\text{as }x\rightarrow-\infty
 $$
 
 As $x$ moves toward positive infinity:
 
 $$
-F_X(x)\rightarrow1
-\quad\text{as }x\rightarrow\infty
+F_X(x)\rightarrow1 \quad\text{as }x\rightarrow\infty
 $$
 
 At the mean of a normal distribution:
@@ -565,21 +561,13 @@ $$
 using the CDF:
 
 $$
-\boxed{
-P(a<X<b)=F_X(b)-F_X(a)
-}
+\boxed{ P(a<X<b)=F_X(b)-F_X(a) }
 $$
 
 In words:
 
 $$
-\boxed{
-\text{Probability between two values}
-=
-\text{upper CDF}
--
-\text{lower CDF}
-}
+\boxed{ \text{Probability between two values} = \text{upper CDF} - \text{lower CDF} }
 $$
 
 ---
@@ -591,9 +579,7 @@ A **z-score** tells you how many standard deviations a value is above or below t
 The standardization formula is:
 
 $$
-\boxed{
-z=\frac{x-\mu}{\sigma}
-}
+\boxed{ z=\frac{x-\mu}{\sigma} }
 $$
 
 where:
@@ -768,9 +754,7 @@ $$
 Therefore:
 
 $$
-\boxed{
-P(\mu-\sigma<X<\mu+\sigma)\approx68\%
-}
+\boxed{ P(\mu-\sigma<X<\mu+\sigma)\approx68\% }
 $$
 
 ---
@@ -798,9 +782,7 @@ $$
 Therefore:
 
 $$
-\boxed{
-P(\mu-2\sigma<X<\mu+2\sigma)\approx95\%
-}
+\boxed{ P(\mu-2\sigma<X<\mu+2\sigma)\approx95\% }
 $$
 
 ---
@@ -828,9 +810,7 @@ $$
 Therefore:
 
 $$
-\boxed{
-P(\mu-3\sigma<X<\mu+3\sigma)\approx99.7\%
-}
+\boxed{ P(\mu-3\sigma<X<\mu+3\sigma)\approx99.7\% }
 $$
 
 ---
@@ -970,16 +950,13 @@ Therefore, the distribution is centered around 50.
 The binomial standard deviation is:
 
 $$
-\boxed{
-\sigma=\sqrt{np(1-p)}
-}
+\boxed{ \sigma=\sqrt{np(1-p)} }
 $$
 
 Substitute:
 
 $$
-\sigma=
-\sqrt{100(0.5)(0.5)}
+\sigma= \sqrt{100(0.5)(0.5)}
 $$
 
 $$
@@ -1081,9 +1058,7 @@ adjustment helps account for the difference between discrete bars and a continuo
 Therefore:
 
 $$
-\boxed{
-P(X\leq55)\approx P(Y\leq55.5)
-}
+\boxed{ P(X\leq55)\approx P(Y\leq55.5) }
 $$
 
 ---
@@ -1120,9 +1095,7 @@ rather than requiring every original variable to be normally distributed.
 Therefore:
 
 $$
-\boxed{
-\text{Normality is not automatically required for every variable}
-}
+\boxed{ \text{Normality is not automatically required for every variable} }
 $$
 
 ---
@@ -1144,9 +1117,7 @@ $$
 For a perfectly normal distribution:
 
 $$
-\boxed{
-\text{Mean}=\text{Median}=\text{Mode}
-}
+\boxed{ \text{Mean}=\text{Median}=\text{Mode} }
 $$
 
 ---
@@ -1196,9 +1167,7 @@ $$
 ## Normal-distribution notation
 
 $$
-\boxed{
-X\sim N(\mu,\sigma^2)
-}
+\boxed{ X\sim N(\mu,\sigma^2) }
 $$
 
 where:
@@ -1242,17 +1211,13 @@ $$
 The cumulative distribution function gives accumulated probability.
 
 $$
-\boxed{
-F_X(x)=P(X\leq x)
-}
+\boxed{ F_X(x)=P(X\leq x) }
 $$
 
 To calculate probability between two values:
 
 $$
-\boxed{
-P(a<X<b)=F_X(b)-F_X(a)
-}
+\boxed{ P(a<X<b)=F_X(b)-F_X(a) }
 $$
 
 ---
@@ -1262,17 +1227,13 @@ $$
 The z-score tells you how many standard deviations a value is from the mean.
 
 $$
-\boxed{
-z=\frac{x-\mu}{\sigma}
-}
+\boxed{ z=\frac{x-\mu}{\sigma} }
 $$
 
 The standard normal distribution is:
 
 $$
-\boxed{
-Z\sim N(0,1)
-}
+\boxed{ Z\sim N(0,1) }
 $$
 
 ---
@@ -1282,21 +1243,15 @@ $$
 For an approximately normal distribution:
 
 $$
-\boxed{
-P(\mu-\sigma<X<\mu+\sigma)\approx68\%
-}
+\boxed{ P(\mu-\sigma<X<\mu+\sigma)\approx68\% }
 $$
 
 $$
-\boxed{
-P(\mu-2\sigma<X<\mu+2\sigma)\approx95\%
-}
+\boxed{ P(\mu-2\sigma<X<\mu+2\sigma)\approx95\% }
 $$
 
 $$
-\boxed{
-P(\mu-3\sigma<X<\mu+3\sigma)\approx99.7\%
-}
+\boxed{ P(\mu-3\sigma<X<\mu+3\sigma)\approx99.7\% }
 $$
 
 ---
@@ -1312,9 +1267,7 @@ $$
 and:
 
 $$
-\boxed{
-\sigma=\sqrt{np(1-p)}
-}
+\boxed{ \sigma=\sqrt{np(1-p)} }
 $$
 
 A normal approximation generally works well when:
@@ -1334,90 +1287,61 @@ $$
 # Main Rules to Put in Your Notebook
 
 $$
-\boxed{
-X\sim N(\mu,\sigma^2)
-}
+\boxed{ X\sim N(\mu,\sigma^2) }
 $$
 
 $$
-\boxed{
-\mu=\text{center}
-}
+\boxed{ \mu=\text{center} }
 $$
 
 $$
-\boxed{
-\sigma=\text{spread}
-}
+\boxed{ \sigma=\text{spread} }
 $$
 
 $$
-\boxed{
-\sigma^2=\text{variance}
-}
+\boxed{ \sigma^2=\text{variance} }
 $$
 
 $$
-\boxed{
-\text{Total area under the PDF}=1
-}
+\boxed{ \text{Total area under the PDF}=1 }
 $$
 
 $$
-\boxed{
-P(X=x)=0
-\text{ for a continuous random variable}
-}
+\boxed{ P(X=x)=0 \text{ for a continuous random variable} }
 $$
 
 $$
-\boxed{
-\text{Probability}=\text{area under the PDF}
-}
+\boxed{ \text{Probability}=\text{area under the PDF} }
 $$
 
 $$
-\boxed{
-F_X(x)=P(X\leq x)
-}
+\boxed{ F_X(x)=P(X\leq x) }
 $$
 
 $$
-\boxed{
-P(a<X<b)=F_X(b)-F_X(a)
-}
+\boxed{ P(a<X<b)=F_X(b)-F_X(a) }
 $$
 
 $$
-\boxed{
-z=\frac{x-\mu}{\sigma}
-}
+\boxed{ z=\frac{x-\mu}{\sigma} }
 $$
 
 $$
-\boxed{
-Z\sim N(0,1)
-}
+\boxed{ Z\sim N(0,1) }
 $$
 
 $$
-\boxed{
-68\%-95\%-99.7\%
-}
+\boxed{ 68\%-95\%-99.7\% }
 $$
 
 For the binomial normal approximation:
 
 $$
-\boxed{
-\mu=np
-}
+\boxed{ \mu=np }
 $$
 
 $$
-\boxed{
-\sigma=\sqrt{np(1-p)}
-}
+\boxed{ \sigma=\sqrt{np(1-p)} }
 $$
 
 The biggest idea is:
