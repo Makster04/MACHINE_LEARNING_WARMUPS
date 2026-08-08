@@ -175,6 +175,8 @@ $$
 
 The condition changed the sample space and therefore changed the probability.
 
+![Four coin outcomes, with two greyed out after conditioning on the first flip](../figures/03-shrinking-sample-space-dark.png)
+
 ---
 
 # 5. A condition can make an event impossible
@@ -290,6 +292,8 @@ $$
 \text{Conditioning means your new universe is B}
 $$
 
+![Two circles before conditioning, then circle B alone as the new sample space](../figures/03-conditional-new-universe-dark.png)
+
 ---
 
 # 8. Intersection versus conditional probability
@@ -390,6 +394,8 @@ Therefore:
 $$
 \text{Always pay attention to which event comes after the vertical bar}
 $$
+
+![Two bars comparing P(cloudy given rain) at 95 percent with P(rain given cloudy) at 30 percent](../figures/03-order-matters-dark.png)
 
 Reversing the two is such a common and consequential mistake that an entire theorem exists to do it correctly. That is Bayes' theorem, in 04.
 
@@ -670,6 +676,8 @@ $$
 
 The condition **doubled** the probability. Rolling a 6 is the best possible start toward a sum of 10.
 
+![The 36-cell dice grid with the sum-10 cells marked and row 6 outlined as the new sample space](../figures/03-dice-conditioning-dark.png)
+
 ---
 
 # 15. Dice example: Sum of 10 GIVEN first die is 1
@@ -836,8 +844,10 @@ $$
 Therefore:
 
 $$
-P(D) = 3.2\%
+P(D) = 0.032
 $$
+
+![Probability tree branching to two machines then to defective or not, with the paths multiplied and added](../figures/03-total-probability-tree-dark.png)
 
 ## The tree-diagram interpretation
 
