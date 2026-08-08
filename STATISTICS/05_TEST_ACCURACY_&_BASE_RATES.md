@@ -95,6 +95,8 @@ The completed matrix:
 
 Look at the top-left corner against the cell below it. Among everyone who tested positive, only 99 out of 10,098 are actually sick. **The false positives outnumber the true positives by about 100 to 1.**
 
+![Confusion matrix with 99 true positives, 1 false negative, 9,999 false positives and 989,901 true negatives](../figures/05-confusion-matrix-dark.png)
+
 Every rate in the rest of this file is just a ratio taken from this table.
 
 ---
@@ -190,7 +192,7 @@ $$
 In the example:
 
 $$
-\frac{99}{99+9{,}999} = \frac{99}{10{,}098} \approx 0.98\%
+\frac{99}{99+9{,}999} = \frac{99}{10{,}098} \approx 0.0098
 $$
 
 PPV answers: **if the test says positive, how worried should I be?**
@@ -204,7 +206,7 @@ $$
 In the example:
 
 $$
-\frac{989{,}901}{989{,}902} \approx 99.9999\%
+\frac{989{,}901}{989{,}902} \approx 0.999999
 $$
 
 A negative result on this test is almost perfectly reassuring, even though a positive result is nearly meaningless. That asymmetry is entirely due to the base rate.
@@ -223,9 +225,9 @@ This is the central idea of the file.
 The same population produces wildly different numbers depending on the direction:
 
 $$
-P(\text{positive}\mid\text{sick}) = 99\%
+P(\text{positive}\mid\text{sick}) = 0.99
 \qquad\text{but}\qquad
-P(\text{sick}\mid\text{positive}) \approx 0.98\%
+P(\text{sick}\mid\text{positive}) \approx 0.0098
 $$
 
 These are reversed conditional probabilities, and 03 already told you they need not be equal. Here you can see just how unequal they can be.
@@ -239,6 +241,8 @@ $$
 Sensitivity is a property of the **test**. Take the same test to a different population and sensitivity stays at 99 percent.
 
 Precision is a property of the **test plus the population**. Take the same test to a different population and precision changes completely, as section 8 shows.
+
+![The 2x2 grid with sensitivity and specificity read across rows and precision and NPV read down columns](../figures/05-rows-vs-columns-dark.png)
 
 ## Bayes is the bridge between the families
 
@@ -265,25 +269,25 @@ This is one of the most important distinctions in the entire topic.
 The statement:
 
 $$
-P(\text{positive}\mid\text{sick})=99\%
+P(\text{positive}\mid\text{sick})=0.99
 $$
 
 does **not** mean:
 
 $$
-P(\text{sick}\mid\text{positive})=99\%
+P(\text{sick}\mid\text{positive})=0.99
 $$
 
 In this example:
 
 $$
-P(\text{positive}\mid\text{sick})=99\%
+P(\text{positive}\mid\text{sick})=0.99
 $$
 
 but:
 
 $$
-P(\text{sick}\mid\text{positive})\approx0.98\%
+P(\text{sick}\mid\text{positive})\approx0.0098
 $$
 
 Therefore:
@@ -301,7 +305,7 @@ The phrase "99 percent accurate" is doing something sneaky here. It describes th
 The disease is extremely rare:
 
 $$
-P(\text{sick})=0.01\% \qquad P(\text{healthy})=99.99\%
+P(\text{sick})=0.0001 \qquad P(\text{healthy})=0.9999
 $$
 
 So even though only 1 percent of healthy people produce false positives, there are so many healthy people that the false-positive count becomes very large.
@@ -325,7 +329,7 @@ This is why Bayes' theorem must consider the **base rate**.
 ## The rule of thumb
 
 $$
-\boxed{\text{Compare the false positive rate against the base rate, not against 100\%}}
+\boxed{\text{Compare the false positive rate against the base rate, not against 100 percent}}
 $$
 
 Here the false positive rate is 1 percent and the base rate is 0.01 percent. The error rate is **100 times larger** than the thing being detected, so false alarms must dominate. You can see the answer will be bad before doing any arithmetic.
@@ -347,6 +351,8 @@ Nothing about the test changes in this table. Sensitivity stays at 99 percent an
 Read the 1-in-100 row carefully. With a 99 percent accurate test and a 1 percent disease, a positive result is an exact **coin flip**.
 
 Only when the disease is as common as the test's error rate does the test start to be informative, and only when the disease is common does precision approach the headline accuracy figure.
+
+![Bar chart of precision at five prevalences, rising from under 1 percent to 99 percent](../figures/05-prevalence-effect-dark.png)
 
 $$
 \boxed{\text{Same test, different population, completely different meaning}}
@@ -407,7 +413,7 @@ $$
 For our test:
 
 $$
-\frac{99 + 989{,}901}{1{,}000{,}000} = \frac{990{,}000}{1{,}000{,}000} = 99.00\%
+\frac{99 + 989{,}901}{1{,}000{,}000} = \frac{990{,}000}{1{,}000{,}000} = 0.99
 $$
 
 That sounds excellent. Now consider a completely useless test that simply says **negative to everyone**, never examining the patient at all:
@@ -419,10 +425,12 @@ $$
 Its accuracy is:
 
 $$
-\frac{0 + 999{,}900}{1{,}000{,}000} = 99.99\%
+\frac{0 + 999{,}900}{1{,}000{,}000} = 0.9999
 $$
 
 The useless test scores **higher accuracy than the real test**. It catches nobody, but it is right more often, because "healthy" is almost always the correct answer.
+
+![Accuracy and recall compared for the real test and a test that always says negative](../figures/05-accuracy-paradox-dark.png)
 
 Therefore:
 
@@ -476,6 +484,8 @@ Lower the threshold and you catch more of the true cases, but you also collect m
 
 Which side you favour depends on the cost of each error:
 
+![Precision rising and recall falling as the decision threshold increases](../figures/05-precision-recall-tradeoff-dark.png)
+
 - **Missing a case is worse** (cancer screening, fraud) → favour **recall**
 - **A false alarm is worse** (spam filtering a real email into the junk folder) → favour **precision**
 
@@ -487,10 +497,10 @@ $$
 \boxed{F_1 = \frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \text{recall}}}
 $$
 
-The harmonic mean is used rather than an ordinary average because it punishes imbalance. Our test has recall $99\%$ and precision $0.98\%$, giving:
+The harmonic mean is used rather than an ordinary average because it punishes imbalance. Our test has recall 99% and precision 0.98%, giving:
 
 $$
-F_1 \approx 1.94\%
+F_1 \approx 0.0194
 $$
 
 An ordinary average would have reported about 50 percent and hidden the problem completely.
@@ -595,7 +605,7 @@ $$
 $$
 
 $$
-\boxed{\text{Compare the false positive rate against the base rate, not against 100\%}}
+\boxed{\text{Compare the false positive rate against the base rate, not against 100 percent}}
 $$
 
 $$
