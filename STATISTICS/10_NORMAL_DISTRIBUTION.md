@@ -135,6 +135,8 @@ Changing $\sigma$ does **not** move the center.
 
 The two parameters are completely independent of each other, which is what makes the normal family so easy to work with.
 
+![Three curves sliding with mu, then three curves widening with sigma](../figures/10-mu-and-sigma-dark.png)
+
 ---
 
 # 5. Know the normal-distribution notation
@@ -221,6 +223,8 @@ $$
 
 measures how far $x$ is from the mean in **standard-deviation units**. This quantity is important enough to have its own name — it is the **z-score**, and it is the subject of 11. Notice that it already appears inside the normal PDF, which is a hint that standardization is not an add-on but is built into the distribution itself.
 
+![The normal PDF split into a scaling constant and a bell factor, with the z-score highlighted](../figures/10-pdf-anatomy-dark.png)
+
 The exponential portion:
 
 $$
@@ -269,6 +273,8 @@ $$
 
 This is not a gap in your algebra. It is a genuine mathematical fact, and it is the entire reason **z-tables** exist and why standardization matters. A single table of a single standard normal curve can serve every normal distribution, which is the subject of 11.
 
+![A shaded region under a normal curve with a note that the area has no closed form](../figures/10-area-no-formula-dark.png)
+
 ---
 
 # 8. The normal CDF is S-shaped
@@ -307,6 +313,8 @@ $$
 
 This is the subtraction rule from 06. Since section 7 established that these CDF values must be looked up rather than calculated, this formula is exactly the procedure used with z-tables in 11.
 
+![A shaded area under the bell matched to the gap between two CDF values](../figures/10-cdf-subtraction-dark.png)
+
 ---
 
 # 9. Remember the 68-95-99.7 rule
@@ -315,27 +323,29 @@ For an approximately normal distribution, most observations occur within a few s
 
 | Within | Interval | Probability | More precisely |
 |---|---|---|---|
-| $1\sigma$ | $\mu\pm\sigma$ | $\approx68\%$ | $68.27\%$ |
-| $2\sigma$ | $\mu\pm2\sigma$ | $\approx95\%$ | $95.45\%$ |
-| $3\sigma$ | $\mu\pm3\sigma$ | $\approx99.7\%$ | $99.73\%$ |
+| $1\sigma$ | $\mu\pm\sigma$ | ≈68% | 68.27% |
+| $2\sigma$ | $\mu\pm2\sigma$ | ≈95% | 95.45% |
+| $3\sigma$ | $\mu\pm3\sigma$ | ≈99.7% | 99.73% |
 
 Written as probabilities:
 
 $$
-P(\mu-\sigma<X<\mu+\sigma)\approx68\%
+P(\mu-\sigma<X<\mu+\sigma)\approx0.68
 $$
 
 $$
-P(\mu-2\sigma<X<\mu+2\sigma)\approx95\%
+P(\mu-2\sigma<X<\mu+2\sigma)\approx0.95
 $$
 
 $$
-P(\mu-3\sigma<X<\mu+3\sigma)\approx99.7\%
+P(\mu-3\sigma<X<\mu+3\sigma)\approx0.997
 $$
 
 ## This rule is really about z-scores
 
 The three tiers are nothing more than the values $z=\pm1$, $z=\pm2$, and $z=\pm3$. That is why the same three percentages work for **every** normal distribution regardless of $\mu$ and $\sigma$ — the rule is stated in standard-deviation units, not in the original units. File 11 makes this explicit.
+
+![A normal curve with the one, two and three sigma bands shaded and labelled](../figures/10-empirical-rule-dark.png)
 
 ## The tails
 
@@ -343,9 +353,9 @@ Using the complement rule from 01, the probability of landing **outside** each b
 
 | Outside | Probability | Roughly |
 |---|---|---|
-| $1\sigma$ | $31.7\%$ | 1 in 3 |
-| $2\sigma$ | $4.6\%$ | 1 in 22 |
-| $3\sigma$ | $0.27\%$ | 1 in 370 |
+| $1\sigma$ | 31.7% | 1 in 3 |
+| $2\sigma$ | 4.6% | 1 in 22 |
+| $3\sigma$ | 0.27% | 1 in 370 |
 
 This is why "a three-sigma event" means something unusual, and why outlier detection often uses a $3\sigma$ cutoff.
 
@@ -359,9 +369,9 @@ Suppose $\mu=70$ and $\sigma=10$.
 
 | Within | Calculation | Interval | Probability |
 |---|---|---|---|
-| $1\sigma$ | $70\pm10$ | $60$ to $80$ | $\approx68\%$ |
-| $2\sigma$ | $70\pm20$ | $50$ to $90$ | $\approx95\%$ |
-| $3\sigma$ | $70\pm30$ | $40$ to $100$ | $\approx99.7\%$ |
+| $1\sigma$ | $70\pm10$ | $60$ to $80$ | ≈68% |
+| $2\sigma$ | $70\pm20$ | $50$ to $90$ | ≈95% |
+| $3\sigma$ | $70\pm30$ | $40$ to $100$ | ≈99.7% |
 
 So a value of 95 would be unusual here, since it sits beyond two standard deviations, in a region containing under 5 percent of the distribution.
 
@@ -507,7 +517,7 @@ $$
 ## 68-95-99.7 Rule
 
 $$
-\boxed{\mu\pm\sigma\approx68\% \qquad \mu\pm2\sigma\approx95\% \qquad \mu\pm3\sigma\approx99.7\%}
+\boxed{\mu\pm\sigma\approx0.68 \qquad \mu\pm2\sigma\approx0.95 \qquad \mu\pm3\sigma\approx0.997}
 $$
 
 These are the $z=\pm1,\pm2,\pm3$ tiers, which is why they hold for every normal distribution.
@@ -529,7 +539,7 @@ These are the $z=\pm1,\pm2,\pm3$ tiers, which is why they hold for every normal 
 | CDF | $F_X(x)=P(X\leq x)$, S-shaped |
 | At the mean | $F_X(\mu)=0.50$ |
 | Between two values | $P(a<X<b)=F_X(b)-F_X(a)$ |
-| Empirical rule | $68\%$, $95\%$, $99.7\%$ at $1$, $2$, $3$ standard deviations |
+| Empirical rule | 68%, 95%, 99.7% at $1$, $2$, $3$ standard deviations |
 | Exact 95 percent | $\mu\pm1.96\sigma$ |
 
 The biggest idea is:
