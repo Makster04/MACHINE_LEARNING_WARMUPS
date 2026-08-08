@@ -90,6 +90,8 @@ Roll a die 10,000 times and average the results, and you will get something very
 
 If you drew the PMF as physical weights sitting on a number line, $E[X]$ is the point where the line would balance. This is why it is called the **center** of the distribution.
 
+![A fair die balancing at 3.5 and a loaded die balancing at 4.67](../figures/07-balance-point-dark.png)
+
 That interpretation is what section 9 relies on: shifting every value shifts the balance point by the same amount.
 
 ---
@@ -97,6 +99,8 @@ That interpretation is what section 9 relies on: shifting every value shifts the
 # 4. Variance measures spread
 
 The expected value tells you where the distribution sits, but not how wide it is. Two distributions can have the same mean and look nothing alike.
+
+![Two curves with the same mean, one narrow and tall, one wide and short](../figures/07-same-mean-different-spread-dark.png)
 
 Variance answers: **how far from the mean are the values, typically?**
 
@@ -109,6 +113,8 @@ E[X-\mu]=E[X]-\mu=\mu-\mu=0
 $$
 
 Values above the mean and values below it cancel exactly. That is true of every distribution, so it measures nothing.
+
+![Signed deviations cancelling to zero above squared deviations that are all positive](../figures/07-why-square-deviations-dark.png)
 
 ## The fix: square the deviations
 
@@ -306,6 +312,8 @@ Adding $b$ slides every value along by the same amount. The whole distribution m
 
 Variance is built from **squared** deviations, so multiplying the variable by $a$ multiplies each squared deviation by $a^2$. Taking the square root at the end brings standard deviation back down to a factor of $|a|$, which is why SD scales by $|a|$ but variance scales by $a^2$.
 
+![Shifting a curve moves its centre without changing width; scaling changes both](../figures/07-shift-and-scale-dark.png)
+
 ## The application: why z-scores have mean 0 and SD 1
 
 A z-score is defined as:
@@ -339,6 +347,8 @@ $$
 $$
 
 This is not a coincidence or a convention — it falls straight out of the two rules above. Standardization is the subject of 11.
+
+![A curve at mean 70 with SD 10 converted to the standard normal at mean 0 with SD 1](../figures/07-standardizing-dark.png)
 
 ---
 
