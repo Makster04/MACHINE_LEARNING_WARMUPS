@@ -67,6 +67,8 @@ $$
 \boxed{\text{Bayes' theorem reverses conditional probability}}
 $$
 
+![The test gives P(positive given sick); the patient wants P(sick given positive)](../figures/04-reversing-the-arrow-dark.png)
+
 ---
 
 # 2. Medical-test example
@@ -129,9 +131,7 @@ $$
 
 or:
 
-$$
-0.01\%
-$$
+**0.01%**
 
 Therefore:
 
@@ -164,7 +164,7 @@ $$
 so:
 
 $$
-P(\text{not sick})=99.99\%
+P(\text{not sick})=0.9999
 $$
 
 ---
@@ -280,6 +280,8 @@ $$
 
 Ignoring the second path would produce the wrong answer. This is the single most common place Bayes problems go wrong.
 
+![Two routes to a positive test, multiplied out and added to give the evidence probability](../figures/04-two-paths-dark.png)
+
 ---
 
 # 7. Bayes' theorem
@@ -327,6 +329,8 @@ $$
 This is the version used in the medical-test example, and the one you will use most often.
 
 Notice the structure: **the numerator is one of the terms in the denominator.** The posterior is asking what fraction of all the evidence came from the path you care about.
+
+![The expanded Bayes formula with the numerator repeated as one term of the denominator](../figures/04-formula-anatomy-dark.png)
 
 ## The denominator is a normalizing constant
 
@@ -454,12 +458,14 @@ $$
 Therefore:
 
 $$
-\boxed{P(\text{sick}\mid\text{positive}) \approx 0.98\%}
+\boxed{P(\text{sick}\mid\text{positive}) \approx 0.0098}
 $$
+
+![Bar of all positive tests, a sliver of 99 sick against 9,999 false positives](../figures/04-positives-breakdown-dark.png)
 
 ## This answer should surprise you
 
-The test is correct 99 percent of the time, yet a positive result means slightly less than a 1 percent chance of being sick. The prior went from $0.01\%$ up to $0.98\%$ — the evidence multiplied the probability by about 98, but it started so small that it is still low.
+The test is correct 99 percent of the time, yet a positive result means slightly less than a 1 percent chance of being sick. The prior went from 0.01% up to 0.98% — the evidence multiplied the probability by about 98, but it started so small that it is still low.
 
 Why this happens, and why it is not a trick, is the subject of 05.
 
@@ -508,10 +514,12 @@ $$
 Only 99 of those people are actually sick. Therefore:
 
 $$
-P(\text{sick}\mid\text{positive}) = \frac{99}{10{,}098} \approx 0.98\%
+P(\text{sick}\mid\text{positive}) = \frac{99}{10{,}098} \approx 0.0098
 $$
 
 which matches the formula exactly.
+
+![Tree of one million people splitting into 99 true positives and 9,999 false positives](../figures/04-natural-frequencies-dark.png)
 
 ## Why this version is worth learning
 
@@ -819,7 +827,7 @@ The biggest idea is:
 
 | Idea from this file | Where it is used |
 |---|---|
-| $P(\text{sick}\mid\text{positive})\approx0.98\%$ | **05 — Test Accuracy and Base Rates**: why this is not a trick |
+| $P(\text{sick}\mid\text{positive})\approx0.0098$ | **05 — Test Accuracy and Base Rates**: why this is not a trick |
 | $P(B\mid A)$ vs $P(B\mid A^c)$ | **05**: these are the true positive and false positive rates |
 | The posterior $P(A\mid B)$ | **05**: this quantity is precision, also called PPV |
 | Prior, likelihood, posterior | **13 — Naive Bayes**: the same three pieces, with many features |
