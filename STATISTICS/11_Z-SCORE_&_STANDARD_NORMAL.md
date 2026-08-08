@@ -28,6 +28,8 @@ $$
 \boxed{\text{Standardize, then use one single table}}
 $$
 
+![Several different normal curves collapsing onto a single standard normal](../figures/11-many-normals-one-table-dark.png)
+
 Standardization rescales any normal distribution onto a common reference curve, so that a single table of areas answers every question about every normal distribution.
 
 ---
@@ -292,6 +294,8 @@ So about **77.5 percent** of students score between 60 and 85.
 
 Standardizing only one endpoint. Both endpoints must be converted, because the table only understands z-values.
 
+![Three standard normal curves shaded below, above, and between z values](../figures/11-reading-the-table-dark.png)
+
 ---
 
 # 10. Working backwards: from probability to a value
@@ -326,11 +330,13 @@ These appear constantly in confidence intervals and hypothesis tests:
 
 | Central probability | $z$ | One-tailed percentile | $z$ |
 |---|---|---|---|
-| $90\%$ | $\pm1.645$ | $90$th | $1.282$ |
-| $95\%$ | $\pm1.960$ | $95$th | $1.645$ |
-| $99\%$ | $\pm2.576$ | $99$th | $2.326$ |
+| 90% | $\pm1.645$ | $90$th | $1.282$ |
+| 95% | $\pm1.960$ | $95$th | $1.645$ |
+| 99% | $\pm2.576$ | $99$th | $2.326$ |
 
 Note that $1.645$ appears in both columns but means different things: as a two-tailed bound it captures the central 90 percent, and as a one-tailed value it marks the 95th percentile. Always check whether the problem is one-tailed or two-tailed.
+
+![The central 95 percent between plus and minus 1.96 with 2.5 percent in each tail](../figures/11-critical-values-dark.png)
 
 ---
 
@@ -376,6 +382,8 @@ Consider a dataset with income in dollars (0 to 100,000) and years of experience
 
 Models that are **not** affected include decision trees and random forests, which split one feature at a time and do not care about relative scale.
 
+![Income dwarfing years of experience before scaling, then both equal after standardizing](../figures/11-feature-scaling-dark.png)
+
 ## The rule that is easy to get wrong
 
 $$
@@ -412,6 +420,8 @@ The z-score formula subtracts a constant and divides by a constant. Section 5 sh
 - Bounded data stays bounded
 
 Shifting and rescaling slides the picture along and stretches its axis. It cannot change the shape.
+
+![A skewed distribution before and after standardizing, with an ill-fitting normal curve overlaid](../figures/11-does-not-make-normal-dark.png)
 
 ## Why this matters
 
@@ -508,7 +518,7 @@ $$
 | Symmetry | $\Phi(-z)=1-\Phi(z)$ |
 | Exact 95 percent | $z=\pm1.96$ |
 | Exact 99 percent | $z=\pm2.576$ |
-| $z=\pm1,\pm2,\pm3$ | $68.27\%$, $95.45\%$, $99.73\%$ |
+| $z=\pm1,\pm2,\pm3$ | 68.27%, 95.45%, 99.73% |
 
 The biggest idea is:
 
