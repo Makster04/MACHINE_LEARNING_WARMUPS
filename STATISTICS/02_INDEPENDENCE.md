@@ -255,7 +255,7 @@ $$
 Therefore:
 
 $$
-\boxed{P(S\cap R_1)=12\%}
+\boxed{P(S\cap R_1)=0.12}
 $$
 
 ![Unit square split at 0.30 and 0.40, with the shaded corner equal to 0.12](../figures/02-area-model-dark.png)
@@ -268,17 +268,13 @@ The school examples help visualize what independence means.
 
 Suppose:
 
-$$
-40\%
-$$
+**40%**
 
 of all students like soccer.
 
 If room assignment is independent of whether students like soccer, then we would expect approximately:
 
-$$
-40\%
-$$
+**40%**
 
 of students in each room to like soccer as well.
 
@@ -294,9 +290,7 @@ students.
 
 If:
 
-$$
-40\%
-$$
+**40%**
 
 like soccer, then:
 
@@ -428,9 +422,7 @@ $$
 
 or approximately:
 
-$$
-\boxed{3.125\%}
-$$
+**3.125%**
 
 ---
 
