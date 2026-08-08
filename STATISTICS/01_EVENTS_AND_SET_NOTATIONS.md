@@ -99,6 +99,13 @@ $$
 A^c=\text{rolling an odd number}=\{1,3,5\}
 $$
 
+| Face | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|
+| In $A$ = even? | | ✓ | | ✓ | | ✓ |
+| In $A^c$ = odd? | ✓ | | ✓ | | ✓ | |
+
+Every column has **exactly one** check — no face is in both, and no face is left out. That is why $P(A) + P(A^c) = 1$.
+
 ### The complement rule
 
 An event either happens or it does not. There is no third possibility. Therefore:
@@ -205,6 +212,17 @@ This includes someone who plays:
 
 In probability, **OR includes both unless stated otherwise**.
 
+The two circles carve the sample space into four regions. Union takes three of them:
+
+| Region | In $A$? | In $B$? | In $A\cup B$? |
+|---|---|---|---|
+| $A$ only | yes | no | **yes** |
+| Both | yes | yes | **yes** |
+| $B$ only | no | yes | **yes** |
+| Neither | no | no | no |
+
+The only region left out is the one belonging to neither event.
+
 ---
 
 # 5. Intersection means AND
@@ -262,6 +280,17 @@ means:
 $$
 \text{Probability that both A and B occur}
 $$
+
+Same four regions, but intersection takes only one:
+
+| Region | In $A$? | In $B$? | In $A\cap B$? |
+|---|---|---|---|
+| $A$ only | yes | no | no |
+| Both | yes | yes | **yes** |
+| $B$ only | no | yes | no |
+| Neither | no | no | no |
+
+Compare this against the union table in section 4. Union keeps three regions; intersection keeps one.
 
 ---
 
@@ -500,6 +529,17 @@ Students who play both soccer and basketball were counted once in the soccer gro
 
 Therefore, the overlap must be subtracted.
 
+Break the students into the three regions that actually exist, and count how many times each one gets added:
+
+| Region | Probability | Added by $P(S)=0.60$ | Added by $P(B)=0.50$ | Times counted |
+|---|---|---|---|---|
+| Soccer only | 0.30 | ✓ | | 1 |
+| **Both** | **0.30** | ✓ | ✓ | **2** |
+| Basketball only | 0.20 | | ✓ | 1 |
+| | **1.10 total** | | | |
+
+The three regions only contain $0.30 + 0.30 + 0.20 = 0.80$ of the students. The extra $0.30$ is the middle row being added a second time — so subtract it once.
+
 ---
 
 # 11. For joint events, subtract the intersection
@@ -691,6 +731,15 @@ A=\{2,4,6\}\qquad B=\{5\}
 $$
 
 They are disjoint, but they are **not exhaustive** — the outcomes $1$ and $3$ are missing.
+
+| Faces covered | 1 | 2 | 3 | 4 | 5 | 6 | Verdict |
+|---|---|---|---|---|---|---|---|
+| $\{1,2\}$, $\{3,4\}$, $\{5,6\}$ | $A_1$ | $A_1$ | $A_2$ | $A_2$ | $A_3$ | $A_3$ | **partition** |
+| $\{2,4,6\}$, $\{5\}$ | — | $A$ | — | $A$ | $B$ | $A$ | **not a partition** |
+
+Read each row across. The top row assigns every face to exactly one piece, so its probabilities add to 1. The bottom row never double-assigns a face either — it is genuinely disjoint — but faces 1 and 3 get nothing, so its probabilities fall short of 1.
+
+**Disjoint checks for collisions. Exhaustive checks for gaps. A partition needs both.**
 
 ### Why this matters later
 
