@@ -114,6 +114,8 @@ Therefore, the events are **dependent**.
 
 **Without replacement** → the pool changes → **dependent**
 
+![Deck of cards with and without replacement, showing which case changes the second probability](../figures/02-replacement-dark.png)
+
 ---
 
 # 3. Independent versus dependent events
@@ -256,6 +258,8 @@ $$
 \boxed{P(S\cap R_1)=12\%}
 $$
 
+![Unit square split at 0.30 and 0.40, with the shaded corner equal to 0.12](../figures/02-area-model-dark.png)
+
 ---
 
 # 6. Independence means the same proportion appears in each group
@@ -311,6 +315,8 @@ $$
 This matches the idea of independence:
 
 **Being assigned to Room 1 does not change the proportion of students who like soccer.**
+
+![Two rooms each showing 4 of 10 students liking soccer](../figures/02-same-proportion-dark.png)
 
 This is the intuition behind the second independence test in section 12: the proportion inside the group equals the proportion overall.
 
@@ -516,6 +522,8 @@ $$
 \boxed{\text{More required successes}\rightarrow\text{smaller probability}}
 $$
 
+![Five bars halving in length from one half down to one thirty-second](../figures/02-halving-dark.png)
+
 ---
 
 # 10. Dice examples: two sixes and ten sixes
@@ -666,6 +674,8 @@ Therefore:
 $$
 \boxed{\text{Disjoint events with nonzero probability are always dependent}}
 $$
+
+![Side-by-side Venn diagrams contrasting disjoint circles with overlapping independent circles](../figures/02-independent-vs-disjoint-dark.png)
 
 ### Comparison
 
