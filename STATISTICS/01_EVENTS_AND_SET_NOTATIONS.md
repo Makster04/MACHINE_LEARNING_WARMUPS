@@ -99,27 +99,6 @@ $$
 A^c=\text{rolling an odd number}=\{1,3,5\}
 $$
 
-<svg width="100%" viewBox="0 0 680 182" role="img"><title>The complement of an event</title><desc>The six faces of a die, with even faces shaded as event A and odd faces shaded as its complement.</desc>
-<text x="340" y="24" text-anchor="middle" font-size="13" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.75">S = {1, 2, 3, 4, 5, 6}</text>
-<rect x="160" y="42" width="60" height="64" rx="6" fill="#D85A30" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="190" y="80" text-anchor="middle" font-size="18" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">1</text>
-<rect x="220" y="42" width="60" height="64" rx="6" fill="#1D9E75" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="250" y="80" text-anchor="middle" font-size="18" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">2</text>
-<rect x="280" y="42" width="60" height="64" rx="6" fill="#D85A30" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="310" y="80" text-anchor="middle" font-size="18" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">3</text>
-<rect x="340" y="42" width="60" height="64" rx="6" fill="#1D9E75" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="370" y="80" text-anchor="middle" font-size="18" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">4</text>
-<rect x="400" y="42" width="60" height="64" rx="6" fill="#D85A30" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="430" y="80" text-anchor="middle" font-size="18" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">5</text>
-<rect x="460" y="42" width="60" height="64" rx="6" fill="#1D9E75" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="490" y="80" text-anchor="middle" font-size="18" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">6</text>
-<rect x="176" y="126" width="13" height="13" rx="3" fill="#1D9E75" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45"/>
-<text x="197" y="137" font-size="13" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">A = even = {2, 4, 6}</text>
-<rect x="380" y="126" width="13" height="13" rx="3" fill="#D85A30" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45"/>
-<text x="401" y="137" font-size="13" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">A&#8288;&#7580; = odd = {1, 3, 5}</text>
-<text x="340" y="168" text-anchor="middle" font-size="12" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.7">No face is in both, and no face is left out &#8212; so P(A) + P(A&#7580;) = 1</text>
-</svg>
-
 ### The complement rule
 
 An event either happens or it does not. There is no third possibility. Therefore:
@@ -226,16 +205,6 @@ This includes someone who plays:
 
 In probability, **OR includes both unless stated otherwise**.
 
-<svg width="100%" viewBox="0 0 680 248" role="img"><title>Union of two events</title><desc>Two overlapping circles with the entire shaded area representing A union B.</desc>
-<circle cx="280" cy="112" r="90" fill="#1D9E75" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45"/>
-<circle cx="400" cy="112" r="90" fill="#1D9E75" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45"/>
-<circle cx="280" cy="112" r="90" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<circle cx="400" cy="112" r="90" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="222" y="118" text-anchor="middle" font-size="16" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">A</text>
-<text x="458" y="118" text-anchor="middle" font-size="16" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">B</text>
-<text x="340" y="232" text-anchor="middle" font-size="12" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.7">A &#8746; B &#8212; the whole shaded region: in A, in B, or in both</text>
-</svg>
-
 ---
 
 # 5. Intersection means AND
@@ -293,16 +262,6 @@ means:
 $$
 \text{Probability that both A and B occur}
 $$
-
-<svg width="100%" viewBox="0 0 680 248" role="img"><title>Intersection of two events</title><desc>Two overlapping circles with only the shared middle region shaded, representing A intersect B.</desc>
-<defs><clipPath id="ixL"><circle cx="280" cy="112" r="90"/></clipPath></defs>
-<g clip-path="url(#ixL)"><circle cx="400" cy="112" r="90" fill="#1D9E75" fill-opacity="0.42" stroke="none"/></g>
-<circle cx="280" cy="112" r="90" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<circle cx="400" cy="112" r="90" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="222" y="118" text-anchor="middle" font-size="16" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">A</text>
-<text x="458" y="118" text-anchor="middle" font-size="16" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">B</text>
-<text x="340" y="232" text-anchor="middle" font-size="12" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.7">A &#8745; B &#8212; only the overlap: outcomes shared by both</text>
-</svg>
 
 ---
 
@@ -541,27 +500,6 @@ Students who play both soccer and basketball were counted once in the soccer gro
 
 Therefore, the overlap must be subtracted.
 
-<svg width="100%" viewBox="0 0 680 300" role="img"><title>Why the addition rule subtracts the intersection</title><desc>Soccer at 0.60 and basketball at 0.50 overlap at 0.30. Soccer only is 0.30, both is 0.30, basketball only is 0.20, totalling 0.80.</desc>
-<defs><pattern id="dcHatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#D85A30" stroke-width="1.4" stroke-opacity="0.8"/></pattern>
-<clipPath id="dcL"><circle cx="280" cy="150" r="95"/></clipPath></defs>
-<circle cx="280" cy="150" r="95" fill="#1D9E75" fill-opacity="0.26" stroke="none"/>
-<circle cx="400" cy="150" r="95" fill="#7F77DD" fill-opacity="0.26" stroke="none"/>
-<g clip-path="url(#dcL)"><circle cx="400" cy="150" r="95" fill="url(#dcHatch)" stroke="none"/></g>
-<circle cx="280" cy="150" r="95" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<circle cx="400" cy="150" r="95" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="205" y="36" text-anchor="middle" font-size="14" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">Soccer</text>
-<text x="205" y="55" text-anchor="middle" font-size="12" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.7">P(S) = 0.60</text>
-<text x="475" y="36" text-anchor="middle" font-size="14" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">Basketball</text>
-<text x="475" y="55" text-anchor="middle" font-size="12" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.7">P(B) = 0.50</text>
-<text x="218" y="148" text-anchor="middle" font-size="16" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">0.30</text>
-<text x="218" y="168" text-anchor="middle" font-size="12" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.7">soccer only</text>
-<text x="340" y="148" text-anchor="middle" font-size="16" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">0.30</text>
-<text x="340" y="168" text-anchor="middle" font-size="12" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.7">counted twice</text>
-<text x="462" y="148" text-anchor="middle" font-size="16" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">0.20</text>
-<text x="462" y="168" text-anchor="middle" font-size="12" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.7">basketball only</text>
-<text x="340" y="282" text-anchor="middle" font-size="12" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.7">0.60 + 0.50 = 1.10, but the hatched region was added twice &#8212; subtract it once to get 0.80</text>
-</svg>
-
 ---
 
 # 11. For joint events, subtract the intersection
@@ -753,37 +691,6 @@ A=\{2,4,6\}\qquad B=\{5\}
 $$
 
 They are disjoint, but they are **not exhaustive** — the outcomes $1$ and $3$ are missing.
-
-<svg width="100%" viewBox="0 0 680 262" role="img"><title>Partition versus a non-partition</title><desc>The top row slices the six die faces into three pairs with no overlap and no gaps. The bottom row shows two disjoint events that leave out the outcomes 1 and 3.</desc>
-<text x="340" y="26" text-anchor="middle" font-size="13" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">A partition &#8212; no overlap, no gaps</text>
-<rect x="160" y="42" width="60" height="56" rx="6" fill="#7F77DD" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="190" y="76" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">1</text>
-<rect x="220" y="42" width="60" height="56" rx="6" fill="#7F77DD" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="250" y="76" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">2</text>
-<rect x="280" y="42" width="60" height="56" rx="6" fill="#1D9E75" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="310" y="76" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">3</text>
-<rect x="340" y="42" width="60" height="56" rx="6" fill="#1D9E75" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="370" y="76" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">4</text>
-<rect x="400" y="42" width="60" height="56" rx="6" fill="#D85A30" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="430" y="76" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">5</text>
-<rect x="460" y="42" width="60" height="56" rx="6" fill="#D85A30" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="490" y="76" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">6</text>
-<text x="340" y="122" text-anchor="middle" font-size="12" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.7">{1,2}, {3,4}, {5,6} &#8212; every face lands in exactly one piece, so the three probabilities add to 1</text>
-<text x="340" y="146" text-anchor="middle" font-size="13" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor">Not a partition &#8212; disjoint, but not exhaustive</text>
-<rect x="160" y="158" width="60" height="56" rx="6" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1" stroke-dasharray="4 3"/>
-<text x="190" y="192" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.35">1</text>
-<rect x="220" y="158" width="60" height="56" rx="6" fill="#1D9E75" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="250" y="192" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="1">2</text>
-<rect x="280" y="158" width="60" height="56" rx="6" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1" stroke-dasharray="4 3"/>
-<text x="310" y="192" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.35">3</text>
-<rect x="340" y="158" width="60" height="56" rx="6" fill="#1D9E75" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="370" y="192" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="1">4</text>
-<rect x="400" y="158" width="60" height="56" rx="6" fill="#D85A30" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="430" y="192" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="1">5</text>
-<rect x="460" y="158" width="60" height="56" rx="6" fill="#1D9E75" fill-opacity="0.3" stroke="currentColor" stroke-opacity="0.45" stroke-width="1"/>
-<text x="490" y="192" text-anchor="middle" font-size="17" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="1">6</text>
-<text x="340" y="242" text-anchor="middle" font-size="12" font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="currentColor" fill-opacity="0.7">{2,4,6} and {5} never overlap, but 1 and 3 are left out &#8212; the probabilities do not add to 1</text>
-</svg>
 
 ### Why this matters later
 
