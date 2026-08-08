@@ -96,6 +96,8 @@ To measure that directly you would need training emails containing **that exact 
 
 The number of possible combinations explodes. With 100 binary features there are $2^{100}$ possible patterns, which is vastly more than any dataset could ever cover.
 
+![Pattern counts growing from 4 to about 1.3 times ten to the thirtieth as features increase](../figures/13-why-joint-fails-dark.png)
+
 $$
 \boxed{\text{Many features} \rightarrow \text{joint probabilities become impossible to estimate}}
 $$
@@ -181,6 +183,8 @@ $$
 The dependence is real: both words are common in spam and rare in ham, so seeing one makes the other more likely. But once you have already *conditioned on the class*, that shared cause has been accounted for, and the leftover dependence is smaller.
 
 That is the whole intuition. The class is the reason the words travel together. Fix the class, and much of the connection disappears — though not all of it, which is why the assumption is naive rather than true.
+
+![Spam as a shared cause of both words, beside bars comparing 0.0552 with 0.1150](../figures/13-conditional-independence-dark.png)
 
 ---
 
@@ -346,10 +350,12 @@ P(\text{spam}\mid\text{lottery}\cap\text{winning}) = \frac{0.105}{0.115} \approx
 $$
 
 $$
-\boxed{P(\text{spam}\mid\text{lottery}\cap\text{winning}) \approx 91.3\%}
+\boxed{P(\text{spam}\mid\text{lottery}\cap\text{winning}) \approx 0.913}
 $$
 
 As a check, the ham posterior is $\frac{0.01}{0.115}\approx0.087$, and the two sum to exactly 1 as any posterior pair must.
+
+![The spam and ham scores multiplied out and split into a 91.3 to 8.7 percent bar](../figures/13-spam-calculation-dark.png)
 
 ---
 
@@ -360,7 +366,7 @@ As a check, the ham posterior is $\frac{0.01}{0.115}\approx0.087$, and the two s
 Notice the movement. The prior probability of spam was only **20 percent**, and after seeing those two words it became about **91.3 percent**. That is Bayes' theorem updating a belief on the strength of evidence, exactly as in 04.
 
 $$
-\boxed{20\% \xrightarrow{\text{two words}} 91.3\%}
+\boxed{0.2 \xrightarrow{\text{two words}} 0.913}
 $$
 
 ---
@@ -448,6 +454,8 @@ For present/absent features, $k=2$. With $\alpha=1$:
 
 The unseen word now contributes a small probability instead of a fatal zero. The other estimates barely move — smoothing pulls everything gently toward uniform, and the effect shrinks as the counts grow.
 
+![A product collapsing to zero from one unseen word, then surviving after add-one smoothing](../figures/13-zero-problem-dark.png)
+
 In scikit-learn this is the `alpha` parameter, and it defaults to $1.0$. Smoothing is on by default because the problem is so common.
 
 ---
@@ -502,6 +510,8 @@ $$
 
 An unsmoothed zero does not merely produce a bad answer in log space; it produces negative infinity and breaks the arithmetic entirely. **Sections 15 and 16 are a package** — you cannot safely take logs without smoothing first.
 
+![Products underflowing to zero beside log values that stay representable](../figures/13-underflow-logs-dark.png)
+
 ---
 
 # 17. The three Naive Bayes variants
@@ -544,7 +554,7 @@ $$
 \boxed{\text{Naive Bayes is a good classifier but a poorly calibrated probability estimator}}
 $$
 
-Double-counted evidence pushes posteriors toward the extremes, so Naive Bayes tends to report values very close to 0 or 1. The $91.3\%$ figure is best read as **"confidently spam"** rather than as a literal 91.3 percent chance. If you need trustworthy probabilities rather than labels, the outputs need to be recalibrated.
+Double-counted evidence pushes posteriors toward the extremes, so Naive Bayes tends to report values very close to 0 or 1. The 91.3% figure is best read as **"confidently spam"** rather than as a literal 91.3 percent chance. If you need trustworthy probabilities rather than labels, the outputs need to be recalibrated.
 
 ## What you get in exchange
 
