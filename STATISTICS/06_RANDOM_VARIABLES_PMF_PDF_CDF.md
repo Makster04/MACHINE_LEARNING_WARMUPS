@@ -43,6 +43,8 @@ Then $X$ assigns a number to each outcome:
 
 The outcome "heads, heads, tails" is not a number and cannot be averaged or added. The value $2$ can. That is the entire purpose of a random variable.
 
+![Eight coin outcomes mapped by arrows onto the values 3, 2, 1 and 0](../figures/06-random-variable-mapping-dark.png)
+
 ## Capital $X$ versus lowercase $x$
 
 This distinction is used constantly and is easy to mix up.
@@ -256,6 +258,8 @@ $$
 \boxed{\text{PMF probability}=\text{sum of probability masses}}
 $$
 
+![Two-dice PMF with the bars for 4, 5 and 6 highlighted and summed](../figures/06-pmf-adding-masses-dark.png)
+
 ---
 
 # 6. PDF — Probability Density Function
@@ -382,6 +386,8 @@ $$
 
 for continuous variables. This is **not** true for discrete variables, where the endpoints carry real mass.
 
+![An interval shrinking from width 1 to width 0, with the enclosed area going to zero](../figures/06-point-has-no-area-dark.png)
+
 ---
 
 # 10. Intervals DO have probability for continuous variables
@@ -478,6 +484,8 @@ $$
 $$
 \boxed{\text{Continuous}\rightarrow\text{PDF}\rightarrow\text{AREA}}
 $$
+
+![Discrete bars beside a smooth density curve, contrasting sums with areas](../figures/06-pmf-vs-pdf-dark.png)
 
 ---
 
@@ -661,6 +669,8 @@ $$
 $$
 \boxed{\text{Where the PDF is near zero, the CDF is nearly flat}}
 $$
+
+![A bell-shaped PDF above its S-shaped CDF, aligned so the steepest climb sits under the tallest point](../figures/06-pdf-to-cdf-dark.png)
 
 This single fact explains a great deal. A constant PDF must produce a straight-line CDF, because a constant rate of accumulation gives constant slope — which is exactly what happens with the uniform distribution in 09. A bell-shaped PDF produces an S-shaped CDF that is steepest in the middle, which is what happens with the normal distribution in 10.
 
