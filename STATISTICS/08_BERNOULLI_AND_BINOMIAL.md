@@ -72,6 +72,8 @@ $p(1-p)$ is largest at $p=0.5$, where it equals $0.25$:
 
 This makes sense. A fair coin is the most unpredictable single trial there is. When $p$ is near 0 or near 1 the outcome is almost certain, so there is very little variability.
 
+![The curve p times one minus p peaking at 0.25 when p is one half](../figures/08-bernoulli-variance-dark.png)
+
 ---
 
 # 2. A binomial distribution counts successes across $n$ trials
@@ -284,6 +286,8 @@ $$
 
 Forgetting this factor is the single most common binomial mistake. It gives the probability of one *specific* sequence rather than of the *count*.
 
+![All ten sequences of five flips containing exactly two heads](../figures/08-arrangements-dark.png)
+
 ---
 
 # 10. The formula has three main pieces
@@ -323,6 +327,8 @@ x + (n-x) = n
 $$
 
 If they do not, you have set up the problem wrong.
+
+![The binomial formula split into arrangements, successes and failures](../figures/08-formula-pieces-dark.png)
 
 So in words:
 
@@ -476,6 +482,8 @@ When $p = 0.3$, successes are less likely, so probability becomes concentrated a
 
 The peak has moved from $x=2.5$ to around $x=1.5$, which is exactly $\mu = np = 5(0.3) = 1.5$. The distribution is no longer symmetric; it is skewed toward the low end.
 
+![Binomial PMFs at p equal to 0.3, 0.5 and 0.7 with the mean marked on each](../figures/08-p-changes-shape-dark.png)
+
 So:
 
 $$
@@ -525,6 +533,8 @@ This demonstrates that the binomial applies whenever you repeatedly ask:
 # 17. When $n$ is large: the normal approximation
 
 Look again at the symmetric table in section 13. Even with only 5 trials, the shape is already starting to resemble a bell. As $n$ grows, that resemblance becomes very close.
+
+![Binomial PMFs at n equal to 5, 20 and 100 converging to a bell shape](../figures/08-large-n-bell-dark.png)
 
 This means a large binomial can be approximated by a normal distribution using the same mean and standard deviation from section 12:
 
