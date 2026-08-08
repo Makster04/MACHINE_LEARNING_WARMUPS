@@ -122,6 +122,8 @@ $$
 
 The numbers confirm it: the exact answer for $P(X\leq1)$ is $0.7358$, while the normal approximation gives $0.6960$ — an error of about 4 percentage points, compared with essentially zero error in the well-conditioned example in section 7.
 
+![A skewed binomial with the approximating normal spilling onto impossible negative counts](../figures/12-when-it-fails-dark.png)
+
 ## What to use instead
 
 When $n$ is large but $p$ is very small, the right approximation is the **Poisson** distribution rather than the normal. Poisson is a later topic, but it is the tool for rare events.
@@ -172,6 +174,8 @@ $$
 
 Against the exact answer of $0.0796$, that is essentially perfect.
 
+![Zoomed binomial bars with the normal curve, showing the 49.5 to 50.5 window](../figures/12-continuity-correction-dark.png)
+
 $$
 \boxed{\text{Each discrete bar is treated as being 0.5 wide on each side}}
 $$
@@ -207,6 +211,8 @@ The strict and non-strict versions differ by a whole integer bar, which is why t
 ## The most common mistake
 
 Adding $0.5$ in every case out of habit. The direction depends on whether the endpoint is being included or excluded, and getting it backwards shifts the answer by a full bar.
+
+![Where the boundary falls for less-than-or-equal versus strictly-less-than](../figures/12-correction-rules-dark.png)
 
 ---
 
@@ -263,8 +269,10 @@ $$
 ## Answer
 
 $$
-\boxed{P(X\leq55) \approx 0.8643 \text{, or about } 86.4\%}
+\boxed{P(X\leq55) \approx 0.8643 \text{, or about } 0.864}
 $$
+
+![Binomial bars up to 55 shaded, with the boundary drawn at 55.5 rather than 55](../figures/12-worked-example-dark.png)
 
 ---
 
@@ -289,6 +297,8 @@ Two things stand out.
 **The approximation is excellent.** With the correction, it is accurate to four decimal places.
 
 **The continuity correction is not optional.** Skipping it produced an error of over 2 percentage points — more than 200 times larger than the corrected error. The correction is doing most of the work here, not the normal curve itself.
+
+![Error bars comparing the corrected and uncorrected approximations against the exact answer](../figures/12-accuracy-dark.png)
 
 ## Another check
 
