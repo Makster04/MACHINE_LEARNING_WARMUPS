@@ -312,7 +312,7 @@ This matches the idea of independence:
 
 ![Two rooms each showing 4 of 10 students liking soccer](../figures/02-same-proportion-dark.png)
 
-This is the intuition behind the second independence test in section 12: the proportion inside the group equals the proportion overall.
+This is the intuition behind the second independence test in section 13: the proportion inside the group equals the proportion overall.
 
 ---
 
@@ -361,7 +361,7 @@ So:
 
 **Independent does NOT mean the events cannot happen together.**
 
-Section 11 makes this distinction fully.
+Section 12 makes this distinction fully.
 
 ---
 
@@ -579,7 +579,88 @@ The probability becomes extremely small because you are requiring the same event
 
 ---
 
-# 11. Independence versus disjoint events
+# 11. The birthday problem
+
+This is the classic showcase for everything above: the product rule, the $p^n$ idea, and the complement rule from 01, all in one question.
+
+> **In a room of 30 people, is it more likely that two share a birthday, or that nobody does?**
+
+Almost everyone guesses nobody. The answer is that a shared birthday is far more likely — about **70 percent**.
+
+## Step 1: flip to the complement
+
+"At least two people share a birthday" is a sprawling event — one pair, two pairs, three people all matching, and so on. Its opposite is a single clean scenario, so use the complement rule from 01:
+
+$$
+P(\text{at least one match}) = 1 - P(\text{everyone different})
+$$
+
+## Step 2: fill the seats one at a time
+
+Ignore leap years and assume all 365 days are equally likely. Seat the people one by one, and ask each to have a birthday nobody before them has taken:
+
+- The 1st person can have any birthday: $\dfrac{365}{365}$
+- The 2nd must avoid 1 taken day: $\dfrac{364}{365}$
+- The 3rd must avoid 2 taken days: $\dfrac{363}{365}$
+- The $n$-th must avoid $n-1$ taken days: $\dfrac{365-(n-1)}{365}$
+
+## Step 3: multiply
+
+Each step is conditional on the ones before it, so this is really the general product rule from 03 rather than plain independence. Multiplying the chain:
+
+$$
+\boxed{P(\text{everyone different}) = \frac{365}{365}\times\frac{364}{365}\times\cdots\times\frac{365-n+1}{365}}
+$$
+
+For $n=4$:
+
+$$
+\frac{365}{365}\times\frac{364}{365}\times\frac{363}{365}\times\frac{362}{365} = 0.9836
+$$
+
+so with 4 people a match has probability $1-0.9836 = 0.0164$.
+
+![Two crossing curves showing the probability of a shared birthday against room size](../figures/02-birthday-problem-dark.png)
+
+## The numbers
+
+| People | $P(\text{everyone different})$ | $P(\text{at least one match})$ |
+|---|---|---|
+| 5 | $0.973$ | $0.027$ |
+| 10 | $0.883$ | $0.117$ |
+| 20 | $0.589$ | $0.411$ |
+| **23** | $0.493$ | **$0.507$** |
+| 30 | $0.294$ | $0.706$ |
+| 50 | $0.030$ | $0.970$ |
+| 100 | $0.0000003$ | $0.9999997$ |
+
+$$
+\boxed{\text{At 23 people a shared birthday becomes more likely than not.}}
+$$
+
+## Why the answer feels wrong
+
+Most people silently answer a different question: *does anyone here share MY birthday?* That one really is unlikely — it involves only 29 comparisons.
+
+The actual question compares **every pair**. With $n$ people the number of pairs is:
+
+$$
+\binom{n}{2} = \frac{n(n-1)}{2}
+$$
+
+For 23 people that is $\dfrac{23\times22}{2} = 253$ pairs, and for 30 people it is $435$. The number of pairs grows roughly with $n^2$, not with $n$, which is why the probability climbs far faster than intuition expects.
+
+$$
+\boxed{\text{You are not comparing people. You are comparing pairs.}}
+$$
+
+## Why this matters beyond parties
+
+The same arithmetic governs **hash collisions**. A hash function with $N$ possible outputs starts colliding after roughly $\sqrt{N}$ items, not $N$ — so a 64-bit hash begins colliding around 4 billion items rather than 18 quintillion. It is called the **birthday bound** for exactly this reason.
+
+---
+
+# 12. Independence versus disjoint events
 
 This is one of the easiest probability concepts to confuse.
 
@@ -687,7 +768,7 @@ $$
 
 ---
 
-# 12. Two ways to test for independence
+# 13. Two ways to test for independence
 
 There are two equivalent tests. Use whichever matches the information you are given.
 
@@ -795,7 +876,7 @@ which does not equal $P(A)=0.50$. Knowing B raised the probability of A from 50%
 
 ---
 
-# 13. Conditional independence
+# 14. Conditional independence
 
 Independence can hold **inside a group** even when it does not hold overall. This is called **conditional independence**, and it is written:
 
@@ -843,7 +924,7 @@ This assumption is exactly what makes Naive Bayes "naive," and it is the reason 
 
 ---
 
-# 14. AND versus OR
+# 15. AND versus OR
 
 Before you multiply, check what the question is actually asking.
 
