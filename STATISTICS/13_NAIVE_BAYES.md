@@ -538,7 +538,42 @@ The worked example in this file uses **Bernoulli NB**, since we only asked wheth
 
 ---
 
-# 18. Why the naive assumption works anyway
+# 18. Naive Bayes is a generative model
+
+Notice what Naive Bayes actually estimates. It never models $P(\text{class}\mid\text{features})$ directly — it models the **other** direction, plus a prior:
+
+$$
+P(\text{class}) \qquad\text{and}\qquad P(\text{feature}\mid\text{class})
+$$
+
+and only then uses Bayes' theorem to flip it round. That puts it in a named family.
+
+## Generative against discriminative
+
+| | Models | Example |
+|---|---|---|
+| **Generative** | $P(\text{features}\mid\text{class})$ and $P(\text{class})$ | Naive Bayes |
+| **Discriminative** | $P(\text{class}\mid\text{features})$ directly | Logistic regression |
+
+## Why "generative"
+
+Because if you know how features are distributed **within** a class, you can run the model backwards and **produce new examples** of that class rather than only labelling existing ones. Pick a class from the prior, then draw each feature from its within-class distribution — using exactly the sampling procedure from 09.
+
+That is the same idea behind image generation. A face generator is trying to produce pixels such that:
+
+$$
+P(\text{face}\mid\text{pixels})
+$$
+
+is high, and it gets there by learning what pixel patterns look like **given** that the image is a face. Naive Bayes is the simplest possible member of that family — the assumptions are cruder by orders of magnitude, but the direction of modelling is the same.
+
+$$
+\boxed{\text{Discriminative models draw the boundary. Generative models model each class.}}
+$$
+
+---
+
+# 19. Why the naive assumption works anyway
 
 Section 5 demonstrated that the assumption is **false** in this very dataset — the two words co-occur about twice as often as independence predicts. So why is Naive Bayes still a useful classifier?
 
