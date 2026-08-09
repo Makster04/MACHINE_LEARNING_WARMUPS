@@ -18,6 +18,18 @@ A random variable is a rule that assigns a number to every outcome of a random e
 
 In algebra, $x$ is an unknown you solve for. A random variable is different — it is a **rule**, and it does not have one fixed value.
 
+| | Deterministic variable | Random variable |
+|---|---|---|
+| Example | $x=2$, so $f(x)=x^2=4$ | $X$ = number of defective items in a shipment |
+| Outcome | **Fixed** — compute it once and it never changes | **Uncertain** — it depends on which shipment arrives |
+| What you can ask | "What is the value?" | "What is the probability of each value?" |
+
+A deterministic variable has one answer. A random variable has a whole **distribution** of answers, each with a probability attached — which is exactly what the PMF and PDF in this file describe.
+
+## Why bother
+
+Because a random variable lets you model the **whole experiment at once**. Instead of tracking eight separate coin outcomes, you track a single quantity $X$ and ask questions about it: what is $P(X=2)$, what is $X$ on average, how much does $X$ vary. Those last two questions are the subject of 07.
+
 ## Example
 
 Flip a coin three times. The sample space is:
