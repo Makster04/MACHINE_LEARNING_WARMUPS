@@ -340,48 +340,38 @@ Always produces mean 0 and standard deviation 1. It **does not** change the shap
 
 ---
 
-# Ten formulas to know cold
+# Twelve formulas to know cold
 
-$$
-P(A^c)=1-P(A)
-$$
+Each formula is shown twice: once in symbols, and once with the symbols replaced by a real case from the notes.
 
-$$
-P(A\cup B)=P(A)+P(B)-P(A\cap B)
-$$
+| Formula | The same thing, with real items | File |
+|---|---|---|
+| $P(A^c)=1-P(A)$ | $P(\text{odd})=1-P(\text{even})=1-\frac{3}{6}=\frac{3}{6}$ | 01 |
+| $P(A\cup B)=P(A)+P(B)-P(A\cap B)$ | $P(\text{soccer or basketball})=0.60+0.50-0.30=0.80$ | 01 |
+| $P(A\mid B)=\frac{P(A\cap B)}{P(B)}$ | $P(\text{basketball}\mid\text{soccer})=\frac{70/200}{100/200}=0.70$ | 03 |
+| $P(A\cap B)=P(A)\,P(B\mid A)$ | $P(\text{two aces})=\frac{4}{52}\times\frac{3}{51}=\frac{1}{221}$ | 03 |
+| $P(B)=\sum_i P(A_i)\,P(B\mid A_i)$ | $P(\text{defective})=0.60(0.02)+0.40(0.05)=0.032$ | 03 |
+| $P(A\mid B)=\frac{P(A)\,P(B\mid A)}{P(B)}$ | $P(\text{sick}\mid\text{pos})=\frac{0.0001\times0.99}{0.010098}\approx0.0098$ | 04 |
+| $P(X=x)=\binom{n}{x}p^x(1-p)^{n-x}$ | $P(2\text{ heads})=\binom{5}{2}(0.5)^2(0.5)^3=0.3125$ | 08 |
+| $E[X]=\sum_x x\,p_X(x)$ | $E[\text{die}]=\frac{1+2+3+4+5+6}{6}=3.5$ | 07 |
+| $\text{Var}(X)=E[X^2]-\left(E[X]\right)^2$ | $\text{Var}(\text{die})=\frac{91}{6}-3.5^2=\frac{35}{12}$ | 07 |
+| $\sigma=\sqrt{\text{Var}(X)}$ | $\sigma_{\text{die}}=\sqrt{\frac{35}{12}}\approx1.71$ | 07 |
+| $z=\frac{x-\mu}{\sigma}$ | $z=\frac{85-70}{10}=1.5$, a score 1.5 SDs above average | 11 |
+| $F_X(x)=P(X\leq x)$ | $F(3)=0.10+0.25+0.25+0.15=0.75$ passengers or fewer | 06 |
 
-$$
-P(A\mid B)=\frac{P(A\cap B)}{P(B)}
-$$
+## The same idea for the distributions
 
-$$
-P(A\cap B)=P(A)P(B\mid A)
-$$
+| Formula | With real items | File |
+|---|---|---|
+| $\text{Binomial}$: $\mu=np$, $\sigma^2=np(1-p)$ | 5 fair flips: $\mu=5(0.5)=2.5$, $\sigma^2=1.25$ | 08 |
+| $U(a,b)$: $\mu=\frac{a+b}{2}$, $\sigma^2=\frac{(b-a)^2}{12}$ | $U(0,15)$: $\mu=7.5$, $\sigma^2=18.75$ | 09 |
+| $U(a,b)$: $P(c<X<d)=\frac{d-c}{b-a}$ | wait 5 to 10 min of 15: $\frac{5}{15}=\frac13$ | 09 |
+| $N(\mu,\sigma^2)$: $P(a<X<b)=\Phi\!\left(\frac{b-\mu}{\sigma}\right)-\Phi\!\left(\frac{a-\mu}{\sigma}\right)$ | $P(60<X<85)=\Phi(1.5)-\Phi(-1)=0.7745$ | 11 |
+| $\chi^2(1)$: $F_W(w)=2\Phi(\sqrt{w})-1$ | $F_W(1)=2(0.8413)-1=0.6827$ | 14 |
+| $\chi^2(k)$: $\mu=k$, $\sigma^2=2k$ | $k=5$: $\mu=5$, $\sigma^2=10$, peak at $w=3$ | 14 |
 
-$$
-P(B)=\sum_i P(A_i)P(B\mid A_i)
-$$
+## Reading the table
 
-$$
-P(A\mid B)=\frac{P(A)P(B\mid A)}{P(B)}
-$$
+The left column is what you write on an exam. The right column is what it actually **means** — and if you can rebuild the right column from the left, you know the formula rather than just recognising it.
 
-$$
-P(X=x)=\binom{n}{x}p^x(1-p)^{n-x}
-$$
-
-$$
-E[X]=\sum_x x\,p_X(x)
-\qquad
-\text{Var}(X)=E[X^2]-\left(E[X]\right)^2
-$$
-
-$$
-z=\frac{x-\mu}{\sigma}
-$$
-
-$$
-F_X(x)=P(X\leq x)
-\qquad
-f_X(x)=F_X'(x)
-$$
+When a formula stops making sense, go back to its concrete case and re-derive it from there.
