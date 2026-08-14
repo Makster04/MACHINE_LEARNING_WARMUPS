@@ -16,9 +16,9 @@ The deck's translation happens in three steps:
 
 | Sentences | Sentences with numbers | Equations |
 |---|---|---|
-| Between the dog and the cat, one is black. | The price of an apple and a banana is $10. | $a+b=10$ |
+| Between the dog and the cat, one is black. | The price of an apple and a banana is \$10. | $a+b=10$ |
 
-**Step 1 → 2.** Move from qualitative statements to statements about *quantities*. "One is black" cannot be calculated with; "costs $10" can.
+**Step 1 → 2.** Move from qualitative statements to statements about *quantities*. "One is black" cannot be calculated with; "costs \$10" can.
 
 **Step 2 → 3.** Give the unknown quantities names — $a$ for the price of an apple, $b$ for the price of a banana — and the sentence compresses into symbols:
 
@@ -122,10 +122,10 @@ The deck poses the same shopping puzzle three times, changing one number. You vi
 
 ## Puzzle 1 — it works
 
-- **Day 1:** an apple and a banana cost $10. $\;\rightarrow\; a+b=10$
-- **Day 2:** an apple and two bananas cost $12. $\;\rightarrow\; a+2b=12$
+- **Day 1:** an apple and a banana cost \$10 → $a+b=10$
+- **Day 2:** an apple and two bananas cost \$12 → $a+2b=12$
 
-Compare the days. Day 2 differs from Day 1 by **exactly one extra banana**, and costs **exactly $2 more**. So the banana costs $2, and then Day 1 forces the apple to $10-2=8$:
+Compare the days. Day 2 differs from Day 1 by **exactly one extra banana**, and costs **exactly \$2 more**. So the banana costs \$2, and then Day 1 gives $a=10-2=8$:
 
 $$
 \boxed{b=2 \qquad a=8 \qquad\text{a unique solution}}
@@ -135,8 +135,8 @@ That "compare the days" move — subtracting one equation from another to cancel
 
 ## Puzzle 2 — every day says the same thing
 
-- **Day 1:** an apple and a banana cost $10. $\;\rightarrow\; a+b=10$
-- **Day 2:** two apples and two bananas cost $20. $\;\rightarrow\; 2a+2b=20$
+- **Day 1:** an apple and a banana cost \$10 → $a+b=10$
+- **Day 2:** two apples and two bananas cost \$20 → $2a+2b=20$
 
 Day 2 is Day 1 **doubled** — buy twice the fruit, pay twice the money. It is true, but it teaches nothing new. One piece of information, two unknowns, so the prices never get pinned down:
 
@@ -154,10 +154,10 @@ This is System 2 of 01 wearing numbers: "the dog is black, the dog is black."
 
 ## Puzzle 3 — the days disagree
 
-- **Day 1:** an apple and a banana cost $10. $\;\rightarrow\; a+b=10$
-- **Day 2:** two apples and two bananas cost $24. $\;\rightarrow\; 2a+2b=24$
+- **Day 1:** an apple and a banana cost \$10 → $a+b=10$
+- **Day 2:** two apples and two bananas cost \$24 → $2a+2b=24$
 
-Doubling Day 1 says two apples and two bananas must cost **$20**. Day 2 insists on **$24**. Both cannot hold, at any prices:
+Doubling Day 1 says two apples and two bananas must cost **\$20**. Day 2 insists on **\$24**. Both cannot hold, at any prices:
 
 $$
 \boxed{\text{Contradiction — no solutions}}
@@ -222,15 +222,15 @@ $$
 
 Nothing so far depends on having two unknowns. The deck's 3-variable quiz: three days at the store, now buying apples ($a$), bananas ($b$), and cherries ($c$).
 
-- **Day 1:** an apple, a banana, and a cherry cost $10. $\;\rightarrow\; a+b+c=10$
-- **Day 2:** an apple, two bananas, and a cherry cost $15. $\;\rightarrow\; a+2b+c=15$
-- **Day 3:** an apple, a banana, and two cherries cost $12. $\;\rightarrow\; a+b+2c=12$
+- **Day 1:** an apple, a banana, and a cherry cost \$10 → $a+b+c=10$
+- **Day 2:** an apple, two bananas, and a cherry cost \$15 → $a+2b+c=15$
+- **Day 3:** an apple, a banana, and two cherries cost \$12 → $a+b+2c=12$
 
 ## Solving by comparing days
 
-**Day 2 vs Day 1:** the only difference is one extra banana, for $5 more. So $b=5$.
+**Day 2 vs Day 1:** the only difference is one extra banana, for \$5 more. So $b=5$.
 
-**Day 3 vs Day 1:** the only difference is one extra cherry, for $2 more. So $c=2$.
+**Day 3 vs Day 1:** the only difference is one extra cherry, for \$2 more. So $c=2$.
 
 **Back to Day 1:** $a+5+2=10$, so $a=3$.
 
@@ -249,7 +249,7 @@ The deck then classifies three more 3-variable systems. Work through the verdict
 | | System 2 | System 3 | System 4 |
 |---|---|---|---|
 | Equations | $a+b+c=10$ <br> $a+b+2c=15$ <br> $a+b+3c=20$ | $a+b+c=10$ <br> $a+b+2c=15$ <br> $a+b+3c=18$ | $a+b+c=10$ <br> $2a+2b+2c=20$ <br> $3a+3b+3c=30$ |
-| What comparing gives | Each step adds one cherry for $5: $c=5$, then $a+b=5$ | 1st vs 2nd forces $c=5$; 2nd vs 3rd forces $c=3$ | Every equation is the first one, rescaled |
+| What comparing gives | Each step adds one cherry for \$5: $c=5$, then $a+b=5$ | 1st vs 2nd forces $c=5$; 2nd vs 3rd forces $c=3$ | Every equation is the first one, rescaled |
 | Solutions | Infinitely many: $(0,5,5),(1,4,5),(2,3,5),\ldots$ | **None** | Infinitely many: any $a,b,c$ with $a+b+c=10$, like $(0,0,10),(2,7,1),\ldots$ |
 | Verdict | Redundant — **singular** | Contradictory — **singular** | Redundant — **singular** |
 
