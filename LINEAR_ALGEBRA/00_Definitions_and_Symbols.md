@@ -1,383 +1,235 @@
-# What You Should Know About The Determinant
+# Definitions and Symbols — Master Reference
 
-> **Prerequisites:** the row-multiple test for singularity is in 05 §2. The matrix and "system singular ⟺ matrix singular" are in 04. Singular and non-singular themselves go all the way back to 01.
+> One page for the two things worth having in front of you: **what every symbol means**, and **the definitions you should be able to state from memory**.
 >
-> **This is the payoff file.** Every earlier file in this series asked you to *check* for singularity by hand — comparing rows, hunting for combinations. This file turns that hunt into a single number.
-
-05 ended with a warning: checking whether one row is a multiple of another works for two rows, but for three or more you have to test every possible combination by hand. That doesn't scale. This file fixes it. The **determinant** is one number, computed directly from a matrix, that tells you instantly whether it's singular — no row-hunting required.
-
-These notes cover: deriving the 2×2 determinant directly from 05's row-multiple test, the singular-if-and-only-if-zero rule, a worked 2×2 example and quiz, the diagonal method for 3×3 matrices, why triangular matrices skip almost all the arithmetic, why a zero row instantly forces a zero determinant, and a full-circle return to 05's quiz — now solved in one line each instead of by hand.
+> Each entry names the file where the idea is developed in full. Numbers in the right-hand columns refer to files 01 through 06.
 
 ---
 
-# 1. From a test to a formula
+# Part 1 — Symbols
 
-Recall the 2×2 singularity test from 05 §2, for a general matrix with top row $a,b$ and bottom row $c,d$:
+## Systems and equations
 
-| | |
-|---|---|
-| $a$ | $b$ |
-| $c$ | $d$ |
-
-The rows are dependent exactly when row 2 is row 1 times some number $k$:
-
-$$
-[a,b]\times k = [c,d]
-$$
-
-Written out, that's two equations:
-
-$$
-ak=c \qquad\qquad bk=d
-$$
-
-Solve each for $k$:
-
-$$
-k=\frac{c}{a} \qquad\qquad k=\frac{d}{b}
-$$
-
-Both equal the same $k$, so they equal each other:
-
-$$
-\frac{c}{a}=\frac{d}{b}
-$$
-
-Cross-multiply to clear the fractions:
-
-$$
-\boxed{ad=bc}
-$$
-
-$$
-\boxed{ad-bc=0}
-$$
-
-This is exactly 05's row-multiple test — nothing new has been assumed — just carried through to its algebraic conclusion. The test that used to require *comparing* two rows has become a single expression that equals zero exactly when they're dependent.
-
-![The row-multiple test ak=c, bk=d combining into ad=bc and then ad-bc=0](../figures/06-from-test-to-formula-dark.png)
-
----
-
-# 2. The determinant, formally
-
-That expression gets a name, for the matrix with top row $a,b$ and bottom row $c,d$ set up in §1:
-
-$$
-\boxed{\text{Determinant} = ad-bc}
-$$
-
-## How to see it: diagonals
-
-Multiply along the **main diagonal** ($a$ times $d$), then subtract the product along the **other diagonal** ($b$ times $c$):
-
-$$
-\boxed{\text{Determinant} = (\text{top-left}\times\text{bottom-right}) - (\text{top-right}\times\text{bottom-left})}
-$$
-
-$a$ sits top-left, $d$ sits bottom-right — multiply those and keep the result. $b$ sits top-right, $c$ sits bottom-left — multiply those and subtract.
-
-## The payoff
-
-$$
-\boxed{\text{Matrix is singular} \iff \text{Determinant is zero}}
-$$
-
-This is a genuine **if-and-only-if** — it runs both directions. A zero determinant guarantees a singular matrix, and a singular matrix guarantees a zero determinant. Neither side can happen without the other.
-
----
-
-# 3. Worked example: the familiar pair
-
-Reuse the two matrices from 04 and 05 one last time — now solved in one line instead of by hand.
-
-**Non-singular**, rows $[1,1]$ and $[1,2]$:
-
-$$
-1\cdot 2 - 1\cdot 1 = 2-1 = \boxed{1}
-$$
-
-Nonzero — confirms non-singular, matching every earlier check.
-
-**Singular**, rows $[1,1]$ and $[2,2]$:
-
-$$
-1\cdot 2 - 2\cdot 1 = 2-2 = \boxed{0}
-$$
-
-Zero — confirms singular, matching 05's discovery that row 2 is row 1 doubled.
-
-![The two matrices with their diagonal products, one nonzero and one zero](../figures/06-2x2-diagonal-worked-dark.png)
-
-## The most common mistake
-
-Forgetting the order. The determinant is $ad-bc$, not $ab-cd$ or $ac-bd$ — it is specifically the product of the diagonal you'd draw from top-left to bottom-right, minus the product of the other diagonal. Mixing up rows and diagonals is the single most common arithmetic slip here.
-
----
-
-# 4. Worked example: the quiz
-
-**Problem.** Find the determinant of each matrix and state whether it is singular.
-
-**Matrix 1**
-
-| | |
-|---|---|
-| 5 | 1 |
-| -1 | 3 |
-
-$$
-\det = 5\cdot 3 - 1\cdot(-1) = 15+1 = \boxed{16}
-$$
-
-Nonzero — **non-singular**.
-
-**Matrix 2**
-
-| | |
-|---|---|
-| 2 | -1 |
-| -6 | 3 |
-
-$$
-\det = 2\cdot 3 - (-1)\cdot(-6) = 6-6 = \boxed{0}
-$$
-
-Zero — **singular**. (Check it against 05's test too: row 2 is row 1 times $-3$, since $2\times(-3)=-6$ and $-1\times(-3)=3$ — the determinant agrees with the row-multiple test exactly as it must.)
-
-## The sign trap
-
-$-1\times(-6)$ is **positive** $6$, not $-6$. Losing track of a double negative here is the second-most common mistake, right behind mixing up the diagonals.
-
----
-
-# 5. Scaling to 3×3: the diagonal method
-
-The same diagonal idea extends to 3×3, with one twist: there are now **three** diagonals to add and **three** to subtract, and the "other" diagonals wrap around the edges of the grid.
-
-$$
-\boxed{\text{Add three diagonal products, subtract the other three}}
-$$
-
-## The three you add
-
-Starting from each entry in the top row, walk down-and-right, wrapping back to the top when you fall off the edge:
-
-- Main diagonal: top-left $\to$ middle $\to$ bottom-right
-- Starting from the top-middle entry, wrapping to the bottom-left
-- Starting from the top-right entry, wrapping to the middle-left
-
-## The three you subtract
-
-Same idea, walking down-and-*left* instead:
-
-- Top-right $\to$ middle $\to$ bottom-left
-- Starting from the top-middle entry, wrapping to the bottom-right
-- Starting from the top-left entry, wrapping to the middle-right
-
-![The 3x3 grid colored to show which three cells belong to each of the six diagonal products, three added and three subtracted](../figures/06-sarrus-rule-diagonals-dark.png)
-
-## The general formula
-
-Label a general 3×3 matrix by row:
-
-| | | |
+| Symbol | What it means | File |
 |---|---|---|
-| $a$ | $b$ | $c$ |
-| $d$ | $e$ | $f$ |
-| $g$ | $h$ | $i$ |
+| $a,b,c,\ldots$ | Variables in a system — prices, unknowns, coordinates | 02 |
+| $a+b=10$ | A linear equation: variables scaled by numbers, then added | 02 |
+| $(8,2)$ | A solution, written as an ordered pair or triple | 02 |
+| $\infty$ | "Infinitely many solutions" — one of the three possible outcomes | 02, 03 |
 
-$$
-\boxed{\text{Determinant} = aei+bfg+cdh \;-\; ceg-afh-bdi}
-$$
+## Geometry
 
-Six products, three terms each, added or subtracted according to which way the diagonal leans.
-
----
-
-# 6. Worked example: a generic 3×3
-
-| | | |
+| Symbol | What it means | File |
 |---|---|---|
-| 1 | 1 | 1 |
-| 1 | 2 | 1 |
-| 1 | 1 | 2 |
+| $b=(\text{slope})\,a+(\text{intercept})$ | An equation rewritten to reveal its line | 03 |
+| $(a,b)$ | A point in 2D; a solution of a 2-variable system | 03 |
+| $(a,b,c)$ | A point in 3D; a solution of a 3-variable system | 03 |
 
-**Add:**
+## Matrices
 
-$$
-\underbrace{1\cdot2\cdot2}_{4} \;+\; \underbrace{1\cdot1\cdot1}_{1} \;+\; \underbrace{1\cdot1\cdot1}_{1} \;=\; 6
-$$
-
-**Subtract:**
-
-$$
-\underbrace{1\cdot2\cdot1}_{2} \;+\; \underbrace{1\cdot1\cdot1}_{1} \;+\; \underbrace{1\cdot1\cdot2}_{2} \;=\; 5
-$$
-
-$$
-\boxed{\text{Determinant} = 6-5 = 1}
-$$
-
-Nonzero — non-singular, exactly matching this matrix's verdict everywhere it has appeared since 04.
-
----
-
-# 7. The triangular shortcut
-
-| | | |
+| Symbol | What it means | File |
 |---|---|---|
-| 1 | 1 | 1 |
-| 0 | 2 | 2 |
-| 0 | 0 | 3 |
+| A grid of numbers, e.g. rows $[1,1]$ and $[1,2]$ | The coefficient matrix — coefficients only, constants stripped away | 04 |
+| $a,b,c,d$ | Generic labels for a 2×2 matrix: top-left, top-right, bottom-left, bottom-right | 04, 06 |
+| $a,b,c,d,e,f,g,h,i$ | Generic labels for a 3×3 matrix, read row by row | 06 |
 
-Every entry **below** the main diagonal is zero — this is a **triangular matrix**. Watch what that does to the six terms.
+## Rows and dependence
 
-**Add:** the main diagonal survives in full: $1\cdot2\cdot3=6$. But the other two add-terms each reach into the zero region: $1\cdot2\cdot0=0$ and $1\cdot0\cdot0=0$.
+| Symbol | Read as | What it means | File |
+|---|---|---|---|
+| $R_1,R_2,R_3$ | "row 1", "row 2", "row 3" | A row of a matrix, referred to by number | 05 |
+| $[a,b]$ | "the row a, b" | A row vector, written as a bracketed list | 05 |
+| $k$ | "k" | The scalar multiplier in the row-multiple test | 05, 06 |
+| $c_1,c_2,c_3,\ldots$ | — | The numbers scaling each row in a linear combination | 05 |
+| $M_1,M_2,\ldots$ | "matrix 1", "matrix 2" | A matrix, referred to by number, in a worked example or quiz | 05, 06 |
 
-**Subtract:** all three subtract-diagonals cross into the zero region at some point: $1\cdot2\cdot0=0$, $1\cdot2\cdot0=0$, $1\cdot0\cdot3=0$.
+## The determinant
 
-$$
-\boxed{\text{Determinant} = (6+0+0)-(0+0+0) = 6}
-$$
+| Symbol | Read as | What it means | File |
+|---|---|---|---|
+| $\det$ | "the determinant of" | One number computed from a matrix that tests singularity | 06 |
+| $ad-bc$ | — | The 2×2 determinant formula | 06 |
+| $aei+bfg+cdh-ceg-afh-bdi$ | — | The 3×3 determinant formula (Sarrus' rule) | 06 |
 
-And $6=1\times2\times3$ — exactly the product of the diagonal.
+## Operators and relations
 
-$$
-\boxed{\text{For a triangular matrix, the determinant is just the product of the diagonal entries}}
-$$
-
-## Why this always happens
-
-Every wraparound diagonal — every term besides the main one — has to dip below the main diagonal *somewhere* to complete its path across the grid. In a triangular matrix, that region is solid zero, so five of the six products vanish automatically. Only the main diagonal survives untouched.
-
-This is exactly the matrix flagged back in 05 §5 — its "staircase of leading zeros" was the tell that made it obviously independent even before a single combination was tried. Now you know precisely why: the determinant shortcut and the "obviously independent" instinct are the same fact.
-
-![The three 3x3 examples compared: a generic matrix, a triangular one, and one with a zero row, showing how more zeros make more of the six diagonal terms vanish](../figures/06-three-3x3-examples-dark.png)
+| Symbol | Read as | What it means | File |
+|---|---|---|---|
+| $\times$ | "times" | Ordinary multiplication, or "row scaled by" in $[a,b]\times k$ | 05, 06 |
+| $\iff$, $\Longleftrightarrow$ | "if and only if" | Each side implies the other — a genuine two-way rule | 02, 04, 06 |
+| $\Rightarrow$ | "implies" | The left side forces the right side | throughout |
+| $\neq$ | "does not equal" | — | throughout |
+| $\approx$ | "is approximately" | — | 01 |
+| $\infty$ | "infinity" | Infinitely many solutions | 02, 03 |
 
 ---
 
-# 8. The zero-row corollary
+# Part 2 — Definitions
 
-Push the triangular example one step further — replace the bottom-right $3$ with $0$, so the entire bottom row is now all zeros:
+## Systems of sentences
 
-| | | |
+**System.** Several statements considered together, as one package — judged jointly, never one at a time. *(01)*
+
+**Complete.** Every sentence in the system adds new information, and everything gets determined. *(01)*
+
+**Redundant.** At least one sentence repeats information the others already gave. True, but wasteful. *(01)*
+
+**Contradictory.** The sentences cannot all be true at once — the package is broken, not just inefficient. *(01)*
+
+**Singular.** Redundant or contradictory. A system that fails to deliver full, unique information. *(01)*
+
+**Non-singular.** Complete. A system where every sentence pulls its weight. *(01)*
+
+> Singular and non-singular describe the **whole system**, never a single sentence — the same sentence can sit inside a non-singular system in one context and a singular one in another.
+
+---
+
+## Systems of equations
+
+**Equation.** A sentence about numbers. Translating a sentence into an equation loses nothing. *(02)*
+
+**Linear equation.** Variables multiplied by numbers and added — nothing squared, nothing multiplied together, nothing inside a function. *(02)*
+
+**Solution.** Values that satisfy **every** equation in the system simultaneously. Satisfying only some of them counts for nothing. *(02)*
+
+**The trichotomy.** A linear system has exactly one solution, infinitely many, or none — never any other count, and in particular never exactly two. *(02, 03)*
+
+> Singular does **not** mean unsolvable. It means "no unique solution" — which includes both infinitely many solutions and none at all.
+
+---
+
+## Geometry: lines and planes
+
+**Line.** The complete solution set of one linear equation in two variables. *(03)*
+
+**Slope.** How steeply a line runs, set entirely by the equation's **coefficients**. *(03, 04)*
+
+**Intercept.** Where a line crosses the axis, set entirely by the equation's **constant**. *(03, 04)*
+
+**Plane.** The complete solution set of one linear equation in three variables. A hyperplane is the same idea in more variables than can be drawn. *(03)*
+
+**Solution as intersection.** Solving a system means finding the point(s) lying on every one of its lines or planes at once. *(03)*
+
+**Why only three outcomes.** Two distinct straight lines can share at most one point — if they shared two, they would be the same line. That single fact rules out any solution count except one, infinitely many, or zero. *(03)*
+
+---
+
+## Matrices
+
+**Coefficient.** A number multiplying a variable. Coefficients set an equation's slope. *(04)*
+
+**Constant.** The number alone on the right of an equation. Constants set an equation's intercept, and nothing else. *(04)*
+
+**Matrix.** The grid formed from a system's coefficients alone — one row per equation, one column per variable, with variable names and constants both stripped away. *(04)*
+
+**System singular ⟺ matrix singular.** Singularity is entirely a property of the coefficients. Constants can never turn a singular system non-singular, or the reverse — they can only decide, among already-singular systems, whether the result is redundant or contradictory. *(04)*
+
+**Homogeneous system.** Every constant on the right equals zero. *(04)*
+
+**Trivial solution.** The all-zero point — always a solution of a homogeneous system, since $0=0$ regardless of the coefficients. Because of this, a homogeneous system can never be contradictory: only non-singular (the trivial solution alone) or singular (infinitely many, including the trivial one). *(04)*
+
+---
+
+## Linear dependence and independence
+
+**Linear combination.** Any sum of rows, each first scaled by some number: $c_1R_1+c_2R_2+c_3R_3+\cdots$ *(05)*
+
+**Linearly dependent.** Some row equals a linear combination of the others. With only two rows, this simplifies to "one row is a scalar multiple of the other." *(05)*
+
+**Linearly independent.** No row can be written as a combination of the rest. *(05)*
+
+**Rows dependent ⟺ matrix singular.** Dependence among the rows is exactly what makes a matrix singular — redundancy, relocated one level deeper than the system itself. *(04, 05)*
+
+> The scalar-multiple test ("is row 2 just row 1 times some $k$?") only fully covers two rows. With three or more, check every combination — a row can depend on several others at once, not just one.
+
+> It only takes **one** dependent row to make the whole matrix singular. The other rows don't get a vote back to non-singular.
+
+---
+
+## The determinant
+
+**Determinant (2×2).** $ad-bc$ — the product of the main diagonal, minus the product of the other diagonal. *(06)*
+
+**Determinant (3×3).** $aei+bfg+cdh-ceg-afh-bdi$ — three diagonal products added, three subtracted, using the diagonal method (Sarrus' rule). *(06)*
+
+**Determinant ⟺ singularity.** A genuine if-and-only-if: the determinant is zero exactly when the matrix is singular, and nonzero exactly when it's non-singular. *(06)*
+
+**Triangular matrix.** Every entry below the main diagonal is zero. Its determinant is just the product of the diagonal entries, because every other diagonal product in the formula is forced to include a zero. *(06)*
+
+**All-zero row.** A row of nothing but zeros forces the determinant to zero automatically — every diagonal product touching that row vanishes. It's the most extreme case of a dependent row: a row carrying no information at all. *(06)*
+
+---
+
+## Techniques
+
+**Extracting a matrix from a system.** Strip every equation down to its coefficients only, keeping variable order consistent, one row per equation. *(04)*
+
+**The row-multiple test (2 rows).** Ask whether $[a,b]\times k=[c,d]$ has a solution for $k$ — check if the same $k$ satisfies both entries at once. *(05)*
+
+**The linear-combination test (3+ rows).** Try to build one row from a scaled sum of the others; if any combination works, the rows are dependent. *(05)*
+
+**The diagonal method.** Multiply along each diagonal of the matrix — add the ones leaning one way, subtract the ones leaning the other — to get the determinant directly, without solving anything. *(06)*
+
+**The triangular shortcut.** If a matrix is triangular, skip the diagonal method entirely and just multiply the diagonal. *(06)*
+
+**Sliding a system to the origin.** Set every constant to zero. This never changes whether the system is singular, but it does rule out "no solutions" as an outcome — useful for seeing a system's pure geometric shape. *(04)*
+
+---
+
+# The master dictionary
+
+The same fact, traced through every file in the series. Each row is a different vocabulary for identical territory — non-singular on the left, singular on the right.
+
+| File | Level | Non-singular | Singular |
+|---|---|---|---|
+| 01 | Sentences | Complete | Redundant or contradictory |
+| 02 | Equations | Unique solution | Infinitely many, or none |
+| 03 | Geometry | Lines/planes cross at one point | Lines/planes coincide, or never meet |
+| 04 | Matrix | Non-singular matrix | Singular matrix |
+| 05 | Rows | Linearly independent | Linearly dependent |
+| 06 | Number | Determinant $\neq 0$ | Determinant $=0$ |
+
+$$
+\boxed{\text{Six files, one fact: does the system carry a genuinely new piece of information in every row, or not?}}
+$$
+
+---
+
+# The distinctions most often confused
+
+| These look alike | But | File |
 |---|---|---|
-| 1 | 1 | 1 |
-| 0 | 2 | 2 |
-| 0 | 0 | 0 |
-
-Every one of the six diagonal products passes through row 3 somewhere, and row 3 is nothing but zeros. Every single term is now $0$:
-
-$$
-\boxed{\text{Determinant} = (0+0+0)-(0+0+0) = 0}
-$$
-
-$$
-\boxed{\text{A matrix with an all-zero row is always singular}}
-$$
-
-This should feel obvious once you translate it back to 05's language: a row of all zeros says "$0a+0b+0c=0$" — true for *any* values whatsoever. It contributes nothing, exactly like the most extreme possible case of one equation repeating information the others already gave. Of course it's singular; that row was never carrying any information to begin with.
+| Singular vs. "no solutions" | Singular includes infinitely many solutions too — it means *no unique solution* | 02 |
+| Redundant vs. contradictory | Both are singular; they're opposite failures — too little information vs. conflicting information | 01, 02 |
+| $a,b,c$ as variables vs. $a,b,c$ as matrix entries | Same letters, different jobs: prices/coordinates in 02–03, generic grid positions in 04 and 06 | 02–03 vs. 04, 06 |
+| Coefficients vs. constants | Only coefficients decide singular vs. non-singular; constants only decide redundant vs. contradictory | 04 |
+| The row-multiple test vs. the full combination test | The multiple test (row 2 = row 1 × k) only covers 2 rows; 3+ rows need every combination checked | 05 |
+| A matrix's singularity vs. its determinant | Logically identical (an *iff*), but computed completely differently — one by inspection, one by formula | 04, 06 |
+| Slope vs. intercept | Slope comes from coefficients (orientation); intercept comes from constants (position) | 03, 04 |
 
 ---
 
-# 9. Full circle: 05's quiz, revisited
+# Formulas to know cold
 
-05 §5 solved four matrices by hand, hunting for row combinations. Here are their determinants, computed directly:
+Each formula is shown twice: once in symbols, and once with the symbols replaced by a real case from the notes.
 
-| Matrix | Rows | Determinant | Verdict | Matches 05? |
-|---|---|---|---|---|
-| $M_1$ | $[1,0,1],[0,1,0],[3,2,3]$ | $0$ | Singular | ✓ ($3R_1+2R_2=R_3$) |
-| $M_2$ | $[1,1,1],[1,1,2],[0,0,-1]$ | $0$ | Singular | ✓ ($R_1-R_2=R_3$) |
-| $M_3$ | $[1,1,1],[0,2,2],[0,0,3]$ | $6$ | **Non-singular** | ✓ (no relation found) |
-| $M_4$ | $[1,2,5],[0,3,-2],[2,4,10]$ | $0$ | Singular | ✓ ($2R_1=R_3$) |
+| Formula | The same thing, with real numbers | File |
+|---|---|---|
+| Linear equation: number·variable + number·variable + $\cdots$ = number | $3.4a-48.99b+2c=122.5$ | 02 |
+| Checking a solution | $a=8,b=2$: $8+2=10$ ✓ and $8+2(2)=12$ ✓ | 02 |
+| $b=(\text{slope})\,a+(\text{intercept})$ | $a+b=10 \Rightarrow b=10-a$: slope $-1$, intercept $10$ | 03 |
+| System → matrix | $a+b=10,\ a+2b=12$ → rows $[1,1]$ and $[1,2]$ | 04 |
+| Row-multiple test | $[1,1]\times 2=[2,2]$ — dependent, singular | 05 |
+| Linear combination | $3R_1+2R_2=R_3$ for rows $[1,0,1],[0,1,0],[3,2,3]$ | 05 |
+| $\det=ad-bc$ | $1\cdot2-1\cdot1=1$ — non-singular | 06 |
+| $\det=ad-bc$ | $2\cdot3-(-1)\cdot(-6)=6-6=0$ — singular | 06 |
+| $\det=aei+bfg+cdh-ceg-afh-bdi$ | $[1,1,1],[1,2,1],[1,1,2]$: $(4+1+1)-(2+1+2)=1$ | 06 |
+| Triangular shortcut | $[1,1,1],[0,2,2],[0,0,3]$: $\det=1\times2\times3=6$ | 06 |
+| All-zero row | $[1,1,1],[0,2,2],[0,0,0]$: $\det=0$ automatically | 06 |
+| Homogeneous system | $a+b=0,\ a+2b=0$: the trivial solution $(0,0)$ always works | 04 |
 
-Every verdict matches — because they were always describing the same fact. 05 found dependence by searching for a combination; this file finds the exact same dependence by computing one number. The determinant did not discover anything 05 didn't already know; it just made the discovery **automatic**.
+## Reading the table
 
-![The four quiz matrices side by side with their determinants and their previously-found row relationships lining up](../figures/06-quiz-revisited-dark.png)
+The left column is what you write down. The right column is what it actually **means** — and if you can rebuild the right column from the left, you know the formula rather than just recognizing it.
 
----
-
-# Most Important Definitions and Distinctions to Remember
-
-## The 2×2 determinant
-
-$$
-\boxed{\text{Determinant} = ad-bc}
-$$
-
-Top-left times bottom-right, minus top-right times bottom-left.
-
-## The 3×3 determinant
-
-$$
-\boxed{\text{Determinant} = aei+bfg+cdh-ceg-afh-bdi}
-$$
-
-Three diagonals added, three subtracted — the diagonal method.
-
-## The central fact
-
-$$
-\boxed{\text{Determinant} = 0 \iff \text{Matrix is singular}}
-$$
-
-An if-and-only-if: each side guarantees the other.
-
-## Two shortcuts
-
-$$
-\boxed{\text{Triangular matrix} \Rightarrow \text{determinant} = \text{product of the diagonal}}
-$$
-
-$$
-\boxed{\text{Any all-zero row (or column)} \Rightarrow \text{determinant} = 0}
-$$
-
----
-
-# Main Rules to Put in Your Notebook
-
-| Situation | Rule |
-|---|---|
-| 2×2 matrix | $\det = ad-bc$ |
-| 3×3 matrix | $\det = aei+bfg+cdh-ceg-afh-bdi$ |
-| Determinant $=0$ | Singular |
-| Determinant $\neq 0$ | Non-singular |
-| Triangular matrix | $\det$ = product of the diagonal |
-| A row (or column) of all zeros | $\det = 0$ automatically |
-
-$$
-\boxed{\text{One number. Compute it. Zero means singular, anything else means non-singular.}}
-$$
-
-The biggest idea is:
-
-**Everything since 04 has been building toward this: singularity, which started as a fact you could only discover by comparing rows and hunting for combinations, collapses into a single computable number. The determinant isn't a new idea bolted onto the course — it's the row-multiple test from 05, followed through algebraically until "is one row a multiple of another" turns into "does this expression equal zero." Diagonal products, added and subtracted; if the result is zero, the rows were dependent all along, and now you never have to search for the combination by hand again.**
-
----
-
-# Where This Series Has Gone
-
-This file closes the loop that opened in 01. The same idea has now worn six different outfits:
-
-| File | The same idea, dressed as… |
-|---|---|
-| 01 | A sentence repeating what another sentence already said |
-| 02 | An equation with no new information, or two equations that conflict |
-| 03 | Lines or planes that coincide or run parallel instead of crossing |
-| 04 | A matrix whose rows encode that repetition — singularity lives in the coefficients, never the constants |
-| 05 | A row that turns out to be a combination of the others |
-| 06 | A single number, computed directly from the matrix, that equals zero exactly when all of the above are true |
-
-$$
-\boxed{\text{Singular, all along, was always the same fact — this file just gave you the fastest way to check it}}
-$$
-
-## Where a next course would pick this up
-
-- **Rank** — counting exactly how much independent information a matrix carries, foreshadowed since 01 §5's "count information, not sentences"
-- **Row reduction** — the "compare and subtract" move used informally in 02's price puzzles, made systematic
-- **The inverse matrix** — exists exactly when the determinant is nonzero, which is why this file matters far beyond just checking singularity
-- **Null space** — the solution set of a homogeneous system (04 §5), studied as an object in its own right
-- **Larger matrices** — $4\times4$ and beyond, where the diagonal method stops being practical and a recursive definition takes over
+When a formula stops making sense, go back to its concrete case and re-derive it from there.
