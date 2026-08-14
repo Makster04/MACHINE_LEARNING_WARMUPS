@@ -44,15 +44,17 @@ $$
 
 **System 1:** $a+b=10,\ \ a+2b=12$
 
-$$
-\begin{bmatrix} 1 & 1 \\ 1 & 2 \end{bmatrix}
-$$
+| | |
+|---|---|
+| 1 | 1 |
+| 1 | 2 |
 
 **System 2:** $a+b=10,\ \ 2a+2b=20$
 
-$$
-\begin{bmatrix} 1 & 1 \\ 2 & 2 \end{bmatrix}
-$$
+| | |
+|---|---|
+| 1 | 1 |
+| 2 | 2 |
 
 Row 1 always records the first equation's coefficients, in the same variable order every time; row 2 records the second equation's. Nothing about *which* letters were used survives — a matrix does not know whether you called your variables $a,b$ or apples and bananas. Only the pattern of numbers remains.
 
@@ -76,9 +78,9 @@ $$
 \boxed{\text{A system is singular} \iff \text{its matrix is singular}}
 $$
 
-Check it directly. System 1's matrix $\begin{bmatrix}1&1\\1&2\end{bmatrix}$ has rows pointing in different directions (slopes $-1$ and $-0.5$, from 03), so its lines must cross: **non-singular**, matching 02's unique solution $(8,2)$.
+Check it directly. System 1's matrix — rows $[1,1]$ and $[1,2]$ — has rows pointing in different directions (slopes $-1$ and $-0.5$, from 03), so its lines must cross: **non-singular**, matching 02's unique solution $(8,2)$.
 
-System 2's matrix $\begin{bmatrix}1&1\\2&2\end{bmatrix}$ has a second row that is just the first row doubled — same direction, same slope $-1$. The lines cannot cross at a single point: **singular**, matching 02's infinitely many solutions.
+System 2's matrix — rows $[1,1]$ and $[2,2]$ — has a second row that is just the first row doubled — same direction, same slope $-1$. The lines cannot cross at a single point: **singular**, matching 02's infinitely many solutions.
 
 $$
 \boxed{\text{Non-singular system} \iff \text{Non-singular matrix} \qquad \text{Singular system} \iff \text{Singular matrix}}
@@ -98,16 +100,17 @@ If singularity lives in the matrix, what's left for the constants to do? Watch c
 
 Strip both down to matrices:
 
-$$
-\begin{bmatrix} 1 & 1 \\ 2 & 2 \end{bmatrix} \qquad\qquad \begin{bmatrix} 1 & 1 \\ 2 & 2 \end{bmatrix}
-$$
+| System 2 | | System 3 | |
+|---|---|---|---|
+| 1 | 1 | 1 | 1 |
+| 2 | 2 | 2 | 2 |
 
 **The same matrix.** Only the constant on the second line changed — $20$ versus $24$ — yet from 02 §5, System 2 has **infinitely many** solutions and System 3 has **none**.
 
 | | System 2 | System 3 |
 |---|---|---|
 | Equations | $a+b=10,\ 2a+2b=20$ | $a+b=10,\ 2a+2b=24$ |
-| Matrix | $\begin{bmatrix}1&1\\2&2\end{bmatrix}$ | $\begin{bmatrix}1&1\\2&2\end{bmatrix}$ — identical |
+| Matrix | rows $[1,1],[2,2]$ | rows $[1,1],[2,2]$ — identical |
 | Constants | $10,\ 20$ | $10,\ 24$ |
 | Solutions | Infinitely many | None |
 | Verdict | Redundant | Contradictory |
@@ -131,9 +134,11 @@ $$
 \text{System 3:}\ \ a+b+c=10,\ \ a+b+2c=15,\ \ a+b+3c=18
 $$
 
-$$
-\begin{bmatrix} 1&1&1 \\ 1&1&2 \\ 1&1&3 \end{bmatrix}
-$$
+| | | |
+|---|---|---|
+| 1 | 1 | 1 |
+| 1 | 1 | 2 |
+| 1 | 1 | 3 |
 
 Identical matrix for both — only the final constant differs ($20$ versus $18$). System 2 was redundant with infinitely many solutions; System 3 was contradictory with none. Same matrix, opposite outcomes, both singular.
 
@@ -229,12 +234,12 @@ This is also why 03's plane pictures for 3 variables could legally be drawn with
 
 Applying this to all four systems of 02 §7 makes a clean table. Each matrix comes from reading off the coefficients — the constants are irrelevant to this column, exactly as §3 proved:
 
-| System | Equations (coefficients only matter here) | Matrix | Verdict |
+| System | Equations (coefficients only matter here) | Matrix rows | Verdict |
 |---|---|---|---|
-| 1 | $a+b+c,\ \ a+2b+c,\ \ a+b+2c$ | $\begin{bmatrix}1&1&1\\1&2&1\\1&1&2\end{bmatrix}$ | **Non-singular** |
-| 2 | $a+b+c,\ \ a+b+2c,\ \ a+b+3c$ | $\begin{bmatrix}1&1&1\\1&1&2\\1&1&3\end{bmatrix}$ | Singular |
-| 3 | $a+b+c,\ \ a+b+2c,\ \ a+b+3c$ | $\begin{bmatrix}1&1&1\\1&1&2\\1&1&3\end{bmatrix}$ — identical to System 2 | Singular |
-| 4 | $a+b+c,\ \ 2a+2b+2c,\ \ 3a+3b+3c$ | $\begin{bmatrix}1&1&1\\2&2&2\\3&3&3\end{bmatrix}$ | Singular |
+| 1 | $a+b+c,\ \ a+2b+c,\ \ a+b+2c$ | $[1,1,1],[1,2,1],[1,1,2]$ | **Non-singular** |
+| 2 | $a+b+c,\ \ a+b+2c,\ \ a+b+3c$ | $[1,1,1],[1,1,2],[1,1,3]$ | Singular |
+| 3 | $a+b+c,\ \ a+b+2c,\ \ a+b+3c$ | $[1,1,1],[1,1,2],[1,1,3]$ — identical to System 2 | Singular |
+| 4 | $a+b+c,\ \ 2a+2b+2c,\ \ 3a+3b+3c$ | $[1,1,1],[2,2,2],[3,3,3]$ | Singular |
 
 Systems 2 and 3 are listed with literally the same matrix on purpose — it is the clearest possible demonstration that the matrix, not the constants, is what "singular" describes.
 
@@ -279,7 +284,7 @@ $$
 $$
 
 $$
-\boxed{\text{A homogeneous system is never contradictory} — \text{only non-singular (trivial solution alone) or singular (infinitely many)}}
+\boxed{\text{A homogeneous system is never contradictory} \text{ — only non-singular (trivial solution alone) or singular (infinitely many)}}
 $$
 
 ---
