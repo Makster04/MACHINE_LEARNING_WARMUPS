@@ -40,9 +40,9 @@ With just two rows, "built from the others" has the simplest possible meaning: o
 
 Recall the two matrices from 04:
 
-**Non-singular:** $\begin{bmatrix}1&1\\1&2\end{bmatrix}$ — rows $[1,1]$ and $[1,2]$.
+**Non-singular matrix:** rows $[1,1]$ and $[1,2]$.
 
-**Singular:** $\begin{bmatrix}1&1\\2&2\end{bmatrix}$ — rows $[1,1]$ and $[2,2]$.
+**Singular matrix:** rows $[1,1]$ and $[2,2]$.
 
 Ask the same question of each: is row 2 equal to row 1 times some single number $k$?
 
@@ -182,12 +182,37 @@ $$
 
 **Problem.** For each matrix, determine whether the rows are linearly dependent or independent.
 
-$$
-M_1=\begin{bmatrix}1&0&1\\0&1&0\\3&2&3\end{bmatrix} \qquad
-M_2=\begin{bmatrix}1&1&1\\1&1&2\\0&0&-1\end{bmatrix} \qquad
-M_3=\begin{bmatrix}1&1&1\\0&2&2\\0&0&3\end{bmatrix} \qquad
-M_4=\begin{bmatrix}1&2&5\\0&3&-2\\2&4&10\end{bmatrix}
-$$
+**$M_1$**
+
+| | | |
+|---|---|---|
+| 1 | 0 | 1 |
+| 0 | 1 | 0 |
+| 3 | 2 | 3 |
+
+**$M_2$**
+
+| | | |
+|---|---|---|
+| 1 | 1 | 1 |
+| 1 | 1 | 2 |
+| 0 | 0 | -1 |
+
+**$M_3$**
+
+| | | |
+|---|---|---|
+| 1 | 1 | 1 |
+| 0 | 2 | 2 |
+| 0 | 0 | 3 |
+
+**$M_4$**
+
+| | | |
+|---|---|---|
+| 1 | 2 | 5 |
+| 0 | 3 | -2 |
+| 2 | 4 | 10 |
 
 ## $M_1$: a two-row combination
 
