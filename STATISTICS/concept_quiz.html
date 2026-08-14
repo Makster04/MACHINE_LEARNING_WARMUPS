@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Concept &amp; Notation Quiz — Probability &amp; Statistics</title>
+<style>
+  :root{
+    --ink:#1B2430;
+    --ink-2:#242F3F;
+    --parchment:#F4EFE1;
+    --parchment-dim:#E7E0CC;
+    --gold:#D4A24C;
+    --teal:#5B8C8C;
+    --rose:#C1666B;
+    --line:#3A4658;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ink);
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(212,162,76,0.06), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(91,140,140,0.08), transparent 45%);
+    color:var(--parchment);
+    font-family: 'Iowan Old Style','Palatino Linotype',Georgia,serif;
+    min-height:100vh;
+    padding:32px 16px 64px;
+  }
+  .wrap{max-width:720px;margin:0 auto;}
+  .masthead{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    border-bottom:1px solid var(--line);
+    padding-bottom:14px;
+    margin-bottom:28px;
+  }
+  .masthead h1{
+    font-size:1.5rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    margin:0;
+  }
+  .masthead .sub{
+    font-family:'Courier New',monospace;
+    font-size:0.75rem;
+    color:var(--teal);
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+  .progress-row{
+    display:flex;
+    gap:5px;
+    margin-bottom:26px;
+  }
+  .dot{
+    flex:1;
+    height:4px;
+    background:var(--line);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .dot.done .fill{background:var(--gold);width:100%;}
+  .dot.wrong .fill{background:var(--rose);width:100%;}
+  .dot .fill{height:100%;width:0;}
+
+  .card{
+    background:var(--parchment);
+    color:var(--ink);
+    border-radius:3px;
+    padding:30px 30px 26px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.35);
+    position:relative;
+  }
+  .card::before{
+    content:"";
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:5px;
+    background:var(--teal);
+    border-radius:3px 0 0 3px;
+  }
+  .card.type-identify::before{background:var(--gold);}
+
+  .eyebrow{
+    font-family:'Courier New',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin-bottom:6px;
+  }
+  .card.type-identify .eyebrow{color:#9c7a2d;}
+
+  .prompt{
+    font-size:1.18rem;
+    line-height:1.5;
+    margin:0 0 18px;
+  }
+
+  .visual{
+    background:var(--parchment-dim);
+    border:1px solid #d8cfab;
+    border-radius:3px;
+    padding:14px 10px;
+    margin-bottom:20px;
+    display:flex;
+    justify-content:center;
+  }
+  .visual svg{max-width:100%;height:auto;}
+  .equation{
+    font-family:'Courier New',monospace;
+    font-size:1.05rem;
+    text-align:center;
+    background:var(--parchment-dim);
+    border:1px solid #d8cfab;
+    border-radius:3px;
+    padding:16px 10px;
+    margin-bottom:20px;
+    letter-spacing:0.02em;
+  }
+
+  .options{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:6px;
+  }
+  .opt{
+    text-align:left;
+    background:#fff;
+    border:1px solid #cfc6a4;
+    border-radius:3px;
+    padding:12px 14px;
+    font-family:inherit;
+    font-size:0.98rem;
+    color:var(--ink);
+    cursor:pointer;
+    transition:border-color .15s, background .15s;
+  }
+  .opt:hover:not(:disabled){border-color:var(--teal);}
+  .opt:disabled{cursor:default;}
+  .opt.correct{background:#e7f0e2;border-color:#5c8a52;}
+  .opt.incorrect{background:#f5e0e1;border-color:var(--rose);}
+  .opt.reveal-correct{background:#e7f0e2;border-color:#5c8a52;}
+
+  .feedback{
+    margin-top:16px;
+    padding:14px 16px;
+    border-radius:3px;
+    font-size:0.94rem;
+    line-height:1.5;
+    display:none;
+  }
+  .feedback.show{display:block;}
+  .feedback.good{background:#e7f0e2;border-left:4px solid #5c8a52;}
+  .feedback.bad{background:#f5e0e1;border-left:4px solid var(--rose);}
+  .feedback .tag{
+    display:inline-block;
+    font-family:'Courier New',monospace;
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    background:var(--ink);
+    color:var(--parchment);
+    padding:2px 7px;
+    border-radius:2px;
+    margin-bottom:8px;
+  }
+
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:22px;
+  }
+  .next-btn{
+    background:var(--ink);
+    color:var(--parchment);
+    border:none;
+    padding:10px 22px;
+    font-family:inherit;
+    font-size:0.95rem;
+    border-radius:3px;
+    cursor:pointer;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s;
+  }
+  .next-btn.show{opacity:1;pointer-events:auto;}
+  .score-note{
+    font-family:'Courier New',monospace;
+    font-size:0.78rem;
+    color:#6b6247;
+  }
+
+  .end-card{text-align:center;padding:50px 30px;}
+  .end-card h2{margin-top:0;font-size:1.6rem;}
+  .end-score{
+    font-size:3rem;
+    font-family:'Courier New',monospace;
+    color:var(--ink);
+    margin:10px 0 4px;
+  }
+  .restart-btn{
+    margin-top:20px;
+    background:var(--teal);
+    color:#fff;
+    border:none;
+    padding:11px 26px;
+    font-family:inherit;
+    font-size:0.95rem;
+    border-radius:3px;
+    cursor:pointer;
+  }
+
+  .legend{
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    margin-top:22px;
+    font-family:'Courier New',monospace;
+    font-size:0.7rem;
+    color:#8a94a6;
+    letter-spacing:0.04em;
+  }
+  .legend span{display:flex;align-items:center;gap:6px;}
+  .swatch{width:10px;height:10px;border-radius:2px;display:inline-block;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="masthead">
+    <h1>Concept &amp; Notation Quiz</h1>
+    <div class="sub" id="counter">Q 1 / 20</div>
+  </div>
+  <div class="progress-row" id="progressRow"></div>
+  <div id="quizArea"></div>
+  <div class="legend">
+    <span><span class="swatch" style="background:#5B8C8C"></span> which concept applies</span>
+    <span><span class="swatch" style="background:#D4A24C"></span> read the equation / graph</span>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [
+  {
+    type: "concept",
+    file: "04 · Bayes",
+    prompt: "You know how common a disease is (P(sick)), how likely a positive test is if someone is sick, and how likely a positive test is if they're healthy. You want to find P(sick | positive test). What tool do you reach for?",
+    options: ["Law of Total Probability alone","Bayes' theorem","The addition rule for joint events","Conditional independence"],
+    correct: 1,
+    explain: "This is exactly the prior → likelihood → posterior setup. You have P(A), P(B|A), and need P(A|B) — that's Bayes' theorem, not just total probability (which only gets you P(B), the denominator)."
+  },
+  {
+    type: "identify",
+    file: "04 · Bayes",
+    prompt: "In the equation below, what does the boxed piece represent?",
+    equation: "P(A|B) = P(A) · ▢P(B|A)▢ / P(B)",
+    options: ["The posterior","The likelihood","The prior","The evidence"],
+    correct: 1,
+    explain: "P(B|A) is the likelihood — how probable the evidence B is, assuming A is true. Don't confuse it with the posterior P(A|B), which runs the other direction."
+  },
+  {
+    type: "concept",
+    file: "02 · Independence",
+    prompt: "Two events can never both occur — like rolling a 2 and rolling a 5 on the same die. What relationship do these events have, and is P(A∩B) = P(A)·P(B) still valid?",
+    options: ["Independent — yes, the product rule applies","Disjoint — no, P(A∩B) = 0, not a product","Conditionally independent — depends on a third event","Exhaustive — yes, they cover the whole sample space"],
+    correct: 1,
+    explain: "These are disjoint (mutually exclusive), not independent. Disjoint events with nonzero probability are always dependent — if one happens, the other's probability collapses to 0."
+  },
+  {
+    type: "identify",
+    file: "06 · PMF/PDF/CDF",
+    prompt: "Which graph shape corresponds to a Cumulative Distribution Function (CDF)?",
+    visual: "cdf-shapes",
+    options: ["A flat horizontal line","A set of separate vertical bars","A smooth, non-decreasing S-shaped curve from 0 to 1","A symmetric bell curve centered at zero"],
+    correct: 2,
+    explain: "The CDF accumulates probability, so it never decreases and always runs from 0 up to 1 — an S-shape (or a staircase for discrete variables). Bars belong to a PMF; a bell belongs to a PDF."
+  },
+  {
+    type: "concept",
+    file: "07 · Expectation & Variance",
+    prompt: "You're given a full probability table and asked for a single number describing 'how spread out' the values typically are, in the same units as the data. What do you compute, and in what order?",
+    options: ["E[X], directly","Var(X) = E[X²] − (E[X])², then leave it as-is","Var(X), then take the square root to get σ","E[(X−μ)]"],
+    correct: 2,
+    explain: "'Same units as the data' is the giveaway — that's standard deviation, σ = √Var(X). Variance alone is in squared units, so it's the intermediate step, not the final answer."
+  },
+  {
+    type: "identify",
+    file: "07 · Expectation & Variance",
+    prompt: "In the shortcut formula for variance, what does each labeled term mean?",
+    equation: "Var(X)  =  ▢E[X²]▢  −  ▢(E[X])²▢",
+    options: ["Left = square of the mean, Right = mean of the squares","Left = mean of the squares, Right = square of the mean","Both terms mean the same thing","Left = variance, Right = standard deviation"],
+    correct: 1,
+    explain: "E[X²] is computed by squaring every value first, then averaging — the mean of the squares. (E[X])² is computed by averaging first, then squaring — the square of the mean. Order matters, and the gap between them is the variance."
+  },
+  {
+    type: "concept",
+    file: "09 vs 10 · Uniform vs Normal",
+    prompt: "A density function is completely flat between two endpoints and zero elsewhere. Which distribution is this, and what does that imply about its CDF?",
+    options: ["Normal — its CDF is S-shaped","Uniform — its CDF rises in a straight line","Chi-square — its CDF is unbounded at zero","Binomial — its CDF is a staircase"],
+    correct: 1,
+    explain: "A constant (flat) density integrates to a straight-line CDF. A curved, changing density (like the normal's bell) is what produces a curved, S-shaped CDF instead."
+  },
+  {
+    type: "identify",
+    file: "10 · Normal Distribution",
+    prompt: "On the bell curve sketch, which labeled feature controls the WIDTH of the curve rather than where it's centered?",
+    visual: "bell-curve",
+    options: ["Point A (the peak location)","Point B (the horizontal spread, marked σ)","The total area under the curve","The x-axis itself"],
+    correct: 1,
+    explain: "μ sets the center (where the peak sits); σ sets the spread. A small σ gives a tall narrow curve, a large σ gives a short wide one — but the total area stays 1 either way."
+  },
+  {
+    type: "concept",
+    file: "11 · Z-Scores",
+    prompt: "You have exam scores from two different classes with different means and standard deviations, and you want to compare one student's performance across both fairly. What do you compute for each student?",
+    options: ["Their raw percentile from a table specific to each class","A z-score, using each class's own μ and σ","The class's variance","P(X ≤ x) using the same normal for both classes"],
+    correct: 1,
+    explain: "Standardizing with z = (x−μ)/σ puts every score onto the same unitless scale — 'number of standard deviations from that class's own mean' — which is what makes cross-class comparison fair."
+  },
+  {
+    type: "identify",
+    file: "11 · Z-Scores",
+    prompt: "What does the shaded region in this standard normal sketch correspond to in the formula P(a < X < b) = Φ(z₂) − Φ(z₁)?",
+    visual: "phi-area",
+    options: ["Φ(z₁) alone","Φ(z₂) alone","The area strictly between z₁ and z₂","The area outside both z₁ and z₂ (the two tails)"],
+    correct: 2,
+    explain: "Subtracting the smaller cumulative area (up to z₁) from the larger one (up to z₂) leaves exactly the middle slice — the area strictly between them."
+  },
+  {
+    type: "concept",
+    file: "12 · Normal Approx to Binomial",
+    prompt: "n = 100 independent trials, p = 0.5. You want P(X ≤ 55) without summing 56 binomial terms by hand. Which two ideas do you need together, and why not just one?",
+    options: ["Just the normal approximation — no correction needed since n is large","The normal approximation AND a continuity correction, because a discrete PMF is being approximated by a continuous curve","Just Bayes' theorem","Just the empirical rule (68-95-99.7)"],
+    correct: 1,
+    explain: "Large n justifies approximating the binomial with a normal (same μ, σ). But binomial bars have width, while a normal curve has none at a single point — so you also need the continuity correction (shift the boundary by 0.5) or the approximation is off by a lot."
+  },
+  {
+    type: "identify",
+    file: "12 · Normal Approx to Binomial",
+    prompt: "You want P(X ≤ k). Which continuity-corrected boundary do you standardize?",
+    equation: "P(X ≤ k)  ≈  P(Y < ▢ ? ▢)",
+    options: ["k − 0.5, because you're excluding k","k + 0.5, because the bar at k is included","k, no adjustment needed","k + 1, to be safe"],
+    correct: 1,
+    explain: "≤ k includes the whole bar sitting at k, and that bar's right edge is at k + 0.5. Expand the boundary outward to include a value; shrink it to exclude one."
+  },
+  {
+    type: "concept",
+    file: "05 · Test Accuracy",
+    prompt: "A screening test is 99% sensitive and 99% specific, but the condition affects only 1 in 10,000 people. A patient tests positive — what quantity do you need to find out how worried they should actually be, and does it equal 99%?",
+    options: ["Sensitivity — yes, still 99%","Precision (PPV) — no, it will be far lower because of the rare base rate","Specificity — yes, still 99%","Accuracy — yes, still 99%"],
+    correct: 1,
+    explain: "The patient wants P(sick | positive) — precision — not P(positive | sick) — sensitivity. With such a rare condition, false positives from the enormous healthy population swamp the true positives, so precision comes out much lower than 99%."
+  },
+  {
+    type: "identify",
+    file: "05 · Test Accuracy",
+    prompt: "In this 2×2 grid, which cell is the False Positive?",
+    visual: "confusion-matrix",
+    options: ["Actually sick, tested positive","Actually sick, tested negative","Actually healthy, tested positive","Actually healthy, tested negative"],
+    correct: 2,
+    explain: "Read the label as [truth, prediction]. 'False' means the test was wrong; 'Positive' means it said positive. So False Positive = actually healthy, but the test said positive."
+  },
+  {
+    type: "concept",
+    file: "13 · Naive Bayes",
+    prompt: "You're building a spam filter using many words as features, and you want the joint probability of seeing all those words given the class — but computing the true joint would need enormous amounts of data. What assumption do you make to simplify it, and what is it called?",
+    options: ["Ordinary independence between the classes themselves","Conditional independence of the features within each class ('naive' assumption)","The features are normally distributed","The classes are equally likely (uniform prior)"],
+    correct: 1,
+    explain: "Naive Bayes assumes features are independent *given* the class: P(w1,...,wn | c) ≈ Π P(wi | c). This is conditional independence — a much weaker, learnable assumption than assuming the words are independent in general."
+  },
+  {
+    type: "identify",
+    file: "13 · Naive Bayes",
+    prompt: "In the smoothing formula below, what problem is α solving?",
+    equation: "P(w|c) = [count(w,c) + ▢α▢] / [count(c) + αk]",
+    options: ["It rescales probabilities to sum to 100%","It prevents an unseen word from making the whole product zero","It converts the probability into a log","It sets the decision threshold"],
+    correct: 1,
+    explain: "Without smoothing, a word never seen with class c gives P(w|c) = 0, which zeroes the entire product for that class regardless of other evidence. Laplace smoothing (α, often 1) guarantees every count stays positive."
+  },
+  {
+    type: "concept",
+    file: "14 · Chi-Square",
+    prompt: "You model channel noise as a standard normal and care about its power, which goes with the square of amplitude. What's the distribution of that squared quantity called, and what's true about its range?",
+    options: ["Still normal — squaring doesn't change the family, and it can be negative","Chi-square — and it can never be negative, since it's built from a square","Uniform — bounded strictly between 0 and 1","Binomial — since it counts events"],
+    correct: 1,
+    explain: "W = Z² defines the chi-square distribution. Because it's a square, W ≥ 0 always — the normal's negative half folds on top of the positive half, and the whole thing lives on [0, ∞)."
+  },
+  {
+    type: "identify",
+    file: "14 · Chi-Square",
+    prompt: "Looking at chi-square curves for increasing degrees of freedom k, what happens to the shape?",
+    visual: "chisq-family",
+    options: ["It stays exactly the same for every k","It slides right, develops a peak, and gradually becomes more symmetric (bell-like)","It slides left and becomes more skewed","It collapses toward a single spike at zero"],
+    correct: 1,
+    explain: "Each extra term adds another non-negative squared value, pushing the whole distribution toward larger w. With enough independent terms (large k), the Central Limit Theorem kicks in and χ²(k) starts to resemble N(k, 2k)."
+  },
+  {
+    type: "concept",
+    file: "03 · Conditional Probability",
+    prompt: "You want P(a customer buys) but you only know P(buys | saw ad) and P(buys | didn't see ad), plus how many customers saw the ad. Which rule combines these into one overall probability?",
+    options: ["Bayes' theorem, solving for the prior","The Law of Total Probability","The multiplication rule for independent events","The complement rule"],
+    correct: 1,
+    explain: "You're reconstructing an unconditional probability by breaking the population into a partition (saw ad / didn't) and weighting each piece's conditional probability by how much of the population it represents — that's the Law of Total Probability."
+  },
+  {
+    type: "identify",
+    file: "08 · Binomial",
+    prompt: "In the binomial PMF, what does the labeled piece represent?",
+    equation: "P(X=x)  =  ▢C(n,x)▢ · pˣ · (1−p)ⁿ⁻ˣ",
+    options: ["The probability that all n trials succeed","The number of ways to arrange x successes among n trials","The probability of failure raised to a power","The mean of the distribution"],
+    correct: 1,
+    explain: "C(n,x), the binomial coefficient, counts the arrangements — how many different orderings of x successes and n−x failures are possible. pˣ(1−p)ⁿ⁻ˣ then gives the probability of any one specific arrangement."
+  }
+];
+
+let idx = 0, score = 0, answeredThis = false;
+const quizArea = document.getElementById('quizArea');
+const counter = document.getElementById('counter');
+const progressRow = document.getElementById('progressRow');
+
+function initProgress(){
+  progressRow.innerHTML = QUESTIONS.map(()=>'<div class="dot"><div class="fill"></div></div>').join('');
+}
+
+function svgFor(name){
+  const svgs = {
+    "cdf-shapes": `<svg viewBox="0 0 560 150" width="520">
+      <text x="10" y="18" font-size="11" fill="#6b6247" font-family="Courier New">PMF (bars)</text>
+      <g>
+        <rect x="20" y="100" width="14" height="30" fill="#5B8C8C"/>
+        <rect x="45" y="70" width="14" height="60" fill="#5B8C8C"/>
+        <rect x="70" y="90" width="14" height="40" fill="#5B8C8C"/>
+        <rect x="95" y="115" width="14" height="15" fill="#5B8C8C"/>
+      </g>
+      <line x1="10" y1="130" x2="130" y2="130" stroke="#8a8360" stroke-width="1"/>
+      <text x="200" y="18" font-size="11" fill="#6b6247" font-family="Courier New">PDF (bell)</text>
+      <path d="M 210 130 Q 245 30 280 130" stroke="#D4A24C" stroke-width="2.5" fill="none"/>
+      <line x1="200" y1="130" x2="330" y2="130" stroke="#8a8360" stroke-width="1"/>
+      <text x="400" y="18" font-size="11" fill="#6b6247" font-family="Courier New">CDF (S-curve)</text>
+      <path d="M 400 128 C 420 128 425 100 445 65 C 465 30 470 12 490 12" stroke="#C1666B" stroke-width="2.5" fill="none"/>
+      <line x1="400" y1="130" x2="530" y2="130" stroke="#8a8360" stroke-width="1"/>
+      <line x1="400" y1="10" x2="400" y2="130" stroke="#8a8360" stroke-width="1"/>
+    </svg>`,
+    "bell-curve": `<svg viewBox="0 0 480 180" width="440">
+      <line x1="30" y1="150" x2="450" y2="150" stroke="#8a8360" stroke-width="1"/>
+      <path d="M 60 148 Q 130 148 175 40 Q 220 -10 265 40 Q 310 148 380 148" stroke="#1B2430" stroke-width="2.5" fill="none"/>
+      <line x1="220" y1="20" x2="220" y2="150" stroke="#C1666B" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="216" y="14" font-size="12" fill="#C1666B" font-family="Georgia">A</text>
+      <line x1="220" y1="150" x2="270" y2="150" stroke="#5B8C8C" stroke-width="3"/>
+      <text x="240" y="168" font-size="12" fill="#5B8C8C" font-family="Georgia">B (σ)</text>
+    </svg>`,
+    "phi-area": `<svg viewBox="0 0 460 160" width="420">
+      <line x1="20" y1="140" x2="440" y2="140" stroke="#8a8360" stroke-width="1"/>
+      <path d="M 40 138 Q 130 138 190 30 Q 230 -5 270 30 Q 330 138 420 138" stroke="#1B2430" stroke-width="2" fill="none"/>
+      <path d="M 170 138 Q 190 100 230 40 L 230 138 Z" fill="#5B8C8C" opacity="0.55"/>
+      <path d="M 230 40 Q 270 100 290 138 L 230 138 Z" fill="#5B8C8C" opacity="0.55"/>
+      <line x1="170" y1="10" x2="170" y2="140" stroke="#C1666B" stroke-dasharray="3 3"/>
+      <text x="160" y="8" font-size="12" fill="#C1666B" font-family="Georgia">z₁</text>
+      <line x1="290" y1="10" x2="290" y2="140" stroke="#C1666B" stroke-dasharray="3 3"/>
+      <text x="285" y="8" font-size="12" fill="#C1666B" font-family="Georgia">z₂</text>
+    </svg>`,
+    "confusion-matrix": `<svg viewBox="0 0 380 200" width="340">
+      <line x1="130" y1="20" x2="130" y2="180" stroke="#8a8360"/>
+      <line x1="30" y1="70" x2="380" y2="70" stroke="#8a8360"/>
+      <text x="10" y="14" font-size="11" font-family="Courier New" fill="#6b6247">Truth ↓ / Test →</text>
+      <text x="160" y="45" font-size="12" font-family="Georgia" fill="#1B2430">Positive</text>
+      <text x="280" y="45" font-size="12" font-family="Georgia" fill="#1B2430">Negative</text>
+      <text x="35" y="105" font-size="12" font-family="Georgia" fill="#1B2430">Sick</text>
+      <text x="35" y="150" font-size="12" font-family="Georgia" fill="#1B2430">Healthy</text>
+      <rect x="130" y="70" width="120" height="55" fill="#e7f0e2" stroke="#cfc6a4"/>
+      <text x="150" y="102" font-size="13" font-family="Georgia" fill="#1B2430">TP</text>
+      <rect x="250" y="70" width="120" height="55" fill="#fff" stroke="#cfc6a4"/>
+      <text x="270" y="102" font-size="13" font-family="Georgia" fill="#1B2430">FN</text>
+      <rect x="130" y="125" width="120" height="55" fill="#fff" stroke="#cfc6a4"/>
+      <text x="150" y="157" font-size="13" font-family="Georgia" fill="#1B2430">?</text>
+      <rect x="250" y="125" width="120" height="55" fill="#e7f0e2" stroke="#cfc6a4"/>
+      <text x="270" y="157" font-size="13" font-family="Georgia" fill="#1B2430">TN</text>
+    </svg>`,
+    "chisq-family": `<svg viewBox="0 0 480 170" width="440">
+      <line x1="20" y1="150" x2="460" y2="150" stroke="#8a8360" stroke-width="1"/>
+      <path d="M 22 10 Q 40 130 70 148 Q 150 150 440 150" stroke="#C1666B" stroke-width="2" fill="none"/>
+      <path d="M 22 150 Q 60 60 100 40 Q 140 60 180 150" stroke="#D4A24C" stroke-width="2" fill="none"/>
+      <path d="M 22 150 Q 120 150 180 90 Q 230 30 280 90 Q 330 150 420 150" stroke="#5B8C8C" stroke-width="2" fill="none"/>
+      <text x="24" y="24" font-size="11" fill="#C1666B" font-family="Courier New">k=1</text>
+      <text x="90" y="35" font-size="11" fill="#D4A24C" font-family="Courier New">k=3</text>
+      <text x="250" y="24" font-size="11" fill="#5B8C8C" font-family="Courier New">k=10</text>
+    </svg>`
+  };
+  return svgs[name] || "";
+}
+
+function render(){
+  if(idx >= QUESTIONS.length){ renderEnd(); return; }
+  const q = QUESTIONS[idx];
+  counter.textContent = `Q ${idx+1} / ${QUESTIONS.length}`;
+  answeredThis = false;
+
+  let visualHtml = "";
+  if(q.visual) visualHtml = `<div class="visual">${svgFor(q.visual)}</div>`;
+  if(q.equation) visualHtml = `<div class="equation">${q.equation}</div>`;
+
+  quizArea.innerHTML = `
+    <div class="card type-${q.type}">
+      <div class="eyebrow">${q.type === 'concept' ? 'Which concept applies?' : 'Read the notation'} · ${q.file}</div>
+      <p class="prompt">${q.prompt}</p>
+      ${visualHtml}
+      <div class="options" id="optionsRow">
+        ${q.options.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join('')}
+      </div>
+      <div class="feedback" id="feedback"></div>
+      <div class="footer-row">
+        <span class="score-note">Score: ${score} / ${idx}</span>
+        <button class="next-btn" id="nextBtn">${idx===QUESTIONS.length-1?'See results':'Next question'} →</button>
+      </div>
+    </div>
+  `;
+
+  document.querySelectorAll('.opt').forEach(btn=>{
+    btn.addEventListener('click', ()=>handleAnswer(parseInt(btn.dataset.i), q));
+  });
+  document.getElementById('nextBtn').addEventListener('click', ()=>{ idx++; render(); });
+}
+
+function handleAnswer(choice, q){
+  if(answeredThis) return;
+  answeredThis = true;
+  const buttons = document.querySelectorAll('.opt');
+  const correct = choice === q.correct;
+  if(correct) score++;
+
+  buttons.forEach((b,i)=>{
+    b.disabled = true;
+    if(i === q.correct) b.classList.add('correct');
+    else if(i === choice) b.classList.add('incorrect');
+  });
+
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback show ' + (correct ? 'good' : 'bad');
+  fb.innerHTML = `<span class="tag">${correct ? 'Correct' : 'Not quite'}</span><br>${q.explain}`;
+
+  const dots = progressRow.children;
+  dots[idx].classList.add(correct ? 'done' : 'wrong');
+
+  document.getElementById('nextBtn').classList.add('show');
+  document.querySelector('.score-note').textContent = `Score: ${score} / ${idx+1}`;
+}
+
+function renderEnd(){
+  counter.textContent = `Done`;
+  const pct = Math.round((score/QUESTIONS.length)*100);
+  let note = "Strong grasp of the material.";
+  if(pct < 50) note = "Worth another pass through the notes before this sticks.";
+  else if(pct < 80) note = "Solid, but a few concepts need another look — recheck the ones you missed.";
+  quizArea.innerHTML = `
+    <div class="card end-card">
+      <div class="eyebrow">Results</div>
+      <h2>Quiz complete</h2>
+      <div class="end-score">${score} / ${QUESTIONS.length}</div>
+      <p>${note}</p>
+      <button class="restart-btn" id="restartBtn">Try again</button>
+    </div>
+  `;
+  document.getElementById('restartBtn').addEventListener('click', ()=>{
+    idx = 0; score = 0;
+    initProgress();
+    render();
+  });
+}
+
+initProgress();
+render();
+</script>
+</body>
+</html>
