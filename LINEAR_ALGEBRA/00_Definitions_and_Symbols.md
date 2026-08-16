@@ -2,13 +2,15 @@
 
 > One page for the two things worth having in front of you: **what every symbol means**, and **the definitions you should be able to state from memory**.
 >
-> Each entry names the file where the idea is developed in full. Numbers in the right-hand columns refer to files 01 through 06.
+> Covers files **01–11**. Each entry names the file where the idea is developed in full.
+>
+> **Week 1 (01–06) diagnoses systems** — telling singular from non-singular, and knowing what to expect before solving. **Week 2 (07–11) solves them** — getting the actual numbers out. Section headings are tagged so you can skip to the week you need.
 
 ---
 
 # Part 1 — Symbols
 
-## Systems and equations
+## Systems and equations · *Week 1*
 
 | Symbol | What it means | File |
 |---|---|---|
@@ -17,7 +19,7 @@
 | $(8,2)$ | A solution, written as an ordered pair or triple | 02 |
 | $\infty$ | "Infinitely many solutions" — one of the three possible outcomes | 02, 03 |
 
-## Geometry
+## Geometry · *Week 1*
 
 | Symbol | What it means | File |
 |---|---|---|
@@ -25,31 +27,44 @@
 | $(a,b)$ | A point in 2D; a solution of a 2-variable system | 03 |
 | $(a,b,c)$ | A point in 3D; a solution of a 3-variable system | 03 |
 
-## Matrices
+## Matrices · *Weeks 1–2*
 
 | Symbol | What it means | File |
 |---|---|---|
 | A grid of numbers, e.g. rows $[1,1]$ and $[1,2]$ | The coefficient matrix — coefficients only, constants stripped away | 04 |
 | $a,b,c,d$ | Generic labels for a 2×2 matrix: top-left, top-right, bottom-left, bottom-right | 04, 06 |
 | $a,b,c,d,e,f,g,h,i$ | Generic labels for a 3×3 matrix, read row by row | 06 |
+| A grid with a final separated column | The **augmented matrix** — coefficients plus the constants | 08, 11 |
+| $*$ | "any value" — an entry the form places no constraint on | 10, 11 |
 
-## Rows and dependence
+## Rows and dependence · *Weeks 1–2*
 
 | Symbol | Read as | What it means | File |
 |---|---|---|---|
-| $R_1,R_2,R_3$ | "row 1", "row 2", "row 3" | A row of a matrix, referred to by number | 05 |
+| $R_1,R_2,R_3$ | "row 1", "row 2", "row 3" | A row of a matrix, referred to by number | 05, 08 |
 | $[a,b]$ | "the row a, b" | A row vector, written as a bracketed list | 05 |
 | $k$ | "k" | The scalar multiplier in the row-multiple test | 05, 06 |
 | $c_1,c_2,c_3,\ldots$ | — | The numbers scaling each row in a linear combination | 05 |
-| $M_1,M_2,\ldots$ | "matrix 1", "matrix 2" | A matrix, referred to by number, in a worked example or quiz | 05, 06 |
+| $M_1,M_2,\ldots$ | "matrix 1", "matrix 2" | A matrix, referred to by number, in a worked example | 05, 06 |
+| $R_1 - 2R_2$ | "row 1 minus twice row 2" | A row operation written compactly | 08, 10, 11 |
 
-## The determinant
+## The determinant · *Week 1*
 
 | Symbol | Read as | What it means | File |
 |---|---|---|---|
 | $\det$ | "the determinant of" | One number computed from a matrix that tests singularity | 06 |
 | $ad-bc$ | — | The 2×2 determinant formula | 06 |
 | $aei+bfg+cdh-ceg-afh-bdi$ | — | The 3×3 determinant formula (Sarrus' rule) | 06 |
+
+## Solving and reduction · *Week 2*
+
+| Symbol | Read as | What it means | File |
+|---|---|---|---|
+| $0=0$ | "zero equals zero" | An equation that dissolved — true but empty; signals redundancy | 07 |
+| $0=2$ | "zero equals two" | An impossible statement — signals contradiction | 07 |
+| A boxed leading entry | "pivot" | The leftmost nonzero entry of a row | 10, 11 |
+| A staircase of pivots | — | Row echelon form: each pivot strictly right of the one above | 10 |
+| $\mathbf{1}$ on the diagonal, $0$ elsewhere | — | The identity matrix — the RREF of any non-singular square matrix | 11 |
 
 ## Operators and relations
 
@@ -59,138 +74,224 @@
 | $\iff$, $\Longleftrightarrow$ | "if and only if" | Each side implies the other — a genuine two-way rule | 02, 04, 06 |
 | $\Rightarrow$ | "implies" | The left side forces the right side | throughout |
 | $\neq$ | "does not equal" | — | throughout |
-| $\approx$ | "is approximately" | — | 01 |
+| $\rightarrow$ | "becomes" | One step of a transformation | 08, 10, 11 |
 | $\infty$ | "infinity" | Infinitely many solutions | 02, 03 |
 
 ---
 
 # Part 2 — Definitions
 
-## Systems of sentences
+## 01 · Systems of sentences · *Week 1*
 
-**System.** Several statements considered together, as one package — judged jointly, never one at a time. *(01)*
+**System.** Several statements considered together, as one package — judged jointly, never one at a time.
 
-**Complete.** Every sentence in the system adds new information, and everything gets determined. *(01)*
+**Complete.** Every sentence adds new information, and everything gets determined.
 
-**Redundant.** At least one sentence repeats information the others already gave. True, but wasteful. *(01)*
+**Redundant.** At least one sentence repeats information the others already gave. True, but wasteful.
 
-**Contradictory.** The sentences cannot all be true at once — the package is broken, not just inefficient. *(01)*
+**Contradictory.** The sentences cannot all be true at once — the package is broken, not just inefficient.
 
-**Singular.** Redundant or contradictory. A system that fails to deliver full, unique information. *(01)*
+**Singular.** Redundant or contradictory. A system that fails to deliver full, unique information.
 
-**Non-singular.** Complete. A system where every sentence pulls its weight. *(01)*
+**Non-singular.** Complete. A system where every sentence pulls its weight.
 
 > Singular and non-singular describe the **whole system**, never a single sentence — the same sentence can sit inside a non-singular system in one context and a singular one in another.
 
 ---
 
-## Systems of equations
+## 02 · Systems of equations · *Week 1*
 
-**Equation.** A sentence about numbers. Translating a sentence into an equation loses nothing. *(02)*
+**Equation.** A sentence about numbers. Translating a sentence into an equation loses nothing.
 
-**Linear equation.** Variables multiplied by numbers and added — nothing squared, nothing multiplied together, nothing inside a function. *(02)*
+**Linear equation.** Variables multiplied by numbers and added — nothing squared, nothing multiplied together, nothing inside a function, no variable in an exponent.
 
-**Solution.** Values that satisfy **every** equation in the system simultaneously. Satisfying only some of them counts for nothing. *(02)*
+**Solution.** Values that satisfy **every** equation of the system simultaneously. Satisfying some of them counts for nothing.
 
-**The trichotomy.** A linear system has exactly one solution, infinitely many, or none — never any other count, and in particular never exactly two. *(02, 03)*
+**The trichotomy.** A linear system has exactly one solution, infinitely many, or none — never any other count, and in particular never exactly two.
 
 > Singular does **not** mean unsolvable. It means "no unique solution" — which includes both infinitely many solutions and none at all.
 
 ---
 
-## Geometry: lines and planes
+## 03 · Geometry: lines and planes · *Week 1*
 
-**Line.** The complete solution set of one linear equation in two variables. *(03)*
+**Line.** The complete solution set of one linear equation in two variables.
 
-**Slope.** How steeply a line runs, set entirely by the equation's **coefficients**. *(03, 04)*
+**Slope.** How steeply a line runs, set entirely by the equation's **coefficients**.
 
-**Intercept.** Where a line crosses the axis, set entirely by the equation's **constant**. *(03, 04)*
+**Intercept.** Where a line crosses the axis, set entirely by the equation's **constant**.
 
-**Plane.** The complete solution set of one linear equation in three variables. A hyperplane is the same idea in more variables than can be drawn. *(03)*
+**Plane.** The complete solution set of one linear equation in three variables. A hyperplane is the same idea in more variables than can be drawn.
 
-**Solution as intersection.** Solving a system means finding the point(s) lying on every one of its lines or planes at once. *(03)*
+**Solution as intersection.** Solving a system means finding the point(s) lying on every one of its lines or planes at once.
 
-**Why only three outcomes.** Two distinct straight lines can share at most one point — if they shared two, they would be the same line. That single fact rules out any solution count except one, infinitely many, or zero. *(03)*
-
----
-
-## Matrices
-
-**Coefficient.** A number multiplying a variable. Coefficients set an equation's slope. *(04)*
-
-**Constant.** The number alone on the right of an equation. Constants set an equation's intercept, and nothing else. *(04)*
-
-**Matrix.** The grid formed from a system's coefficients alone — one row per equation, one column per variable, with variable names and constants both stripped away. *(04)*
-
-**System singular ⟺ matrix singular.** Singularity is entirely a property of the coefficients. Constants can never turn a singular system non-singular, or the reverse — they can only decide, among already-singular systems, whether the result is redundant or contradictory. *(04)*
-
-**Homogeneous system.** Every constant on the right equals zero. *(04)*
-
-**Trivial solution.** The all-zero point — always a solution of a homogeneous system, since $0=0$ regardless of the coefficients. Because of this, a homogeneous system can never be contradictory: only non-singular (the trivial solution alone) or singular (infinitely many, including the trivial one). *(04)*
+**Why only three outcomes.** Two distinct straight lines share at most one point — if they shared two, they would be the same line. That single fact is the whole proof of 02's trichotomy.
 
 ---
 
-## Linear dependence and independence
+## 04 · Matrices and singularity · *Week 1*
 
-**Linear combination.** Any sum of rows, each first scaled by some number: $c_1R_1+c_2R_2+c_3R_3+\cdots$ *(05)*
+**Coefficient.** A number multiplying a variable. Coefficients set an equation's slope.
 
-**Linearly dependent.** Some row equals a linear combination of the others. With only two rows, this simplifies to "one row is a scalar multiple of the other." *(05)*
+**Constant.** The number alone on the right of an equation. Constants set an equation's intercept, and nothing else.
 
-**Linearly independent.** No row can be written as a combination of the rest. *(05)*
+**Matrix.** The grid formed from a system's coefficients alone — one row per equation, one column per variable, with variable names and constants both stripped away.
 
-**Rows dependent ⟺ matrix singular.** Dependence among the rows is exactly what makes a matrix singular — redundancy, relocated one level deeper than the system itself. *(04, 05)*
+**System singular ⟺ matrix singular.** Singularity is entirely a property of the coefficients. Constants can never flip it — they only decide, among already-singular systems, redundant versus contradictory.
 
-> The scalar-multiple test ("is row 2 just row 1 times some $k$?") only fully covers two rows. With three or more, check every combination — a row can depend on several others at once, not just one.
+**Homogeneous system.** Every constant on the right equals zero.
 
-> It only takes **one** dependent row to make the whole matrix singular. The other rows don't get a vote back to non-singular.
-
----
-
-## The determinant
-
-**Determinant (2×2).** $ad-bc$ — the product of the main diagonal, minus the product of the other diagonal. *(06)*
-
-**Determinant (3×3).** $aei+bfg+cdh-ceg-afh-bdi$ — three diagonal products added, three subtracted, using the diagonal method (Sarrus' rule). *(06)*
-
-**Determinant ⟺ singularity.** A genuine if-and-only-if: the determinant is zero exactly when the matrix is singular, and nonzero exactly when it's non-singular. *(06)*
-
-**Triangular matrix.** Every entry below the main diagonal is zero. Its determinant is just the product of the diagonal entries, because every other diagonal product in the formula is forced to include a zero. *(06)*
-
-**All-zero row.** A row of nothing but zeros forces the determinant to zero automatically — every diagonal product touching that row vanishes. It's the most extreme case of a dependent row: a row carrying no information at all. *(06)*
+**Trivial solution.** The all-zero point — always a solution of a homogeneous system, since $0=0$ regardless of the coefficients. So a homogeneous system is never contradictory: only non-singular (trivial solution alone) or singular (infinitely many).
 
 ---
 
-## Techniques
+## 05 · Linear dependence and independence · *Week 1*
 
-**Extracting a matrix from a system.** Strip every equation down to its coefficients only, keeping variable order consistent, one row per equation. *(04)*
+**Linear combination.** Any sum of rows, each first scaled by some number: $c_1R_1+c_2R_2+c_3R_3+\cdots$
 
-**The row-multiple test (2 rows).** Ask whether $[a,b]\times k=[c,d]$ has a solution for $k$ — check if the same $k$ satisfies both entries at once. *(05)*
+**Linearly dependent.** Some row equals a linear combination of the others. With only two rows this simplifies to "one row is a scalar multiple of the other."
 
-**The linear-combination test (3+ rows).** Try to build one row from a scaled sum of the others; if any combination works, the rows are dependent. *(05)*
+**Linearly independent.** No row can be written as a combination of the rest.
 
-**The diagonal method.** Multiply along each diagonal of the matrix — add the ones leaning one way, subtract the ones leaning the other — to get the determinant directly, without solving anything. *(06)*
+**Rows dependent ⟺ matrix singular.** Dependence among rows is exactly what makes a matrix singular — redundancy, relocated one level deeper than the system.
 
-**The triangular shortcut.** If a matrix is triangular, skip the diagonal method entirely and just multiply the diagonal. *(06)*
+> The scalar-multiple test only fully covers two rows. With three or more, check every combination — a row can depend on several others at once.
 
-**Sliding a system to the origin.** Set every constant to zero. This never changes whether the system is singular, but it does rule out "no solutions" as an outcome — useful for seeing a system's pure geometric shape. *(04)*
+> One dependency anywhere makes the **whole** matrix singular. The other rows don't get a vote.
+
+---
+
+## 06 · The determinant · *Week 1*
+
+**Determinant (2×2).** $ad-bc$ — the product of the main diagonal, minus the product of the other diagonal.
+
+**Determinant (3×3).** $aei+bfg+cdh-ceg-afh-bdi$ — three diagonal products added, three subtracted (the diagonal method, Sarrus' rule).
+
+**Determinant ⟺ singularity.** A genuine if-and-only-if: zero exactly when the matrix is singular, nonzero exactly when it isn't.
+
+**Triangular matrix.** Every entry below the main diagonal is zero. Its determinant is just the product of the diagonal entries.
+
+**All-zero row.** Forces the determinant to zero automatically — the most extreme dependent row, carrying no information at all.
+
+---
+
+## 07 · Solving by elimination · *Week 2*
+
+**Solved system.** The same system rewritten so each variable stands alone: $a=3$, $b=2$. Solving means transforming into this form without changing the solution set.
+
+**The three legal manipulations.** Swap two equations; multiply an equation by a **nonzero** constant; add two equations. Safe because each is **reversible** — reversible moves cannot lose or invent solutions.
+
+**Elimination.** Normalize (divide each equation by its coefficient of the target variable), subtract to cancel that variable, repeat on the smaller system, then **back-substitute** upward.
+
+**Back-substitution.** Once the last variable is known, plug it into the equation above, solve, and keep climbing.
+
+**Degree of freedom.** A variable you may choose freely, with the others determined by that choice. Each $0=0$ that appears leaves one more.
+
+> A zero coefficient is not a failure — it means that elimination step is already done.
+
+---
+
+## 08 · Matrix row reduction · *Week 2*
+
+**Augmented matrix.** The coefficient matrix with the constants carried along in an extra final column.
+
+**Row operations.** The same three legal moves from 07, applied to matrix rows: switch two rows; multiply a row by a nonzero scalar; add one row to another.
+
+**Effect on the determinant.** Switching rows flips its **sign**; scaling a row by $k$ **multiplies** it by $k$; adding one row to another leaves it **unchanged**.
+
+**Preserves singularity.** None of the three can turn a zero determinant nonzero or vice versa — so singularity and rank survive any amount of row reduction. This is the permission slip for everything in 09–11.
+
+**Upper diagonal matrix.** Zeros below the diagonal — what 10 calls row echelon form.
+
+**Diagonal matrix.** Zeros above *and* below — what 11 calls reduced row echelon form.
+
+> "Preserves singularity" is **not** "preserves the determinant." Two of the three operations genuinely change its value; they just can't change whether it's zero.
+
+---
+
+## 09 · Rank · *Week 2*
+
+**Rank.** The number of independent pieces of information a system carries — equivalently, the number of **linearly independent rows** of its matrix.
+
+**Full rank.** Rank equal to the number of rows. Full rank ⟺ non-singular.
+
+**Solution space.** The set of all solutions of the homogeneous system, with a dimension: a point (0), a line (1), a plane (2), and so on.
+
+**Rank-nullity.** $\text{rank} + \text{dimension of solution space} = \text{number of variables}$. Every independent equation removes one degree of freedom. The dimension of the solution space is the **nullity**.
+
+> Rank counts **independent** rows, not rows. A matrix with two rows and no zeros anywhere can still have rank 1.
+
+---
+
+## 10 · Row echelon form · *Week 2*
+
+**Pivot.** The leftmost nonzero entry of a row. An all-zero row has no pivot.
+
+**Row echelon form.** Each pivot sits strictly to the right of the pivot in the row above; all-zero rows sit at the bottom. The result is a descending staircase.
+
+**The algorithm.** Divide each row by its leftmost nonzero entry, subtract to clear beneath that pivot, then move down and repeat.
+
+**Gaussian elimination.** Row-reduce to echelon form, then back-substitute. The standard algorithm for solving linear systems.
+
+**Rank from the form.** $\text{rank} = \text{the number of pivots} = \text{the number of nonzero rows}$.
+
+> Count **pivots**, not diagonal entries. The staircase may skip a column, and then the two counts disagree.
+
+> Pivots need not be 1 in row echelon form — only the staircase is required. The usual algorithm normalizes them to 1 as a side effect.
+
+---
+
+## 11 · Reduced row echelon form · *Week 2*
+
+**Reduced row echelon form (RREF).** In row echelon form, **and** every pivot is a 1, **and** every entry above a pivot is 0.
+
+**The algorithm.** Divide each row by its pivot, then clear upward — working from the rightmost pivot leftward, subtract multiples of each pivot row from the rows above it.
+
+**Gauss-Jordan elimination.** Reducing all the way to RREF, so no back-substitution is needed at all.
+
+**Reading the solution.** With constants carried in an augmented matrix, the final column of the RREF **is** the solution.
+
+**Uniqueness.** Every matrix has exactly one RREF, however you get there. (Row echelon form is *not* unique.)
+
+> RREF does not mean "everything but the pivots is zero." Only entries **above a pivot** must vanish; columns containing no pivot are unconstrained.
 
 ---
 
 # The master dictionary
 
-The same fact, traced through every file in the series. Each row is a different vocabulary for identical territory — non-singular on the left, singular on the right.
+The same fact, traced through every file. Each row is a different vocabulary for identical territory.
 
 | File | Level | Non-singular | Singular |
 |---|---|---|---|
 | 01 | Sentences | Complete | Redundant or contradictory |
 | 02 | Equations | Unique solution | Infinitely many, or none |
-| 03 | Geometry | Lines/planes cross at one point | Lines/planes coincide, or never meet |
+| 03 | Geometry | Lines/planes cross at a point | They coincide, or never meet |
 | 04 | Matrix | Non-singular matrix | Singular matrix |
 | 05 | Rows | Linearly independent | Linearly dependent |
-| 06 | Number | Determinant $\neq 0$ | Determinant $=0$ |
+| 06 | A number | Determinant $\neq 0$ | Determinant $= 0$ |
+| 07 | Elimination | Every variable pinned down | Ends in $0=0$ or $0=\text{nonzero}$ |
+| 09 | Rank | Full rank | Rank $<$ number of rows |
+| 10 | Echelon form | A pivot in every row | At least one zero row |
 
 $$
-\boxed{\text{Six files, one fact: does the system carry a genuinely new piece of information in every row, or not?}}
+\boxed{\text{Nine levels, one fact: does every row carry a genuinely new piece of information?}}
+$$
+
+---
+
+# Four ways to test for singularity
+
+By the end of the series there are four independent checks. They always agree — pick whichever is cheapest for the matrix in front of you.
+
+| Test | How | Best when | File |
+|---|---|---|---|
+| **Inspection** | Is one row a combination of the others? | Small matrices with obvious patterns | 05 |
+| **Determinant** | Compute it; zero means singular | 2×2 and 3×3 | 06 |
+| **Rank** | Is the rank less than the number of rows? | When you also want the solution-set size | 09 |
+| **Row reduction** | Reduce; does a zero row appear? | Large matrices, and anything a computer does | 10 |
+
+$$
+\boxed{\text{det}=0 \iff \text{rank} < \text{full} \iff \text{a zero row appears} \iff \text{rows dependent} \iff \text{singular}}
 $$
 
 ---
@@ -200,22 +301,27 @@ $$
 | These look alike | But | File |
 |---|---|---|
 | Singular vs. "no solutions" | Singular includes infinitely many solutions too — it means *no unique solution* | 02 |
-| Redundant vs. contradictory | Both are singular; they're opposite failures — too little information vs. conflicting information | 01, 02 |
-| $a,b,c$ as variables vs. $a,b,c$ as matrix entries | Same letters, different jobs: prices/coordinates in 02–03, generic grid positions in 04 and 06 | 02–03 vs. 04, 06 |
+| Redundant vs. contradictory | Both singular; opposite failures — too little information vs. conflicting information | 01, 02 |
 | Coefficients vs. constants | Only coefficients decide singular vs. non-singular; constants only decide redundant vs. contradictory | 04 |
-| The row-multiple test vs. the full combination test | The multiple test (row 2 = row 1 × k) only covers 2 rows; 3+ rows need every combination checked | 05 |
-| A matrix's singularity vs. its determinant | Logically identical (an *iff*), but computed completely differently — one by inspection, one by formula | 04, 06 |
-| Slope vs. intercept | Slope comes from coefficients (orientation); intercept comes from constants (position) | 03, 04 |
+| $a,b,c$ as variables vs. as matrix entries | Prices/coordinates in 02–03, generic grid positions in 04 and 06 | 02–03 vs. 04, 06 |
+| The row-multiple test vs. the full combination test | The multiple test only covers 2 rows; 3+ rows need every combination checked | 05 |
+| "Preserves singularity" vs. "preserves the determinant" | Row operations do the first, not the second — two of three change the value | 08 |
+| Rank vs. number of rows | Rank counts *independent* rows; they differ exactly when there's redundancy | 09 |
+| Pivots vs. diagonal entries | Rank is the pivot count; the diagonal count is wrong whenever the staircase skips a column | 10, 11 |
+| Row echelon vs. **reduced** row echelon | REF clears below pivots only; RREF clears above too, forces pivots to 1, and is unique | 10, 11 |
+| Gaussian vs. Gauss-Jordan | Gaussian stops at REF and back-substitutes; Gauss-Jordan goes to RREF and reads off | 10, 11 |
 
 ---
 
-# Formulas to know cold
+# Formulas and procedures to know cold
 
-Each formula is shown twice: once in symbols, and once with the symbols replaced by a real case from the notes.
+Each line is shown twice: once in symbols, once with a real case from the notes.
+
+## Week 1 — diagnosing
 
 | Formula | The same thing, with real numbers | File |
 |---|---|---|
-| Linear equation: number·variable + number·variable + $\cdots$ = number | $3.4a-48.99b+2c=122.5$ | 02 |
+| Linear equation: number·variable $+\cdots=$ number | $3.4a-48.99b+2c=122.5$ | 02 |
 | Checking a solution | $a=8,b=2$: $8+2=10$ ✓ and $8+2(2)=12$ ✓ | 02 |
 | $b=(\text{slope})\,a+(\text{intercept})$ | $a+b=10 \Rightarrow b=10-a$: slope $-1$, intercept $10$ | 03 |
 | System → matrix | $a+b=10,\ a+2b=12$ → rows $[1,1]$ and $[1,2]$ | 04 |
@@ -225,11 +331,31 @@ Each formula is shown twice: once in symbols, and once with the symbols replaced
 | $\det=ad-bc$ | $2\cdot3-(-1)\cdot(-6)=6-6=0$ — singular | 06 |
 | $\det=aei+bfg+cdh-ceg-afh-bdi$ | $[1,1,1],[1,2,1],[1,1,2]$: $(4+1+1)-(2+1+2)=1$ | 06 |
 | Triangular shortcut | $[1,1,1],[0,2,2],[0,0,3]$: $\det=1\times2\times3=6$ | 06 |
-| All-zero row | $[1,1,1],[0,2,2],[0,0,0]$: $\det=0$ automatically | 06 |
-| Homogeneous system | $a+b=0,\ a+2b=0$: the trivial solution $(0,0)$ always works | 04 |
+
+## Week 2 — solving
+
+| Formula | The same thing, with real numbers | File |
+|---|---|---|
+| Normalize a row | $5a+b=17 \;\div 5\; \Rightarrow\; a+0.2b=3.4$ | 07 |
+| Eliminate by subtracting | $(a-0.75b=1.5)-(a+0.2b=3.4) \Rightarrow -0.95b=-1.9$ | 07 |
+| Back-substitute | $b=2$ into $a+0.2b=3.4 \Rightarrow a=3$ | 07 |
+| Redundant tell | $(a+b=10)-(a+b=10) \Rightarrow 0=0$ | 07 |
+| Contradictory tell | $(a+b=12)-(a+b=10) \Rightarrow 0=2$ | 07 |
+| Row swap on the determinant | $\det[5,1;4,3]=11 \Rightarrow \det[4,3;5,1]=-11$ | 08 |
+| Row scaling on the determinant | Row 1 $\times 10$: $\det = 110 = 10\times 11$ | 08 |
+| Row addition on the determinant | $R_1+R_2$: $\det[9,4;4,3]=11$, unchanged | 08 |
+| Rank-nullity | Rank 1 with 2 variables ⟹ solution space is a line (dimension 1) | 09 |
+| Reduce to echelon form | $[5,1],[4,-3] \rightarrow [1,0.2],[0,1]$ — 2 pivots, rank 2 | 10 |
+| Singular echelon form | $[5,1],[10,2] \rightarrow [1,0.2],[0,0]$ — 1 pivot, rank 1 | 10 |
+| Clear above a pivot | $[1,0.2]-0.2[0,1]=[1,0]$ | 11 |
+| Read off the solution | Augmented RREF $[1,0\mid 3],[0,1\mid 2] \Rightarrow a=3,\ b=2$ | 11 |
+
+## The full pipeline
+
+$$
+\boxed{\text{System} \rightarrow \text{Matrix} \rightarrow \text{Echelon form} \rightarrow \text{Reduced echelon form} \rightarrow \text{Solution}}
+$$
 
 ## Reading the table
 
-The left column is what you write down. The right column is what it actually **means** — and if you can rebuild the right column from the left, you know the formula rather than just recognizing it.
-
-When a formula stops making sense, go back to its concrete case and re-derive it from there.
+The left column is what you write down; the right column is what it actually **means**. If you can rebuild the right column from the left, you know the formula rather than just recognizing it. When one stops making sense, go back to its concrete case and re-derive from there.
